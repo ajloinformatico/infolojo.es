@@ -1,0 +1,70 @@
+/*Mobile Style*/
+body{
+    font-family: Helvetica, serif;
+    width: 100%;
+    text-align: center;
+    min-width: 350px;
+}
+header{
+    width: 100%;
+    display: inline-flex;
+    background-color: #35495e;
+    color: white;
+}
+
+header h1{
+    width: 80%;
+    padding-left: 1em;
+    height: auto;
+    text-align: left;
+    float: left;
+}
+
+.mobile-menu-button{
+    width: 20%;
+    float: left;
+}
+
+
+.desktop-menu{
+    display: none;
+
+}
+
+
+
+/*
+
+ .container { padding: 16px; border: #0000FF 1px solid; }
+.div1 { display: inline-block; width: 20%; height: auto;   float: left; text-align: center; border: #000000 1px solid; padding: 107px 0px; }
+.div2 { display: inline-block; width: 80%; height: auto; text-align: center; border: #000000 1px solid; padding: 48px 0px; }
+.div3 { display: inline-block; width: 80%; height: auto; text-align: center; border: #000000 1px solid; padding: 48px 0px; }
+</style>
+
+*/
+
+
+
+
+/*Style for desktop*/
+@media only screen and (min-width: 736px) {
+    .desktop-menu{
+        display: inline-flex;
+        width: 100%;
+    }
+
+
+    header h1{
+        width: 100%;
+        padding-left: 0;
+        float: none;
+        text-align: center;
+    }
+
+    .mobile-menu-button{
+        display: none;
+    }
+
+
+
+}
