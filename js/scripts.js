@@ -6,17 +6,18 @@ let showHidden = 0; // when it is 0 menu is hidden and when its is 1 menu is sho
 
 /*Show and hidden menu*/
 function menuMobile() {
-    const menuDesktop = document.querySelector('.desktop-menu');
+    const menuDesktop = document.getElementById('menu');
+
     if (showHidden === 0) {
-        menuDesktop.style.cssText = 'display: inline-flex; width: 100%;';
+        menuDesktop.classList.remove('menu-empty');
+        menuDesktop.classList.add('menu-des');
         showHidden = 1;
-        alert("show menu");
         console.log("showHidden = 1");
 
     } else if (showHidden === 1) {
-        menuDesktop.style.cssText = 'display: none; width: 0;';
+        menuDesktop.classList.remove('menu-des');
+        menuDesktop.classList.add('menu-empty');
         showHidden = 0;
-        alert("hidden menu menu");
         console.log("showHidden = 0");
     }
 }

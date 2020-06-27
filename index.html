@@ -13,24 +13,23 @@
     <!--My scripts-->
     <script type="text/javascript" src="js/scripts.js"></script>
 
-
-    <script type="text/javascript">
-        alert("personal website. Building");
-    </script>
 </head>
 <body>
 <header>
     <h1>INFOLOJO</h1>
-    <button class="mobile-menu-button" onclick="menuMobile();">Menu</button><!--Press and display menu-->
+    <!--Press and display menu-->
+    <div>
+        <img alt="Menu" title="press to show menu" src="images/menu.png" onclick="menuMobile()" class="mobile-menu-button">
+    </div>
 </header>
 
-<nav class="desktop-menu">
-    <ul>
-        <li><a href="#about-me" title="about me section">About me</a></li>
-        <li><a href="#my-projects" title="My projects">My Projects</a></li>
-        <li><a href="docs/curriculum.pdf"  target="_blank" title="Curriculum">Curriculum</a></li>
-        <li><a href="#contact-me">contact me</a></li>
-    </ul>
+<nav id="menu">
+
+        <p><a href="#about-me" title="about me section">About me</a></p>
+        <p><a href="#my-projects" title="My projects">My Projects</a></p>
+        <p><a href="docs/curriculum.pdf"  target="_blank" title="Curriculum">Curriculum</a></p>
+        <p><a href="#contact-me">contact me</a></p>
+
 </nav>
 
 <main>
@@ -48,4 +47,9 @@
 
 </main>
 </body>
+
+<!--Hide menu as default when page is loaded-->
+<script type="text/javascript">
+    document.getElementById('menu').classList.add('menu-empty')
+</script>
 </html>

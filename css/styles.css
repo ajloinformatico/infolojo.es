@@ -16,6 +16,8 @@ body{
     box-sizing: border-box;
     overflow: hidden;
 }
+
+/*HEADER OF THE WEB PAGE*/
 header{
     box-sizing: border-box;
     overflow: hidden;
@@ -34,49 +36,88 @@ header h1{
     float: left;
 }
 
-.mobile-menu-button{
+
+header div{
     width: 20%;
     float: left;
+
+    display: inline-block;
+    text-align: center;
 }
 
 
-.desktop-menu{
+.mobile-menu-button{
+    margin-top: 1.5em;
+    height: 2em;
+    width: 2em;
+}
+
+
+
+
+/*Class for menu on phone*/
+.menu-des{
+    display: inline-block;
+    width: 100%;
+    background-color: #347474;
+    border-top:  black solid 1px;
+    border-bottom: black solid 1px;
+}
+
+
+.menu-des a{
+    text-decoration: none;
+    color: white;
+}
+.menu-des a:hover{
+    background-color: ghostwhite;
+    color: black;
+}
+
+
+/*Default class of te menu*/
+.menu-empty{
     display: none;
-
 }
-
-
-
-/*
-
- .container { padding: 16px; border: #0000FF 1px solid; }
-.div1 { display: inline-block; width: 20%; height: auto;   float: left; text-align: center; border: #000000 1px solid; padding: 107px 0px; }
-.div2 { display: inline-block; width: 80%; height: auto; text-align: center; border: #000000 1px solid; padding: 48px 0px; }
-.div3 { display: inline-block; width: 80%; height: auto; text-align: center; border: #000000 1px solid; padding: 48px 0px; }
-</style>
-
-*/
-
 
 
 
 /*Style for desktop*/
 @media only screen and (min-width: 736px) {
-    .desktop-menu{
+
+    header h1{
+        width: 90%;
+        text-align: center;
+        padding-left: 0;
+
+    }
+
+
+   header div{
+        width: 10%;
+        float: left;
+    }
+
+   .mobile-menu-button{
+       /*todo ajustar al centro*/
+       height: 3em;
+       width: 3em;
+
+   }
+
+
+    /*Class for menu on desktop*/
+    .menu-des{
         display: inline-flex;
         width: 100%;
     }
-    
-    header h1{
-        width: 100%;
-        padding-left: 0;
-        float: none;
-        text-align: center;
+    .menu-des p{
+        margin-left: 10em;
     }
 
-    .mobile-menu-button{
-        display: none;
-    }
+
+
+
 
 
 
