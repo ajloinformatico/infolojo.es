@@ -1,4 +1,4 @@
 # infolojo.es
  personal website. Portfolio and projects
  
- infolojo.github.io
+https://ajloinformatico.github.io/infolojo.es/
