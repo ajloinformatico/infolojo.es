@@ -9,7 +9,7 @@ body{
     font-family: Helvetica, serif;
     width: 100%;
     height: 100%;
-    text-align: center;
+    text-align: justify;
     min-width: 350px;
     padding: 0;
     margin: 0;
@@ -55,13 +55,14 @@ header div{
 
 
 
+
 /*Class for menu on phone*/
 .menu-des{
     display: inline-block;
     width: 100%;
+    text-align: center;
     background-color: #347474;
-    border-top:  black solid 1px;
-    border-bottom: black solid 1px;
+    border-top:  black solid 2px;
 }
 
 
@@ -81,9 +82,40 @@ header div{
 }
 
 
+.introduction{
+    padding-top: 1em;
+    font-family: "Times New Roman";
+    font-style: oblique;
+    font-weight: bold;
+    border-top: 2px solid black;
+    border-bottom: 1px solid black;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+.about-me{
+    border-top: 1px solid black ;
+    background-color: #b8a9a9;
+    padding-bottom: 1em;
+    border-bottom: 1px solid black;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/*todo continuar desde aquí añadir estilo de imagen y proyectos
+   en movil 1 columna en desktop 2 columnas*/
+.projects{
+    border-top: 1px solid black;
+
+}
 
 /*Style for desktop*/
 @media only screen and (min-width: 736px) {
+
+    header{
+        height: 5em;
+    }
 
     header h1{
         width: 90%;
@@ -99,7 +131,7 @@ header div{
     }
 
    .mobile-menu-button{
-       /*todo ajustar al centro*/
+       margin-top: 1em;
        height: 3em;
        width: 3em;
 
@@ -112,9 +144,25 @@ header div{
         width: 100%;
     }
     .menu-des p{
-        margin-left: 10em;
+        margin-left: 5em;
     }
 
+
+    /*main*/
+    .introduction{
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+    .about-me{
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+    .about-me h2{
+        width: 90%;
+        text-align: center;
+    }
 
 
 
