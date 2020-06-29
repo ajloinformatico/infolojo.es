@@ -123,15 +123,21 @@ header div{
     padding-right: 1em;
 }
 
+
+/*Style for all links on projects*/
 .projects a{
     text-decoration: none;
     font-weight: bold;
-    color: black;
-
+    color: #35495e;
 }
 .projects a:hover{
     background-color: black;
     color: white;
+}
+
+/*But black color for title*/
+.projects h2 a{
+    color: black;
 }
 
 .projects img{
@@ -224,8 +230,8 @@ header div{
 
 
     .projects{
-        padding-right: 5em;
-        padding-left: 5em;
+        padding-right: 0;
+        padding-left: 0;
     }
 
     .projects h2{
@@ -235,6 +241,7 @@ header div{
     .projects div h2{
         width: 90%;
     }
+
 
     .grid-projects div{
         width: 50%;
