@@ -7,10 +7,10 @@ html{
 body{
     background-color: #9b9595;
     font-family: Helvetica, serif;
-    font-size: 17pt;
+    font-size: 15pt;
     width: 100%;
     height: 100%;
-    text-align: justify;
+    text-align: center;
     min-width: 350px;
     padding: 0;
     margin: 0;
@@ -114,18 +114,54 @@ header div{
     border: 2px solid black ;
 }
 
+/*Projects style*/
 
-<!--Todo make grid for projects and style for the project imp letter more little-->
 .projects{
     border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.projects a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
 
 }
+.projects a:hover{
+    background-color: black;
+    color: white;
+}
+
+.projects img{
+    width: 128px;
+    height: 128px;
+}
+
+
+.grid-projects{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14pt;
+}
+
+.grid-projects div {
+    margin-top: 1em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+
+
+
+
 
 /*Style for desktop*/
 @media only screen and (min-width: 736px) {
 
     body{
-        font-size: 19pt;
+        font-size: 18pt;
     }
 
     header{
@@ -176,7 +212,6 @@ header div{
 
     .about-me h2{
         width: 90%;
-        text-align: center;
     }
 
     .about-me img{
@@ -188,7 +223,30 @@ header div{
 
 
 
+    .projects{
+        padding-right: 5em;
+        padding-left: 5em;
+    }
+
+    .projects h2{
+        width: 90%;
+    }
+
+    .projects div h2{
+        width: 90%;
+    }
+
+    .grid-projects div{
+        width: 50%;
+    }
+
+    .grid-projects img{
+        margin-right: 10%;
+    }
 
 
+    .description{
+        margin-left: 20%;
+    }
 
 }
