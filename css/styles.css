@@ -62,7 +62,8 @@ header div{
 .menu-des{
     display: inline-block;
     width: 100%;
-    text-align: center;
+    text-align: left;
+    padding-left: 1em;
     background-color: #347474;
     border-top:  black solid 2px;
 }
@@ -179,7 +180,21 @@ header div{
     padding-right: 1em;
 }
 
-
+/*Class contact me*/
+.contact-me{
+    padding-left: 1em;
+    padding-right: 1em;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: #b8a9a9;
+    font-weight: bold;
+}
+.contact-me img{
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 50px;
+    height: 50px;
+}
 
 
 
@@ -211,6 +226,8 @@ header div{
 
     /*Class for menu on desktop*/
    .menu-des{
+       padding-left: 0;
+       text-align: center;
        display: inline-flex;
        width: 100%;
    }
@@ -275,7 +292,6 @@ header div{
         background-color: #9b9595;
         padding-left: 0;
         padding-right: 0;
-
     }
 
 
