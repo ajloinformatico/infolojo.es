@@ -1,3 +1,4 @@
+/*todo delete comments */
 /*Mobile Style*/
 html{
     display: block;
@@ -124,6 +125,7 @@ header div{
 }
 
 
+
 /*Style for all links on projects*/
 .projects a{
     text-decoration: none;
@@ -140,9 +142,16 @@ header div{
     color: black;
 }
 
+/*
 .projects img{
     width: 128px;
     height: 128px;
+}
+*/
+.cgimage{
+    border: 5px solid black;
+    width: 100px;
+    height: 100px;
 }
 
 
@@ -152,11 +161,24 @@ header div{
     font-size: 14pt;
 }
 
-.grid-projects div {
+.grid-projects div{
     margin-top: 1em;
     width: 100%;
     margin-bottom: 1em;
 }
+.element{
+    border: 1px solid black;
+    background-color: #b8a9a9;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.element2{
+    border: 1px solid black;
+    background-color: #b8a9a9;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
 
 
 
@@ -175,34 +197,26 @@ header div{
     }
 
     header h1{
-        width: 90%;
-        text-align: center;
-        padding-left: 0;
+        padding-left: 2em;
 
     }
 
 
-   header div{
-        width: 10%;
+    header div{
         float: left;
     }
 
-   .mobile-menu-button{
-       margin-top: 1em;
-       height: 3em;
-       width: 3em;
 
-   }
 
 
     /*Class for menu on desktop*/
-    .menu-des{
-        display: inline-flex;
-        width: 100%;
-    }
-    .menu-des p{
-        margin-left: 5em;
-    }
+   .menu-des{
+       display: inline-flex;
+       width: 100%;
+   }
+   .menu-des p{
+       margin-left: 5em;
+   }
 
 
     /*main*/
@@ -216,44 +230,53 @@ header div{
         padding-right: 5em;
     }
 
-    .about-me h2{
-        width: 90%;
-    }
-
     .about-me img{
         /*400 x 533*/
         height: 355px;
         width: 266px;
-        margin-right: 10%;
     }
 
 
 
     .projects{
+        padding-top: .5em;
         padding-right: 0;
         padding-left: 0;
     }
 
-    .projects h2{
-        width: 90%;
-    }
-
-    .projects div h2{
-        width: 90%;
-    }
-
-
+    /**/
     .grid-projects div{
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin-top: 0;
+        margin-bottom: 0;
         width: 50%;
-    }
-
-    .grid-projects img{
-        margin-right: 10%;
     }
 
 
     .description{
-        margin-left: 20%;
+        margin-left: 25%;
     }
+
+    .element{
+        border-top: 2px solid black;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        background-color: #b8a9a9;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .element2{
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        background-color: #9b9595;
+        padding-left: 0;
+        padding-right: 0;
+
+    }
+
 
 }
