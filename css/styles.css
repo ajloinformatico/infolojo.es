@@ -221,7 +221,7 @@ footer a:hover{
 
 
 /*****************************Style for desktop*****************/
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 740px) {/*736*/
 
     body {
         font-size: 18pt;
@@ -249,7 +249,7 @@ footer a:hover{
     }
 
     .menu-des p {
-        margin-left: 5em;
+        margin-left: 3em;
     }
 
     /*main*/
