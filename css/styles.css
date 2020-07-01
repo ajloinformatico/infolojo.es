@@ -248,8 +248,11 @@ footer a:hover{
         width: 100%;
     }
 
-    .menu-des p {
-        margin-left: 3em;
+    .menu-des p:first-child { /*only for first child*/
+        margin-left: 1em; /*3em*/
+    }
+    .menu-des p{
+        margin-right: 3em;
     }
 
     /*main*/
