@@ -24,7 +24,7 @@ header{
     height: auto;
     width: 100%;
     display: inline-flex;
-    background-color: #35495e;
+    background-color: black;
     color: white;
 }
 
@@ -57,8 +57,8 @@ header div{
     width: 100%;
     text-align: left;
     padding-left: 1em;
-    background-color: #347474;
-    border-top:  black solid 2px;
+    background-color: black;
+    border-top:  white solid 2px;
 }
 
 .menu-des a{
@@ -80,7 +80,7 @@ header div{
     font-family: "Times New Roman";
     font-style: oblique;
     font-weight: bold;
-    border-top: 2px solid black;
+    border-top: 2px solid white;
     border-bottom: 1px solid black;
     padding-left: 1em;
     padding-right: 1em;
