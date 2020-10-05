@@ -21,3 +21,7 @@ function menuMobile() {
         console.log("showHidden = 0");
     }
 }
+/*Change style dark and white*/
+function changeStyle() {
+    return true;
+}
