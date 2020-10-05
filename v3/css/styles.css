@@ -6,14 +6,18 @@
     --bgBlack: black;
     /*FontColors*/
     --font-color-light: black;
-    --font-color-dark: whute;
+    --font-color-dark: white;
     /*FontSize*/
     --font-size: 10pt;
+
+    /*grids porjects*/
+    --bg-color-white: #DADADA;
+    --bg-color-dark: #000000;
 }
 
 html{
     display: block;
-    color: var(--font-color-lightº);
+    color: var(--font-color-light);
 }
 body{
     background-color: var(--bgLight);
@@ -32,16 +36,20 @@ header{
     overflow: hidden;
     display: inline-flex;
     width: 100%;
+    border-bottom: gray 5px solid;
 }
 header h1{
     padding-left: 1em;
+    width: 80%;
+    text-align: left;
 }
 
 /********************* BOTÓN DE SWITCH ************************/
 label{
     margin-top: 1.6em;
-    margin-left: 2em;
-
+    margin-left: 0;
+    width: 10%;
+    float: right;
 }
 
 .checkbox{
@@ -102,11 +110,212 @@ label{
     left: 17px !important; /*original 21*/
 }
 
-/********************************** FIN DEL BOTON WITCH ***********************/
-/*MENU*/
+/********************************** FIN DEL SWITCH ***********************/
+
+
+/********************************* MENU ***********************************/
 .menu-button{
     width: 2em;
     height: 2em;
     margin-top: 1.2em;
+    margin-right: 1em;
+    float: right;
+}
+
+.menu-des{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding-left: 1em;
+    background-color: black;
+    border-bottom: gray 5px solid;
+}
+
+.menu-des a{
+    text-decoration: none;
+    color: white;
+}
+.menu-des a:hover{
+    background-color: ghostwhite;
+    color: black;
+}
+/*Default class of te menu*/
+.menu-empty{
+    display: none;
+}
+
+/***************************************** END MENU *****************/
+
+/***************************************** INTRODUCTION *****************/
+.introduction{
+    padding: 2em 1em 1em;
+}
+
+/**************************************** INTRODUCTION *******************/
+
+.about-me{
+    padding: 2em 1em 1em;
+}
+
+.enl{
+    text-decoration: none;
+    font-weight: bold;
+    color: #094eed;
+}
+
+.enl:hover{
+    background-color: black;
+    color: white;
+}
+
+.about-me img{
+    margin-bottom: 1em;
+    text-align: center;
+    height: 260px;
+    width: 200px;
+    border-radius: 50%;
+    border: 2px solid black ;
+}
+
+/*Class for sub text*/
+.sub{
+    font-weight: bold;
+
+    color: #094eed;
+}
+
+/************************ END INTRODUCTION *********************/
+
+/*******************PROJECTS SECTION****************************/
+
+.projects{
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+/*Style for all links on projects*/
+.projects a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #35495e;
+}
+
+.projects a:hover{
+    background-color: black;
+    color: white;
+}
+/*But black color for title*/
+.projects h2 a{
+    color: black;
+}
+/*Image of classics games*/
+.cgimage{
+    border: 5px solid black;
+    width: 100px;
+    height: 100px;
+}
+/*Grid*/
+.grid-projects{
+    display: flex;
+    flex-wrap: wrap;
 
 }
+/*Elements of the grid*/
+.grid-projects div{
+    margin-top: 1em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+/*Firs 2 elements of the grid*/
+.element{
+    border: 1px solid black;
+    background-color: var(--bg-color-white);
+    padding-left: 2em;
+    padding-right: 2em;
+}
+/*Seconds two elements of the grid*/
+.element2 {
+    border: 1px solid black;
+    background-color: var(--bg-color-white);
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+
+
+
+
+
+/*Tablets*/
+@media only screen and (min-width: 641px) and (max-width: 960px){
+
+
+    .menu-des{
+        text-align: center;
+    }
+    .introduction{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .about-me{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    .projects{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .grid-projects div {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 50%;
+    }
+
+
+    hr{
+        margin-right: 10%;
+        margin-left: 10%
+    }
+}
+
+/*desktop*/
+@media only screen and (min-width: 961px){
+
+    .menu-des {
+        padding-left: 0;
+        text-align: center;
+        display: inline-flex;
+        width: 100%;
+    }
+    .menu-des p{
+        margin-left: 3em;
+    }
+    .introduction{
+        background-color: white;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .about-me{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    hr{
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+
+    .projects {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    /**/
+  
+
+
+
+}
+

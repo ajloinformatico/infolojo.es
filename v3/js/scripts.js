@@ -1,10 +1,11 @@
 
+
 //Menu desplegable
-let showHidden = 0; // when it is 0 menu is hidden and when its is 1 menu is showed
+var showHidden = 0; // when it is 0 menu is hidden and when its is 1 menu is showed
 
-
-
-/*Show and hidden menu*/
+/**
+ * Show and hidden menu
+ */
 function menuMobile() {
     const menuDesktop = document.getElementById('menu');
 
@@ -21,7 +22,27 @@ function menuMobile() {
         console.log("showHidden = 0");
     }
 }
-/*Change style dark and white*/
-function changeStyle() {
+
+
+var theme = "light";
+/**
+ * Change button theme and change all themes calling change_themes()
+ */
+function themeButton() {
+    $(document).ready(function () {
+        $('.switch').click(function () {
+            $(this).toggleClass("switchOn");
+            if(theme === "light"){
+                changeTheme("light");
+                theme = "dark"
+            }else{
+                changeTheme("dark");
+                theme = "light";
+            }
+        });
+    });
+}
+
+function changeTheme(theme){
     return true;
 }
