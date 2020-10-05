@@ -227,6 +227,7 @@ label{
     margin-bottom: 1em;
 }
 /*Firs 2 elements of the grid*/
+/*todo los dos en una sola clase e investigar flex*/
 .element{
     border: 1px solid black;
     background-color: var(--bg-color-white);
@@ -265,13 +266,6 @@ label{
     .projects{
         padding-left: 15%;
         padding-right: 15%;
-    }
-    .grid-projects div {
-        padding-top: 1em;
-        padding-bottom: 1em;
-        margin-top: 0;
-        margin-bottom: 0;
-        width: 50%;
     }
 
 
@@ -313,7 +307,7 @@ label{
     }
 
     /**/
-  
+
 
 
 
