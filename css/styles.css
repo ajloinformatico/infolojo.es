@@ -50,7 +50,7 @@ header h1{
 
 
 .logo{
-    padding-top: 1em;
+    padding-top: 1.2em;
     width: 40px;
     height: 40px;
     border: 2px solid black;
@@ -63,7 +63,7 @@ header h1{
 .menu-button{
     width: 2em;
     height: 2em;
-    margin-top: 1.4em;
+    margin-top: 1.5em;
     margin-right: 1em;
     float: right;
 }
