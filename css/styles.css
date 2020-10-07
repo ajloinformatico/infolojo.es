@@ -183,7 +183,7 @@ header h1{
     overflow: hidden;
     box-sizing: border-box;
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .element{
@@ -197,6 +197,7 @@ header h1{
 .description{
     background-color: var(--bg-color-white);
     padding: 2em;
+
 }
 
 /*************************************END PROJECT SECTION***************************************/
@@ -265,13 +266,12 @@ footer a:hover{
         margin-right: 10%;
         margin-left: 10%
     }
-    .element{
-        border: 1px solid black;
-        border-radius: 5%;
-        background-color: var(--bg-color-white);
+
+    .description{
+        height: 550px;
     }
-    .element h2{
-        color: black;
+    .element{
+        margin-bottom: 1.5em;
     }
 
 
@@ -303,13 +303,12 @@ footer a:hover{
         margin-left: 15%;
     }
 
-    .element{
-        border: 1px solid black;
-        border-radius: 5%;
-        background-color: var(--bg-color-white);
+
+    .description{
+        height: 550px;
     }
-    .element h2{
-        color: black;
+    .element{
+        margin-bottom: 1.5em;
     }
 
     /**/
