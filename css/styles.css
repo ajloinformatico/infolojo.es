@@ -9,7 +9,7 @@
     --font-color-dark: white;
     /*FontSize*/
     --font-size: 11pt;
-    --font-size-footer: 14pt;
+    --font-size-special: 14pt;
 
     /*grids porjects*/
     --bg-color-white: #DADADA;
@@ -42,12 +42,19 @@ header{
     padding-right: .5em;
 }
 header h1{
-    padding-left: 1em;
+    padding-left: .5em;
     width: 90%;
     text-align: left;
 }
-header .logo{
-    margin-top: .4em;
+
+
+
+.logo{
+    padding-top: 1.1em;
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 15%;
 }
 
 
@@ -56,7 +63,7 @@ header .logo{
 .menu-button{
     width: 2em;
     height: 2em;
-    margin-top: 1.2em;
+    margin-top: 1.5em;
     margin-right: 1em;
     float: right;
 }
@@ -67,7 +74,7 @@ header .logo{
     text-align: left;
     padding-left: 1em;
     background-color: black;
-    border-bottom: gray 5px solid;;
+    border-bottom: gray 5px solid;
 }
 
 .menu-des a{
@@ -99,7 +106,7 @@ header .logo{
 .enl{
     text-decoration: none;
     font-weight: bold;
-    color: #094eed;
+    color: #6447ed;
 }
 
 .enl:hover{
@@ -119,8 +126,9 @@ header .logo{
 /*Class for sub text*/
 .sub{
     font-weight: bold;
-
-    color: #094eed;
+    font-size: var(--font-size-special);
+    /*color: #094eed;*/
+    color: #6447ed;
 }
 
 /************************ END INTRODUCTION *********************/
@@ -172,7 +180,8 @@ header .logo{
 }
 /*Elements of the grid*/
 .grid-projects div{
-    margin-top: 1em;
+    overflow: hidden;
+    box-sizing: border-box;
     width: 100%;
     margin-bottom: 1em;
 }
@@ -180,6 +189,13 @@ header .logo{
 .element{
     border: 1px solid black;
     border-radius: 5%;
+    background-color: black;
+}
+.element h2{
+    color: white;
+}
+.description{
+    padding-top: 1.4em;
     background-color: var(--bg-color-white);
 }
 /*************************************END PROJECT SECTION***************************************/
@@ -190,7 +206,7 @@ header .logo{
     border-top: 5px solid gray;
     background-color: #b8a9a9;
     font-weight: bold;
-    font-size:  var(--font-size-footer);
+    font-size:  var(--font-size-special);
 }
 
 .contact-me img{
@@ -205,12 +221,12 @@ footer{
     padding: 1em;
     background-color: black;
     color: white;
-    font-size: var(--font-size-footer);
+    font-size: var(--font-size-special);
 }
 
 footer a{
     text-decoration: none;
-    color: #094eed;
+    color: #22edb4;
     font-weight: bold;
 }
 
@@ -222,12 +238,7 @@ footer a:hover{
 
 /************************************* END FOOTER *****************************/
 /************************************* EXTRA *********************************/
-.logo{
-    width: 50px;
-    height: 50px;
-    border: 2px solid black;
-    border-radius: 25%;
-}
+
 
 
 
@@ -253,6 +264,16 @@ footer a:hover{
         margin-right: 10%;
         margin-left: 10%
     }
+    .element{
+        border: 1px solid black;
+        border-radius: 5%;
+        background-color: var(--bg-color-white);
+    }
+    .element h2{
+        color: black;
+    }
+
+
 }
 
 /*desktop*/
@@ -279,6 +300,15 @@ footer a:hover{
     hr{
         margin-right: 15%;
         margin-left: 15%;
+    }
+
+    .element{
+        border: 1px solid black;
+        border-radius: 5%;
+        background-color: var(--bg-color-white);
+    }
+    .element h2{
+        color: black;
     }
 
     /**/
