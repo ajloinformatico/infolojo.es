@@ -81,10 +81,13 @@ header h1{
 .menu-des a{
     text-decoration: none;
     color: white;
+    transition: background-color  0.5s linear 0.2s;
 }
 .menu-des a:hover{
     background-color: ghostwhite;
     color: black;
+    transition: color  0.5s linear 0.2s;
+
 }
 /*Default class of te menu*/
 .menu-empty{
