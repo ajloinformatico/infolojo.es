@@ -43,6 +43,9 @@ header h1{
     width: 80%;
     text-align: left;
 }
+header .logo{
+    margin-top: .4em;
+}
 
 /********************* BOTÓN DE SWITCH ************************/
 label{
@@ -189,9 +192,13 @@ label{
 /*******************PROJECTS SECTION****************************/
 
 .projects{
+    /*
     padding-top: 2em;
     padding-left: 2em;
     padding-right: 2em;
+    */
+    padding: 2em 1em;
+
 }
 /*Style for all links on projects*/
 .projects a{
@@ -216,8 +223,15 @@ label{
 }
 /*Grid*/
 .grid-projects{
+    /*
     display: flex;
     flex-wrap: wrap;
+    */
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    list-style-type: none;
+    gap: 1.5em;
+    padding: 0;
 
 }
 /*Elements of the grid*/
@@ -226,21 +240,58 @@ label{
     width: 100%;
     margin-bottom: 1em;
 }
-/*Firs 2 elements of the grid*/
-/*todo los dos en una sola clase e investigar flex*/
+
 .element{
     border: 1px solid black;
+    border-radius: 5%;
     background-color: var(--bg-color-white);
+    /*
     padding-left: 2em;
     padding-right: 2em;
+    */
 }
-/*Seconds two elements of the grid*/
-.element2 {
-    border: 1px solid black;
-    background-color: var(--bg-color-white);
-    padding-left: 2em;
-    padding-right: 2em;
+/*************************************END PROJECT SECTION***************************************/
+/******************************CONTACT ME SECTION*********************/
+.contact-me{
+    /*padding: 1em;*/
+    padding: 2em 1em;
+    border-top: 5px solid gray;
+    background-color: #b8a9a9;
+    font-weight: bold;
 }
+
+.contact-me img{
+    padding-left: .4em;
+    padding-right: .4em;
+    width: 50px;
+    height: 50px;
+}
+/******************************END CONTACT ME SECTION*********************/
+/******************************* FOOTER **********************************/
+footer{
+    padding: 1em;
+    background-color: black;
+    color: white;
+}
+
+footer a{
+    text-decoration: none;
+    color: #0e575e;
+    font-weight: bold;
+}
+
+footer a:hover{
+    background-color: white;
+    color: black;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 25%;
+}
+
+/************************************* END FOOTER *****************************/
 
 
 
@@ -259,11 +310,6 @@ label{
         padding-right: 15%;
     }
     .about-me{
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-
-    .projects{
         padding-left: 15%;
         padding-right: 15%;
     }
@@ -299,11 +345,6 @@ label{
     hr{
         margin-right: 15%;
         margin-left: 15%;
-    }
-
-    .projects {
-        padding-left: 20%;
-        padding-right: 20%;
     }
 
     /**/

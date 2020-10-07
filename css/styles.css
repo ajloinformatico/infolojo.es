@@ -1,64 +1,73 @@
-/*Mobile Style*/
+/*MOBILE STYLE*/
+/*variables*/
+:root{
+    /*BackGrounds*/
+    --bgLight: white;
+    --bgBlack: black;
+    /*FontColors*/
+    --font-color-light: black;
+    --font-color-dark: white;
+    /*FontSize*/
+    --font-size: 11pt;
+    --font-size-footer: 14pt;
+
+    /*grids porjects*/
+    --bg-color-white: #DADADA;
+    --bg-color-dark: #000000;
+}
+
 html{
     display: block;
+    color: var(--font-color-light);
 }
-
 body{
-    background-color: #9b9595;
-    font-family: Helvetica, serif;
-    font-size: 15pt;
-    width: 100%;
-    height: 100%;
+    background-color: var(--bgLight);
+    font-family: sans-serif;
+    font-size: var(--font-size);
+    margin:0;
     text-align: center;
     min-width: 350px;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    overflow: scroll; /*hidden = without scroll*/
-}
+    align-content: center;
 
-/*********************HEADER OF THE WEB PAGE***********************/
+
+}
 header{
-    box-sizing: border-box;
-    overflow: hidden;
-    height: auto;
-    width: 100%;
-    display: inline-flex;
     background-color: black;
     color: white;
+    overflow: hidden;
+    display: inline-flex;
+    width: 100%;
+    border-bottom: gray 5px solid;
+    padding-left: .5em;
+    padding-right: .5em;
 }
-
 header h1{
-    width: 80%;
     padding-left: 1em;
-    height: auto;
+    width: 90%;
     text-align: left;
-    float: left;
+}
+header .logo{
+    margin-top: .4em;
 }
 
-header div{
-    width: 20%;
-    float: left;
 
-    display: inline-block;
-    text-align: center;
-}
 
-/***************************MENU*******************/
-.mobile-menu-button{
-    margin-top: 1.5em;
-    height: 2em;
+/********************************* MENU ***********************************/
+.menu-button{
     width: 2em;
+    height: 2em;
+    margin-top: 1.2em;
+    margin-right: 1em;
+    float: right;
 }
 
-/*Class for menu on phone*/
 .menu-des{
     display: inline-block;
     width: 100%;
     text-align: left;
     padding-left: 1em;
     background-color: black;
-    border-top:  white solid 2px;
+    border-bottom: gray 5px solid;;
 }
 
 .menu-des a{
@@ -74,33 +83,23 @@ header div{
     display: none;
 }
 
-/***********************INTRODUCTION SECTION*********************************/
+/***************************************** END MENU *****************/
+
+/***************************************** INTRODUCTION *****************/
 .introduction{
-    padding-top: 1em;
-    font-family: "Times New Roman";
-    font-style: oblique;
-    font-weight: bold;
-    border-top: 2px solid white;
-    border-bottom: 1px solid black;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
+    padding: 2em 1em 1em;
 }
 
-/*******************ABOUT ME SECTION******************************************************/
+/**************************************** INTRODUCTION *******************/
+
 .about-me{
-    border-top: 1px solid black ;
-    background-color: #b8a9a9;
-    padding-bottom: 1em;
-    border-bottom: 1px solid black;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 2em 1em 1em;
 }
 
 .enl{
     text-decoration: none;
     font-weight: bold;
-    color: #35495e;
+    color: #094eed;
 }
 
 .enl:hover{
@@ -117,19 +116,31 @@ header div{
     border: 2px solid black ;
 }
 
+/*Class for sub text*/
+.sub{
+    font-weight: bold;
+
+    color: #094eed;
+}
+
+/************************ END INTRODUCTION *********************/
+
 /*******************PROJECTS SECTION****************************/
 
 .projects{
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    padding-left: 1em;
-    padding-right: 1em;
+    /*
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    */
+    padding: 2em 1em;
+
 }
 /*Style for all links on projects*/
 .projects a{
     text-decoration: none;
     font-weight: bold;
-    color: #35495e;
+    color: #094eed;
 }
 
 .projects a:hover{
@@ -148,9 +159,16 @@ header div{
 }
 /*Grid*/
 .grid-projects{
+    /*
     display: flex;
     flex-wrap: wrap;
-    font-size: 14pt;
+    */
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    list-style-type: none;
+    gap: 1.5em;
+    padding: 0;
+
 }
 /*Elements of the grid*/
 .grid-projects div{
@@ -158,30 +176,21 @@ header div{
     width: 100%;
     margin-bottom: 1em;
 }
-/*Firs 2 elements of the grid*/
+
 .element{
     border: 1px solid black;
-    background-color: #b8a9a9;
-    padding-left: 1em;
-    padding-right: 1em;
+    border-radius: 5%;
+    background-color: var(--bg-color-white);
 }
-/*Seconds two elements of the grid*/
-.element2{
-    border: 1px solid black;
-    background-color: #b8a9a9;
-    padding-left: 1em;
-    padding-right: 1em;
-}
+/*************************************END PROJECT SECTION***************************************/
 /******************************CONTACT ME SECTION*********************/
 .contact-me{
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    /*padding: 1em;*/
+    padding: 2em 1em;
+    border-top: 5px solid gray;
     background-color: #b8a9a9;
     font-weight: bold;
+    font-size:  var(--font-size-footer);
 }
 
 .contact-me img{
@@ -190,20 +199,18 @@ header div{
     width: 50px;
     height: 50px;
 }
-
-/***********************FOOTER SECTION******************************************/
+/******************************END CONTACT ME SECTION*********************/
+/******************************* FOOTER **********************************/
 footer{
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 1em;
     background-color: black;
     color: white;
+    font-size: var(--font-size-footer);
 }
 
 footer a{
     text-decoration: none;
-    color: #0e575e;
+    color: #094eed;
     font-weight: bold;
 }
 
@@ -213,108 +220,71 @@ footer a:hover{
 }
 
 
-/*Class for sub text*/
-.sub{
-    font-weight: bold;
-    color: #0e575e;
+/************************************* END FOOTER *****************************/
+/************************************* EXTRA *********************************/
+.logo{
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 25%;
 }
 
 
-/*****************************Style for desktop*****************/
-@media only screen and (min-width: 740px) {/*736*/
 
-    body {
-        font-size: 18pt;
+
+/*Tablets*/
+@media only screen and (min-width: 641px) and (max-width: 960px){
+
+
+    .menu-des{
+        text-align: center;
+    }
+    .introduction{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .about-me{
+        padding-left: 15%;
+        padding-right: 15%;
     }
 
-    header {
-        height: 5em;
+
+    hr{
+        margin-right: 10%;
+        margin-left: 10%
     }
+}
 
-    header h1 {
-        padding-left: 2em;
+/*desktop*/
+@media only screen and (min-width: 961px){
 
-    }
-
-    header div {
-        float: left;
-    }
-
-    /*Class for menu on desktop*/
     .menu-des {
         padding-left: 0;
         text-align: center;
         display: inline-flex;
         width: 100%;
     }
-
-    .menu-des p:first-child { /*only for first child*/
-        margin-left: 1em; /*3em*/
-    }
     .menu-des p{
-        margin-right: 3em;
+        margin-left: 3em;
     }
-
-    /*main*/
-    .introduction {
-        padding-left: 10em;
-        padding-right: 10em;
+    .introduction{
+        background-color: white;
+        padding-left: 20%;
+        padding-right: 20%;
     }
-
-    .about-me {
-        padding-left: 10em;
-        padding-right: 10em;
+    .about-me{
+        padding-left: 20%;
+        padding-right: 20%;
     }
-
-    .about-me img {
-        /*400 x 533*/
-        height: 355px;
-        width: 266px;
-    }
-
-    .projects {
-        padding-top: .5em;
-        padding-right: 0;
-        padding-left: 0;
+    hr{
+        margin-right: 15%;
+        margin-left: 15%;
     }
 
     /**/
-    .grid-projects div {
-        padding-top: 1em;
-        padding-bottom: 1em;
-        margin-top: 0;
-        margin-bottom: 0;
-        width: 50%;
-    }
-
-    .description {
-        margin-left: 25%;
-    }
-
-    .element {
-        border-top: 2px solid black;
-        border-left: 0;
-        border-right: 0;
-        border-bottom: 0;
-        background-color: #b8a9a9;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .element2 {
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        border-bottom: 0;
-        background-color: #9b9595;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .contact-me img {
-        padding-left: 1em;
-        padding-right: 1em;
 
 
-    }
+
+
 }
+
