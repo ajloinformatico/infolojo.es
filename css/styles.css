@@ -173,7 +173,7 @@ header h1{
     flex-wrap: wrap;
     */
     display: inline-grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); /*360 */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /*360 */
     list-style-type: none;
     gap: 1.5em;
     padding: 0;
