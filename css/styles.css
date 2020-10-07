@@ -28,6 +28,7 @@ body{
     text-align: center;
     min-width: 350px;
     align-content: center;
+    width: 100%
 
 
 }
@@ -176,13 +177,15 @@ header h1{
     list-style-type: none;
     gap: 1.5em;
     padding: 0;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 
 }
 /*Elements of the grid*/
 .grid-projects div{
-    overflow: hidden;
-    box-sizing: border-box;
-    width: 100%;
+
+    /*width: 100%;*/
     margin-bottom: 1.5em;
 }
 
@@ -190,6 +193,7 @@ header h1{
     border: 1px solid black;
     border-radius: 5%;
     background-color: black;
+    margin-bottom: 1.5em;
 }
 .element h2{
     color: white;
