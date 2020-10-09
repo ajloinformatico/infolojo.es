@@ -100,8 +100,8 @@ header h1{
 .introduction{
     padding: 2em 1em 1em;
 }
-
-/**************************************** INTRODUCTION *******************/
+/***************************************** END INTRODUCCTION **************/
+/**************************************** ABOUT ME *******************/
 
 .about-me{
     padding: 2em 1em 1em;
@@ -135,7 +135,7 @@ header h1{
     color: #6447ed;
 }
 
-/************************ END INTRODUCTION *********************/
+/************************ END ABPOUT ME *********************/
 
 /*******************PROJECTS SECTION****************************/
 
@@ -197,6 +197,12 @@ header h1{
     border-radius: 5%;
     background-color: black;
     margin-bottom: 1.5em;
+    /*out card shadow*/
+    -webkit-box-shadow: 0px 16px 6px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 16px 6px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 16px 6px -10px rgba(0,0,0,0.75);
+
+
 }
 .element h2{
     color: white;
@@ -204,6 +210,12 @@ header h1{
 .description{
     background-color: var(--bg-color-white);
     padding: 2em;
+    border-radius: 5%;
+    /*Inside card shadow*/
+    -webkit-box-shadow: inset 0px 1px 35px 9px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 1px 35px 9px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 1px 35px 9px rgba(0,0,0,0.75);
+
 }
 
 /*************************************END PROJECT SECTION***************************************/
@@ -274,13 +286,8 @@ footer a:hover{
     }
 
     .description{
-        height: 550px;
+        height: 590px;
     }
-    .element{
-        margin-bottom: 1.5em;
-    }
-
-
 }
 
 /*desktop*/
@@ -309,18 +316,9 @@ footer a:hover{
         margin-left: 15%;
     }
 
-
     .description{
-        height: 550px;
+        height: 590px;
     }
-    .element{
-        margin-bottom: 1.5em;
-    }
-
-    /**/
-
-
-
 
 }
 
