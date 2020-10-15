@@ -14,6 +14,17 @@
     /*grids porjects*/
     --bg-color-white: #DADADA;
     --bg-color-dark: #000000;
+
+    /******Efectos transition emñaces*****/
+    /*menu*/
+    --mouse-is-over-menu: linear 0.2s;
+    --mouse-is-hover-menu:color  0.2s linear 0.2s;
+
+    /*elementos normales*/
+
+    --mouse-is-over-normal: linear 0.1s;
+    --mouse-is-hover-mormal:color  0.1s linear 0.1s;
+    
 }
 
 html{
@@ -39,9 +50,9 @@ header{
     display: inline-flex;
     width: 100%;
     border-bottom: gray 5px solid;
-    padding-left: .5em;
+    /*padding-left: .5em;
     padding-right: .5em;
-}
+*/}
 header h1{
     padding-left: .5em;
     width: 90%;
@@ -52,6 +63,7 @@ header h1{
 
 .logo{
     padding-top: 1.2em;
+    padding-left: 1em;
     width: 40px;
     height: 40px;
     border: 2px solid black;
@@ -65,30 +77,46 @@ header h1{
     width: 2em;
     height: 2em;
     margin-top: 1.5em;
-    margin-right: 1em;
+    margin-right: .5em;
     float: right;
 }
 
 .menu-des{
-    display: inline-block;
-    width: 100%;
-    text-align: left;
-    padding-left: 1em;
+    display: list-item;
     background-color: black;
     border-bottom: gray 5px solid;
 }
 
-.menu-des a{
+.menu-des ul{
+    list-style-type: none;
+    width: inherit;
+    margin: 0;
+    text-align: justify;
+    cursor: pointer;   
+    padding-left: 0;
+}
+
+.menu-des li a{
+    display:inline-block ; /*Necesario para enlaces*/
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+ 
+    box-sizing: border-box;
     text-decoration: none;
     color: white;
-    transition: background-color  0.5s linear 0.2s;
+    transition: var(--mouse-is-over-menu); /*when the mouse is removed*/
 }
-.menu-des a:hover{
+.menu-des li  a:hover{
     background-color: ghostwhite;
     color: black;
-    transition: color  0.5s linear 0.2s;
-
+    transition: var(--mouse-is-hover-menu); /*when the mouse is over*/
+    font-weight: bolder;
 }
+
+
+
 /*Default class of te menu*/
 .menu-empty{
     display: none;
@@ -111,11 +139,14 @@ header h1{
     text-decoration: none;
     font-weight: bold;
     color: #6447ed;
+    transition: var(--mouse-is-over-normal); /*when the mouse is removed*/
 }
 
 .enl:hover{
     background-color: black;
     color: white;
+    transition: var(--mouse-is-hover-mormal); /*when the mouse is over*/
+
 }
 
 .about-me img{
@@ -153,11 +184,13 @@ header h1{
     text-decoration: none;
     font-weight: bold;
     color: #094eed;
+    transition: var(--mouse-is-over-normal);
 }
 
 .projects a:hover{
     background-color: black;
     color: white;
+    transition: var(--mouse-is-hover-mormal);
 }
 /*But black color for title*/
 .projects h2 a{
@@ -248,11 +281,13 @@ footer a{
     text-decoration: none;
     color: #22edb4;
     font-weight: bold;
+    transition: var(--mouse-is-over-normal);
 }
 
 footer a:hover{
     background-color: white;
     color: black;
+    transition: var(--mouse-is-hover-mormal);
 }
 
 
@@ -267,7 +302,7 @@ footer a:hover{
 @media only screen and (min-width: 641px) and (max-width: 960px){
 
 
-    .menu-des{
+    .menu-des li a{
         text-align: center;
     }
     .introduction{
@@ -293,15 +328,38 @@ footer a:hover{
 /*desktop*/
 @media only screen and (min-width: 961px){
 
+    /*
     .menu-des {
         padding-left: 0;
         text-align: center;
         display: inline-flex;
         width: 100%;
     }
-    .menu-des p{
+    .menu-des li a{
         margin-left: 3em;
     }
+    */
+.menu-des{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+.menu-des ul{
+    display: inline-flex;
+}
+
+.menu-des li a{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+
+
+
+
+
+
+
     .introduction{
         background-color: white;
         padding-left: 20%;
