@@ -339,26 +339,19 @@ footer a:hover{
         margin-left: 3em;
     }
     */
-.menu-des{
-    display: inline-block;
-    width: 100%;
-    text-align: left;
-}
-.menu-des ul{
-    display: inline-flex;
-}
+    .menu-des{
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+    .menu-des ul{
+        display: inline-flex;
+    }
 
-.menu-des li a{
-    padding-left: 2em;
-    padding-right: 2em;
-}
-
-
-
-
-
-
-
+    .menu-des li a{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
 
     .introduction{
         background-color: white;
