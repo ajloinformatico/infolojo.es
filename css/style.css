@@ -1,0 +1,185 @@
+/*Import Noto Sans JP*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+
+:root{
+    /*Color*/
+    --back-color : #e7e7de;
+    --header-color : #0f3057;
+    --header-color-hover: #394758;
+    --nav-color : #008891;
+    --nav-color-hover : #78b2b6;
+    --python-color: #00587a; 
+    --html-color: #f48b29;
+    --java-color: #ac0d0d;
+    --css-color: #008891;
+
+    /*Fonts*/
+    --font-common: 'Noto Sans JP', sans-serif; /*Normal font*/
+    /*TODO: FONT ACCESIBLE*/
+    --size-commom: 14pt;
+
+    /*Lins transitions*/
+    /*menu*/
+    --mouse-is-over-menu: linear 0.2s;
+    --mouse-is-hover-menu:color  0.2s linear 0.2s;
+    /*1 TIME TRANSITION 2 DELEAY*/
+
+    /*normal elements*/
+    --mouse-is-over-normal: linear 0.1s;
+    --mouse-is-hover-mormal:color  0.1s linear 0.1s;
+}
+
+html{
+    background-color: var(--back-color);
+    font-family: var(--font-common);
+    font-size: var(--size-commom);
+    color: black;
+    transition: all 1s ease-in-out;
+}
+
+body{
+    margin:0;
+    text-align: center;
+    min-width: 350px;
+    align-content: center;
+    width: 100%
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+    
+}
+
+
+
+/******************** Menu *****************/
+header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+    align-items: baseline;
+    background-color: var(--header-color);
+    color: white;
+}
+
+
+header>div:first{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+}
+
+header>div>h1{
+    font-size: xx-large;
+    display: block;
+}
+
+/*header img*/
+header>div>img{
+    width: 50px;
+    display: block;
+
+}
+
+/************************ MENU ******************/
+
+/*Desk menu hidden*/
+.nav-menu{
+    display: none;
+}
+
+#menu-mobile{
+    background-color: var(--nav-color);
+    padding-top: .5em;
+    padding-bottom: .5em;
+    width: 100%;
+}
+
+
+ul>li>a{
+    display: inline-block;
+    color:white;
+    text-decoration: none;
+    font-weight: bolder;
+    width:100%;
+    box-sizing: border-box; 
+}
+
+ul>li>a:hover{
+    background-color: var(--nav-color-hover);
+    width: 100%;
+}
+
+
+/*************************** main ***********************/
+main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+
+
+/************ FOOTER ***********************/
+footer{
+    background-color: var(--header-color);
+    color: white;
+    overflow: hidden;
+    padding-top: .5em;
+}
+footer>a{
+    text-decoration: none;
+    color: var(--java-color);
+    font-weight: bolder;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+
+@media screen and (min-width: 880px) {
+
+    header{
+        justify-content: space-around;
+        align-content: baseline;
+        align-items: baseline;
+        padding: 0;
+    }
+
+
+
+    /*************** Menu* *****************/
+    .nav-menu{
+        display: block; 
+    }
+    .nav-menu>ul{
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-menu>ul>li{
+        display: block;
+    }
+    ul>li>a{
+        padding: .5em;
+    }
+    ul>li>a:hover{
+        background-color: var(--header-color-hover);
+    }
+    #menu-mobile{
+        display: none;
+    }
+    .trigger-menu{
+        display: none;
+    }
+
+    /************** MAIN ***********************/
+    main{
+        width: 85%;
+    }
+}
+
