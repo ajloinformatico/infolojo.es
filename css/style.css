@@ -53,7 +53,9 @@ ul{
     
 }
 
-
+h1, h2{
+    font-weight: bolder;
+}
 
 /******************** Menu *****************/
 header{
@@ -66,7 +68,6 @@ header{
     background-color: var(--header-color);
     color: white;
 }
-
 
 header>div:first{
     display: flex;
@@ -122,8 +123,43 @@ main{
     margin: 0 auto;
 }
 
+.intro-about{
+    border-bottom: 1pt solid var(--header-color-hover);
+}
 
 
+
+.me{
+    width: 200px;
+}
+
+/************************ proyects *********************/
+.peojects{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+
+.projects div>picture>img{
+    width: 150px;
+    border: 1pt solid var(--header-color-hover);
+}
+
+.projects a{
+    color: black;
+}
+
+
+
+/*********************** VARA ************************/
+.resat{
+    color: var(--java-color);
+}
+.resalt-blue{
+    color: var(--python-color);
+}
 
 
 /************ FOOTER ***********************/
@@ -181,5 +217,7 @@ footer>a{
     main{
         width: 85%;
     }
+    /************* Projects *********************/
+    
 }
 
