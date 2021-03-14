@@ -114,6 +114,7 @@ ul>li>a{
 ul>li>a:hover{
     background-color: var(--nav-color-hover);
     width: 100%;
+    transition: all .5s ease;
 }
 
 
@@ -134,11 +135,24 @@ main{
 }
 
 /************************ proyects *********************/
-.peojects{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.my-projects{
+    margin-bottom: 2em;
 
+}
+
+.projects{
+    width: 100%;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: center;
+    border-bottom: 1pt solid var(--header-color-hover);
+}
+.projects>div{
+    width: 100%;
 }
 
 
@@ -147,9 +161,23 @@ main{
     border: 1pt solid var(--header-color-hover);
 }
 
+
+
 .projects a{
+    text-decoration: none;
+}
+
+.projects .tecnologies a:hover{
+    
+    padding: .5em;
+    transition: all .5s ease-in-out;
+}
+
+/*Github logo*/
+.projects a:last-of-type{
     color: black;
 }
+
 
 
 
@@ -218,6 +246,9 @@ footer>a{
         width: 85%;
     }
     /************* Projects *********************/
+    .projects>div{
+        width:20em
+    }
     
 }
 
