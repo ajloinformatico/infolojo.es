@@ -191,19 +191,46 @@ main{
 }
 
 
-/************ FOOTER ***********************/
-footer{
+/*********************** FOOTER ***********************/
+footer {
     background-color: var(--header-color);
     color: white;
     overflow: hidden;
     padding-top: .5em;
+    
 }
-footer>a{
+
+footer a{
     text-decoration: none;
     color: var(--java-color);
     font-weight: bolder;
     margin-left: .5em;
     margin-right: .5em;
+}
+
+.footer-content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;  
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/****** CONTACT FORM *******/
+fieldset{
+    border: none;
+    display: flex;
+    flex-flow: column;
+}
+input {
+    width: 90%;
+}
+input:last-child{
+    width: 5em;
+    background-color: #00587a;
+    color: white;
+    padding: 2em;
 }
 
 
@@ -241,14 +268,17 @@ footer>a{
     .trigger-menu{
         display: none;
     }
-
     /************** MAIN ***********************/
     main{
         width: 85%;
     }
     /************* Projects *********************/
     .projects>div{
-        width:20em
+        width:20em;
+    }
+    .footer-content{
+        width: 85%;
+        flex-flow: row;
     }
     
 }
