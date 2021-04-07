@@ -1,5 +1,13 @@
-//TODO MENU 
 
 
-// https://www.hoclabs.com/2018/03/17/emailjs-envio-de-correos-desde-javascript/
-// service_t9qfd1h -> ajloinformatico@gmail.com
+const menuMobileTag = document.querySelector('#menu-mobile')
+let navMobile = 1
+
+/**
+ * Show an hidde menu
+ */
+const menuMobile = () => {
+
+    navMobile===1?menuMobileTag.style.display="none":menuMobileTag.style.display = "block"
+}
+    

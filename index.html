@@ -34,7 +34,7 @@
             </nav>
             <div class="buttons">
                 <a class="trigger-acce"><span class="fab fa-accessible-icon"></span></a>
-                <a class="trigger-menu" onclick="showHiddenMenu()"><span class="fas fa-bars"></span></a>       
+                <a class="trigger-menu" href="#" onclick='menuMobile()'><span class="fas fa-bars"></span></a>       
             </div>
         </header>
         <nav id="menu-mobile" class="menu-empty">
@@ -51,7 +51,7 @@
                 <h2>INFOLOJO'S WEB</h2>
                 <p><b><i>Luck, coffee and code ☕</i></b></p>
             </section>
-            <section class="intro-about">
+            <section id="about-me" class="intro-about">
                 <h2>ABOUT ME</h2>
                 <p>
                     Hy 🖖 My name is <b>Antonio José Lojo Ojeda</b>. Im a boy from <b>El Puerto de 
@@ -67,7 +67,7 @@
                 </picture>
             </section>
 
-            <section class="my-projects">
+            <section id="my-projects" class="my-projects">
                 <h2>MY PROYECTS</h2>
                 <section class="projects">
                     <diV>
@@ -336,20 +336,18 @@
                 <p class="resat">take a look at my repositories</p>
                 <a href="https://github.com/ajloinformatico" target="_blank" alt="go to my github"><img src="https://img.icons8.com/doodle/48/000000/repository.png"/></a>
             </section>
-            
-
-
         </main>
-        <footer>
+        <footer id="contact-me">
             <section class="footer-content">
                 <!--by https://formspree.io/forms-->
                 <form action="https://formspree.io/f/xvodpvpq" method="POST">
                         <fieldset>
+                            <legend>Email ?</legend>
                             <input  type="email" name="_replyto" id="_replyto" aria-label="_replyto" placeholder="Your email">
-                        <textarea name="message" id="message" title="Your message">Hello Infolojo 🖖
-                        </textarea>
-                        <!-- your other form fields go here -->    
-                        <input type="submit" value="Send"></input>
+                            <textarea name="message" id="message" title="Your message">Hello Infolojo 🖖
+                            </textarea>
+                            <!-- your other form fields go here -->    
+                            <input type="submit" value="Send"></input>
                     </fieldset>
                 </form>
 

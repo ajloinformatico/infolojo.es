@@ -84,7 +84,6 @@ header>div>h1{
 header>div>img{
     width: 50px;
     display: block;
-
 }
 
 /************************ MENU ******************/
@@ -99,6 +98,7 @@ header>div>img{
     padding-top: .5em;
     padding-bottom: .5em;
     width: 100%;
+    transition: all ease-in-out .5s
 }
 
 
@@ -108,6 +108,7 @@ ul>li>a{
     text-decoration: none;
     font-weight: bolder;
     width:100%;
+    padding-left: .7em;
     box-sizing: border-box; 
 }
 
@@ -117,6 +118,11 @@ ul>li>a:hover{
     transition: all .5s ease;
 }
 
+/******************* Buttons to show menu **********/
+.buttons a{
+    
+
+}
 
 /*************************** main ***********************/
 main{
@@ -218,20 +224,38 @@ footer a{
 }
 
 /****** CONTACT FORM *******/
+form {
+    border-bottom: 1pt solid var(--header-color-hover);
+    margin-bottom: 2em;
+}
 fieldset{
     border: none;
-    display: flex;
-    flex-flow: column;
+    margin: 0 auto;
 }
+
 input {
     width: 90%;
+    margin-bottom: 1em;
+}
+textarea{
+    width: 90.6%;
+    height: 100px;
 }
 input:last-child{
-    width: 5em;
     background-color: #00587a;
     color: white;
-    padding: 2em;
+    padding: .5em;
+    width: 90px;
+    margin-top: 1.5em;
+    border: none;
 }
+input:hover{
+    padding: .5em;
+    background-color: var(--nav-color-hover);
+    transition: all .5s ease;
+    color: black
+}
+
 
 
 @media screen and (min-width: 880px) {
@@ -260,7 +284,7 @@ input:last-child{
         padding: .5em;
     }
     ul>li>a:hover{
-        background-color: var(--header-color-hover);
+        background-color: var(--back-color);
     }
     #menu-mobile{
         display: none;
@@ -276,9 +300,22 @@ input:last-child{
     .projects>div{
         width:20em;
     }
+    /************* Footer *****************/
     .footer-content{
+        margin-top: 2em;
         width: 85%;
         flex-flow: row;
+        justify-content: space-between;
+        align-content: center;
+    }
+    /************ Form **************************/
+    form{
+        margin: none;
+        border: none;
+    }
+    /************ Footer info *******************/
+    .footr-info{
+        margin-top: .4em;
     }
     
 }
