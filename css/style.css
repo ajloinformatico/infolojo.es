@@ -16,25 +16,31 @@
     /*Fonts*/
     --font-common: 'Noto Sans JP', sans-serif; /*Normal font*/
     /*TODO: FONT ACCESIBLE*/
-    --size-commom: 14pt;
+    --size-commom-desktop: 14pt;
+    --size-common-mobile: 12pt;
 
     /*Lins transitions*/
     /*menu*/
     --mouse-is-over-menu: linear 0.2s;
     --mouse-is-hover-menu:color  0.2s linear 0.2s;
+    --mobile-menu: all .5s ease-in-out;
+    --input-transition: all .5s ease; 
     /*1 TIME TRANSITION 2 DELEAY*/
+
+    
 
     /*normal elements*/
     --mouse-is-over-normal: linear 0.1s;
     --mouse-is-hover-mormal:color  0.1s linear 0.1s;
+    --transition-common: all 1s ease-in-out;
 }
 
 html{
+    font-size: var(--size-commom-mobile);
     background-color: var(--back-color);
     font-family: var(--font-common);
-    font-size: var(--size-commom);
     color: black;
-    transition: all 1s ease-in-out;
+    transition: var(--transition-common);
 }
 
 body{
@@ -98,7 +104,7 @@ header>div>img{
     padding-top: .5em;
     padding-bottom: .5em;
     width: 100%;
-    transition: all ease-in-out .5s
+    display: none;
 }
 
 
@@ -115,12 +121,13 @@ ul>li>a{
 ul>li>a:hover{
     background-color: var(--nav-color-hover);
     width: 100%;
-    transition: all .5s ease;
+    transition: var(--mobile-menu);
+    color: black;
 }
 
 /******************* Buttons to show menu **********/
 .buttons a{
-    
+    color: white
 
 }
 
@@ -165,6 +172,7 @@ main{
 
 .projects div>picture>img{
     width: 150px;
+    height: 90px;
     border: 1pt solid var(--header-color-hover);
 }
 
@@ -177,7 +185,7 @@ main{
 .projects .tecnologies a:hover{
     
     padding: .5em;
-    transition: all .5s ease-in-out;
+    transition: var(--mobile-menu);
 }
 
 /*Github logo*/
@@ -185,16 +193,54 @@ main{
     color: black;
 }
 
+/*Footer notes*/
+.footer-notes{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+
+}
+
+.footer-notes div{
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+
+
+.footer-notes a{
+    color: black;
+}
+
+
 
 
 
 /*********************** VARA ************************/
+
+.font-accesible{
+    font-size: 14pt;
+    transition: all 1s ease-in-out;
+}
+
 .resat{
     color: var(--java-color);
 }
 .resalt-blue{
     color: var(--python-color);
 }
+#resat{
+    color: var(--java-color);
+    transition: var(--mouse-is-over-normal)
+}
+#resat:hover{
+    color: var(--java-color);
+    transition: var(--mouse-is-hover-mormal);
+    font-size: x-large;
+}
+
 
 
 /*********************** FOOTER ***********************/
@@ -241,6 +287,12 @@ textarea{
     width: 90.6%;
     height: 100px;
 }
+textarea:focus, textarea:hover{
+    background-color: var(--nav-color-hover);
+    transition: var(--input-transition);
+    color: black
+}
+
 input:last-child{
     background-color: #00587a;
     color: white;
@@ -249,10 +301,9 @@ input:last-child{
     margin-top: 1.5em;
     border: none;
 }
-input:hover{
-    padding: .5em;
+input:focus, input:hover{
     background-color: var(--nav-color-hover);
-    transition: all .5s ease;
+    transition: var(--input-transition);
     color: black
 }
 
@@ -260,14 +311,16 @@ input:hover{
 
 @media screen and (min-width: 880px) {
 
+
+    html{
+        font-size: var(--size-commom-desktop);
+    }
     header{
         justify-content: space-around;
         align-content: baseline;
         align-items: baseline;
         padding: 0;
     }
-
-
 
     /*************** Menu* *****************/
     .nav-menu{
@@ -318,5 +371,10 @@ input:hover{
         margin-top: .4em;
     }
     
+    /************ VARS **************************/
+    .font-accesible{
+        font-size: 16pt;
+    }
+
 }
 

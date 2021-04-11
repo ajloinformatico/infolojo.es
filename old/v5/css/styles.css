@@ -50,9 +50,8 @@ header{
     display: inline-flex;
     width: 100%;
     border-bottom: gray 5px solid;
-    /*padding-left: .5em;
-    padding-right: .5em;
-*/}
+}
+
 header h1{
     padding-left: .5em;
     width: 90%;
@@ -117,10 +116,6 @@ header h1{
 
 
 
-/*Default class of te menu*/
-.menu-empty{
-    display: none;
-}
 
 /***************************************** END MENU *****************/
 
