@@ -1,6 +1,9 @@
 /*Import Noto Sans JP*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 
+/*Import Playfair Display*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 :root{
     /*Color*/
     --back-color : #e7e7de;
@@ -15,9 +18,14 @@
 
     /*Fonts*/
     --font-common: 'Noto Sans JP', sans-serif; /*Normal font*/
+    --font-input: 'Playfair Display', serif;
+
+    
     /*TODO: FONT ACCESIBLE*/
     --size-commom-desktop: 14pt;
     --size-common-mobile: 12pt;
+
+
 
     /*Lins transitions*/
     /*menu*/
@@ -25,6 +33,7 @@
     --mouse-is-hover-menu:color  0.2s linear 0.2s;
     --mobile-menu: all .5s ease-in-out;
     --input-transition: all .5s ease; 
+    --projects-icons-trnasition: all .3s ease;
     /*1 TIME TRANSITION 2 DELEAY*/
 
     
@@ -36,11 +45,13 @@
 }
 
 html{
+    
     font-size: var(--size-commom-mobile);
     background-color: var(--back-color);
     font-family: var(--font-common);
     color: black;
     transition: var(--transition-common);
+    
 }
 
 body{
@@ -48,7 +59,8 @@ body{
     text-align: center;
     min-width: 350px;
     align-content: center;
-    width: 100%
+    width: 100%;
+    
 }
 
 ul{
@@ -105,6 +117,7 @@ header>div>img{
     padding-bottom: .5em;
     width: 100%;
     display: none;
+    transition: all 1s ease-in-out;
 }
 
 
@@ -127,8 +140,8 @@ ul>li>a:hover{
 
 /******************* Buttons to show menu **********/
 .buttons a{
-    color: white
-
+    color: white;
+    font-size: x-large;
 }
 
 /*************************** main ***********************/
@@ -185,7 +198,7 @@ main{
 .projects .tecnologies a:hover{
     
     padding: .5em;
-    transition: var(--mobile-menu);
+    transition: var(--projects-icons-trnasition);
 }
 
 /*Github logo*/
@@ -213,36 +226,6 @@ main{
 .footer-notes a{
     color: black;
 }
-
-
-
-
-
-/*********************** VARA ************************/
-
-.font-accesible{
-    font-size: 14pt;
-    transition: all 1s ease-in-out;
-}
-
-.resat{
-    color: var(--java-color);
-}
-.resalt-blue{
-    color: var(--python-color);
-}
-#resat{
-    color: var(--java-color);
-    transition: var(--mouse-is-over-normal)
-}
-#resat:hover{
-    color: var(--java-color);
-    transition: var(--mouse-is-hover-mormal);
-    font-size: x-large;
-}
-
-
-
 /*********************** FOOTER ***********************/
 footer {
     background-color: var(--header-color);
@@ -282,17 +265,19 @@ fieldset{
 input {
     width: 90%;
     margin-bottom: 1em;
+    font-family: var(--font-input);
+    
 }
 textarea{
     width: 90.6%;
     height: 100px;
+    font-family: var(--font-input);
 }
 textarea:focus, textarea:hover{
     background-color: var(--nav-color-hover);
     transition: var(--input-transition);
     color: black
 }
-
 input:last-child{
     background-color: #00587a;
     color: white;
@@ -300,6 +285,7 @@ input:last-child{
     width: 90px;
     margin-top: 1.5em;
     border: none;
+    font-family: var(--font-common);
 }
 input:focus, input:hover{
     background-color: var(--nav-color-hover);
@@ -307,6 +293,27 @@ input:focus, input:hover{
     color: black
 }
 
+/*********************** VARS ************************/
+
+.font-accesible{
+    font-size: 14pt;
+    transition: all 1s ease-in-out;
+}
+.resat{
+    color: var(--java-color);
+}
+.resalt-blue{
+    color: var(--python-color);
+}
+#resat{
+    color: var(--java-color);
+    transition: var(--mouse-is-over-normal)
+}
+#resat:hover{
+    color: var(--java-color);
+    transition: var(--mouse-is-hover-mormal);
+    font-size: x-large;
+}
 
 
 @media screen and (min-width: 880px) {
