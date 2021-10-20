@@ -12,6 +12,7 @@
     --nav-color : #008891;
     --nav-color-hover : #78b2b6;
     --python-color: #00587a; 
+    --bottom-go-top: #024959;
     --html-color: #f48b29;
     --java-color: #ac0d0d;
     --css-color: #008891;
@@ -60,6 +61,7 @@ body{
     min-width: 350px;
     align-content: center;
     width: 100%;
+    position: relative;
     
 }
 
@@ -313,6 +315,18 @@ input:focus, input:hover{
     color: var(--java-color);
     transition: var(--mouse-is-hover-mormal);
     font-size: x-large;
+}
+
+#scrollTop {
+    display:none;
+	padding:20px;
+	background: var(--bottom-go-top);
+	font-size:20px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
 }
 
 

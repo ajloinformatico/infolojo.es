@@ -1,16 +1,36 @@
 
 const menuMobileTag = document.querySelector('#menu-mobile')
 const htmlGeneral = document.querySelector('#general')
-let navMobile = -1
+const TIME_ANIMATION_SCROLL_TOP = 1000
+let navMobile = 1
 let accesiblemode = -1
 
 
-document.onload = () => {
-    
+/** Init menu bottom to scroll up or scroll down*/
 
+$(document).ready(() => {
+
+    document.querySelector('#scrollTop').style.display = "none"
     menuMobile()
-}
 
+    $(window).scroll(() => {
+        // if scroll > 200 muestra el botom si no ocultalo
+        if ($(this).scrollTop() > 200) {
+            $('#scrollTop').fadeIn()
+        
+        } else {
+            $('#scrollTop').fadeOut();
+        }
+    });
+
+    $('#scrollTop').click(() => {
+        $('html, body').animate({
+            scrollTop:0
+        },TIME_ANIMATION_SCROLL_TOP)
+        return false
+    });
+
+});
 
 
 /**
