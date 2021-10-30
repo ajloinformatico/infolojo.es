@@ -20,7 +20,7 @@
         <meta name="keywords" content="Informática" />
         <meta name="keywords" content="Dessarrollo, software, programación, sistemas" />
         <meta name="author" content="Antonio José Lojo Ojeda" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" href="css/style.css">
         
@@ -31,11 +31,11 @@
             <h1>INFOLOJO</h1>
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#about-me" class="aboutmeLink" title="about me section">About Me</a></li>
-                    <li><a href="#my-projects" class="myprojectLink" title="My projects section">My Projects</a></li>
+                    <li><a onclick="navTo('#about-me')" class="aboutmeLink" title="about me section">About Me</a></li>
+                    <li><a onclick="navTo('#my-projects')" class="myprojectLink" title="My projects section">My Projects</a></li>
                     <li><a href="docs/curriculum.pdf"  class="curriculumLink" target="_blank" title="Curriculum">Curriculum Vitae</a></li>
                     <li><a href="digital_curriculum/" target="_blank title" title="Curriculum virtual">Digital curriculum</a></li>
-                    <li><a href="#contact-me" class="contactMelink" title="contact me esection">Contact Me</a></li>
+                    <li><a onclick="navTo('#contact-me')" class="contactMelink" title="contact me esection">Contact Me</a></li>
                 </ul>
             </nav>
             <div class="buttons">
@@ -46,11 +46,11 @@
         </header>
         <nav id="menu-mobile" class="menu-empty">
             <ul>
-                <li><a href="#about-me" class="aboutmeLink" title="about me section">About Me</a></li>
-                <li><a href="#my-projects" class="myprojectLink" title="My projects section">My Projects</a></li>
+                <li><a onclick="navTo('#about-me')" class="aboutmeLink" title="about me section">About Me</a></li>
+                <li><a onclick="navTo('#my-projects')" class="myprojectLink" title="My projects section">My Projects</a></li>
                 <li><a href="docs/curriculum.pdf"  class="curriculumLink" target="_blank" title="Curriculum">Curriculum Vitae</a></li>
                 <li><a href="digital_curriculum/" target="_blank title" title="Curriculum virtual">Digital curriculum</a></li>
-                <li><a href="#contact-me" class="contactMelink" title="contact me esection">Contact Me</a></li>
+                <li><a onclick="navTo('#contact-me')" class="contactMelink" title="contact me esection">Contact Me</a></li>
             </ul>
         </nav>
         <main>
