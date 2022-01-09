@@ -308,14 +308,18 @@ input:focus, input:hover{
 }
 .resat{
     color: var(--java-color);
+    text-decoration: none;
 }
+
 .resalt-blue{
     color: var(--python-color);
 }
+
 #resat{
     color: var(--java-color);
     transition: var(--mouse-is-over-normal)
 }
+
 #resat:hover{
     color: var(--java-color);
     transition: var(--mouse-is-hover-mormal);
