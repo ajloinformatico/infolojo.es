@@ -313,6 +313,7 @@ input:focus, input:hover{
 
 .resalt-blue{
     color: var(--python-color);
+    text-decoration: none;
 }
 
 #resat{
