@@ -321,7 +321,7 @@ input:focus, input:hover{
     font-weight: bold;
 }
 
-#inside-link-on-text{
+.inside-link-on-text{
     color: var(--java-color);
     text-decoration: none;
     cursor: pointer;
@@ -329,7 +329,7 @@ input:focus, input:hover{
     transition: var(--mouse-is-over-normal)
 }
 
-#inside-link-on-text:hover{
+.inside-link-on-text:hover{
     transition: var(--mouse-is-hover-normal);
     font-size: x-large;
 }
@@ -425,7 +425,7 @@ input:focus, input:hover{
         font-size: 16pt;
     }
     
-    #inside-link-on-text:hover{
+    .inside-link-on-text:hover{
         font-size: large;
     }
 
