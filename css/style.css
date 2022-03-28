@@ -24,7 +24,9 @@
     
     /*TODO: FONT ACCESIBLE*/
     --size-commom-desktop: 14pt;
+    --size-common-desktop-x-large: 16pt;
     --size-common-mobile: 12pt;
+    --size-common-mobile-x-large: 14pt;
 
 
 
@@ -306,14 +308,30 @@ input:focus, input:hover{
     font-size: 14pt;
     transition: all 1s ease-in-out;
 }
+
 .resat{
     color: var(--java-color);
     text-decoration: none;
+    font-weight: bold;
 }
 
 .resalt-blue{
     color: var(--python-color);
     text-decoration: none;
+    font-weight: bold;
+}
+
+#inside-link-on-text{
+    color: var(--java-color);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--mouse-is-over-normal)
+}
+
+#inside-link-on-text:hover{
+    transition: var(--mouse-is-hover-normal);
+    font-size: x-large;
 }
 
 #resat{
@@ -405,6 +423,10 @@ input:focus, input:hover{
     /************ VARS **************************/
     .font-accesible{
         font-size: 16pt;
+    }
+    
+    #inside-link-on-text:hover{
+        font-size: large;
     }
 
 }
