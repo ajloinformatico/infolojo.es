@@ -1,4 +1,7 @@
 # infolojo.es
- personal website. Portfolio and projects
- 
-https://ajloinformatico.github.io/infolojo.es/
+web personal
+Queda terminar
+    *Estructura
+    *Revision de estilo
+    *limpieza de codigo
+    *Programacion enlazes y efectos
