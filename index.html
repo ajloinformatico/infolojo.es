@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <title>INFOLOJO</title>
     <meta name="description" content="INFOLOJO`s web" />
@@ -11,35 +11,38 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 
     <!--My script for the menu-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-
-
-
 </head>
 <body>
 <header>
+    <img class="logo" alt="logo" title="INFOLOJO" src="images/infolojo.png"/>
     <h1>INFOLOJO</h1>
-    <!--Press and display menu-->
-    <div>
-        <img alt="Menu" title="press to show menu" src="images/menu.png" onclick="menuMobile()" class="mobile-menu-button">
-    </div>
-</header>
 
-<nav id="menu">
+    <!--Switch button-->
+    <label title="click to change style">
+        <input type="checkbox" name="checkboxName" class="checkbox" onclick="themeButton()"/>
+        <div class="switch"></div>
+    </label>
+
+    <!--Menú button-->
+    <div>
+        <img alt="Menu" title="press to show menu" src="images/menu.png" onclick="menuMobile()" class="menu-button"/>
+    </div>
+
+</header>
+<main>
+    <nav id="menu" class="menu-empty">
 
         <p><a href="#about-me" title="about me section">About Me</a></p>
         <p><a href="#my-projects" title="My projects">My Projects</a></p>
-        <p><a href="docs/curriculum.pdf"  target="_blank" title="Curriculum">Curriculum Vitae</a></p>
+        <p><a href="docs/curriculum.pdf" target="_blank" title="Curriculum">Curriculum Vitae</a></p>
         <p><a href="#contact-me">Contact Me</a></p>
 
-</nav>
-
-<main>
-
+    </nav>
     <section class="introduction">
+        <h2>WELCOME TO MY PERSONAL WEBSITE</h2>
         <p>
-            WELCOME TO<br> MY PERSONAL WEBSITE!!!<br><br>
-
             This is a website coded only in HTML CSS and JavaScript by myself.
 
             I would like to introduce you myself as a developer and show you to the projects
@@ -47,12 +50,12 @@
 
             I hope you find it entertaining. And if you are interested do not hesitate to contact me
         </p>
+
     </section>
-
-
+    <hr>
 
     <a name="about-me"><section class="about-me">
-        <h2>About me</h2>
+        <h2>ABOUT ME</h2>
         <p>
             My name is <b>Antonio José Lojo Ojeda</b>. I live in Puerto de Santa Maria, Cádiz.
 
@@ -69,8 +72,10 @@
             Technician in Microcomputer Systems and Networks<br>Web apps Developer
         </p>
     </section></a>
+    <hr>
+
     <a name="my-projects"><section class="projects">
-        <h2><a href="https://github.com/ajloinformatico" target="_blank"  title="Show my projects on Github">My Projects</a></h2>
+        <h2><a href="https://github.com/ajloinformatico" target="_blank"  title="Show my projects on Github">MY PROJECTS</a></h2>
 
         <div class="grid-projects">
             <div class="element">
@@ -78,11 +83,11 @@
                 <img class="cgimage" alt="Classics Game image" src="images/ClassicsGames.png"/>
                 <div class="description">
                     <p>compilation of video mini-games encoded in javascript.
-                    No Frameworks just HTML, CSS and JavaScript</p>
+                        No Frameworks just HTML, CSS and JavaScript</p>
                     <h3>technologies</h3>
-                        <p>HTML</p>
-                        <p>CSS</p>
-                        <p>JavaScript</p>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
                     <h3>Take a look at Classics Games project</h3>
                     <p><a href="https://ajloinformatico.github.io/ClassicsGames/" title="website of Classics Games">Classics Games`Website</a></p>
                     <p><a href="https://github.com/ajloinformatico/ClassicsGames" title="repository of Classics Games">Classics Games on Github</a></p>
@@ -97,9 +102,9 @@
                         It is entirely on Spanish, but it could be translated easily to other language. It accepted multi-user
                         and used a MySQL database to store all notes.</p>
                     <h3>technologies</h3>
-                        <p>Python</p>
-                        <p>Tkinter</p>
-                        <p>PyMySQL</p>
+                    <p>Python</p>
+                    <p>Tkinter</p>
+                    <p>PyMySQL</p>
                     <h3>Take a look at Keepit project on Github</h3>
                     <p><a href="https://github.com/Wikijito7/keepit" title="Keepit" target="_blank">Keepit on Github</a></p>
                     <h3>Show more about Wokis</h3>
@@ -107,7 +112,7 @@
                     <p><a href="https://github.com/Wikijito7" target="_blank" title="Wokis`GitHub">Wokis`Github</a></p>
                 </div>
             </div>
-            <div class="element2"><!--element2 for second line on the grid-->
+            <div class="element"><!--element2 for second line on the grid-->
                 <h2>AgendaLojo</h2>
                 <div class="description">
                     <p>
@@ -116,14 +121,14 @@
                         Includes group management with relationships between contacts.
                     </p>
                     <h3>technologies</h3>
-                        <p>Python</p>
-                        <p>Tkinter</p>
-                        <p>PyMySQL</p>
+                    <p>Python</p>
+                    <p>Tkinter</p>
+                    <p>PyMySQL</p>
                     <h3>Take a look at AgendaLojo Project on Github</h3>
                     <p><a href="https://github.com/ajloinformatico/AgendaLojov3.py" target="_blank" title="repository of AgendaLojo">Agenda Lojo on Github</a></p>
                 </div>
             </div>
-            <div class="element2">
+            <div class="element">
                 <h2>Converter between systems</h2>
                 <div class="description">
                     <p>
@@ -132,7 +137,7 @@
                         - octadecimal - hexadeciml
                     </p>
                     <h3>Technologies</h3>
-                        <p>Python</p>
+                    <p>Python</p>
                     <h3>Take a look at Converter between systems project on Github</h3>
                     <p><a href="https://github.com/ajloinformatico/converter-between-systems" target="_blank" title="repository of converter-between-systems">Converter between systems on Github</a></p>
                 </div>
@@ -141,25 +146,24 @@
     </section></a>
 
     <a name="contact-me"><section class="contact-me">
-        <p>If you want to see more about me or contact me take a look at the links</p>
-        <div>
-            <a href="https://www.instagram.com/antoniojose_lo98/" target="_blank" title="take a look at my twitter"><img src="images/instagram.png" alt="Instagram icon"/></a><!--Instagram-->
-            <a href="https://twitter.com/antoniojose_lo9" target="_blank" title="take a look at my twitter"><img src="images/twitter.png" alt="Twitter icon"/></a><!--Twitter-->
-            <a href="https://github.com/ajloinformatico" target="_blank" title="Show my projects on Github"><img src="images/github.png" alt="Github icon"/></a><!--Github-->
-            <a href="mailto:ajloinformatico@gmail.com" target="_blank" title="Send me an email"> <img src="images/mail.png" alt="Mail icon"/></a><!--Mail-->
-        </div>
+    <p>If you want to see more about me or contact me take a look at the links</p>
+    <div>
+        <a href="https://www.instagram.com/antoniojose_lo98/" target="_blank" title="take a look at my twitter"><img src="images/instagram.png" alt="Instagram icon"/></a><!--Instagram-->
+        <a href="https://twitter.com/antoniojose_lo9" target="_blank" title="take a look at my twitter"><img src="images/twitter.png" alt="Twitter icon"/></a><!--Twitter-->
+        <a href="https://github.com/ajloinformatico" target="_blank" title="Show my projects on Github"><img src="images/github.png" alt="Github icon"/></a><!--Github-->
+        <a href="mailto:ajloinformatico@gmail.com" target="_blank" title="Send me an email"> <img src="images/mail.png" alt="Mail icon"/></a><!--Mail-->
+    </div>
     </section></a>
+
+    <footer>
+        <p>page coded by <a href="https://github.com/ajloinformatico" target="_blank" title="Github page">ajloinformatico.</a>
+            I´m open source.
+            Copyright © 2020 INFOLOJO</p>
+        <img class="logo" alt="logo" title="INFOLOJO" src="images/infolojo.png"/>
+    </footer>
+
 </main>
 
-<footer>
-    <p>page coded by <a href="https://github.com/ajloinformatico" target="_blank" title="Github page">ajloinformatico.</a>
-        I´m open source.
-        Copyright © 2020 INFOLOJO</p>
-</footer>
-</body>
 
-<!--Hide menu as default when page is loaded-->
-<script type="text/javascript">
-    document.getElementById('menu').classList.add('menu-empty')
-</script>
+</body>
 </html>
