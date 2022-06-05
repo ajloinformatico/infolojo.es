@@ -1,109 +1,165 @@
-<!doctype html>
-<html>
-	<head>
-		<title>infolojo.es</title>
-		<meta name="description" content="INDEX DE INFOLOJO" />
-		<!--<meta name="keywords" content="palabra1, palabra2, palabra3" /> INCLUIR PALABRAS A INDEXAR EN EL NAVEGADOR-->
-		<meta name="Antonio José" content="Antonio José Lojo Ojeda" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<!--<link rel="icon" href="favicon.ico" type="image/x-icon"/> MODIFICAR PARA INCLUIR UN FAVICO-->
-        <!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>MODIFICAR PARA INCLUIR UN INCONO-->
-        <!--RESPONSIVE EVITA QUE SE OUE SE PUEDA HACER ZOOM-->
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <link rel="stylesheet" href="css/style_1.css" type="text/css">
-        <script type="text/javascript" src="fuentes/ej8.js"></script>
-	</head>
-	<body><center>
-        <div id="contenedor_global">
-            <header class="header">
-                <h1 class="subrayadoHeader"><a href="index.html" title="Ver en github">Infolojo</a></h1>
-                <p><b>Técnico en sistemas y redes</b><br><b>estudiante desarrollador web</b></p>
-            </header>
-            <nav class="nav_p">
-                <a href="index.html" title="¿Qué es esto?">¿Qué es esto?</a>
-                <a href="#">Mis proyectos</a>
-                <a href="#">Mi trayectoria</a>
-            </nav>
-            <section class="bienvenido"> <!--Solo es un mensaje de bienvenida-->
-                <h2>Bienvenido a infolojo</h2>
-            </section>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>INFOLOJO</title>
+    <meta name="description" content="INFOLOJO`s web" />
+    <meta name="keywords" content="INFOLOJO" />
+    <meta name="author" content="Antonio José Lojo Ojeda" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <link rel="icon" href="images/infolojo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+    <!--My script for the menu-->
+    <script type="text/javascript" src="js/scripts.js"></script>
 
 
 
-            <aside class="aside_p">
-                <h2>Contacta conmigo</h2>
-                <section class="contacto">
-                    <img src="img/quien_soy.PNG" title="trabajando desde casa">
-                    <p>conmigo aquí</p>
-                    <ul>
-                        <!--Incorporar scripts-->
-                        <li><img src="img/instagram.png" alt="github" title="instagram"></li>
-                        <li><img src="img/correo.png" alt="correo" title="correo"></li>
-                    </ul>
-                </section>
+</head>
+<body>
+<header>
+    <h1>INFOLOJO</h1>
+    <!--Press and display menu-->
+    <div>
+        <img alt="Menu" title="press to show menu" src="images/menu.png" onclick="menuMobile()" class="mobile-menu-button">
+    </div>
+</header>
 
-            </aside>
-           
-           
-           
-            <main class="main_p">
-                <!--Comienzo primera parte-->
-                <section class="inicio">
-                    <h3>¿Qué es esto?</h3>
-                    <p>Este es un sitio web el cuál se ha creado desde cero con código html puro y duro.
-                    <br>El objetivo del sitio es darme a conocer y presentarme. Si estas interado.</p>
-                    <p>Puedes encontrar información sobre mi <br><br>
-                    <b><i><a class="enlaceSec" title="Ir a mi trayectoria" href="sobreMi.html">"AQUI"</a></i></b>
-                </p>
-                </section>
+<nav id="menu">
 
-            </main>
+        <p><a href="#about-me" title="about me section">About Me</a></p>
+        <p><a href="#my-projects" title="My projects">My Projects</a></p>
+        <p><a href="docs/curriculum.pdf"  target="_blank" title="Curriculum">Curriculum Vitae</a></p>
+        <p><a href="#contact-me">Contact Me</a></p>
 
-            <main class="main_p2">
-                <!--Comienzo segunda parte-->
-                <h3 class="subrayadoCR">Mi trayectoria</h3>
-                <br>
-                <h4>Me Presento como<br><b><i>Antonio José Lojo Ojeda</i></b></h4><!--SUBTÍTULO sub apartado quien soy dentro de la WEB-->
-                    <section class="trayecoria"><img src="img/quien_soy_1.PNG">
+</nav>
+
+<main>
+
+    <section class="introduction">
+        <p>
+            WELCOME TO<br> MY PERSONAL WEBSITE!!!<br><br>
+
+            This is a website coded only in HTML CSS and JavaScript by myself.
+
+            I would like to introduce you myself as a developer and show you to the projects
+            I have worked on.
+
+            I hope you find it entertaining. And if you are interested do not hesitate to contact me
+        </p>
+    </section>
+
+
+
+    <a name="about-me"><section class="about-me">
+        <h2>About me</h2>
+        <p>
+            My name is <b>Antonio José Lojo Ojeda</b>. I live in Puerto de Santa Maria, Cádiz.
+
+            I have always loved this world and since I started in computing almost 4 years ago. I'm living a dream
+            graduated as <b>Technician in Microcomputer Systems and Networks</b>
+            with awards for the best academic record of my year. recognition of one of the best academic records in the
+            entire province of Cádiz. 3 month experience with computer software for the company
+            <a class="enl" href = "https://bernardinoabad.es/" title="Bernardino Abad website">Bernardino abad</a> as
+            Computer technician
+            Currently studying <b>CFGS as Web apps Developer </b>
+        </p>
+        <img src="images/me_smaller.jpg" title="me" alt="a picture of me"/>
+        <p class="sub">
+            Technician in Microcomputer Systems and Networks<br>Web apps Developer
+        </p>
+    </section></a>
+    <a name="my-projects"><section class="projects">
+        <h2><a href="https://github.com/ajloinformatico" target="_blank"  title="Show my projects on Github">My Projects</a></h2>
+
+        <div class="grid-projects">
+            <div class="element">
+                <h2>Classics Games</h2>
+                <img class="cgimage" alt="Classics Game image" src="images/ClassicsGames.png"/>
+                <div class="description">
+                    <p>compilation of video mini-games encoded in javascript.
+                    No Frameworks just HTML, CSS and JavaScript</p>
+                    <h3>technologies</h3>
+                        <p>HTML</p>
+                        <p>CSS</p>
+                        <p>JavaScript</p>
+                    <h3>Take a look at Classics Games project</h3>
+                    <p><a href="https://ajloinformatico.github.io/ClassicsGames/" title="website of Classics Games">Classics Games`Website</a></p>
+                    <p><a href="https://github.com/ajloinformatico/ClassicsGames" title="repository of Classics Games">Classics Games on Github</a></p>
+                </div>
+            </div>
+            <div class="element">
+                <h2>Keepit</h2>
+                <img src="images/keepit.png"/>
+                <div class="description">
+                    <p>Keepit is a note program developed with <a href="https://www.wokis.es" target="_blank" title="Wokis`Website">Wokis</a>. It's that simple. It was developed as a final project for my development degree.
+                        You can create, view and delete notes. Also, you can search any note by title, category or label.
+                        It is entirely on Spanish, but it could be translated easily to other language. It accepted multi-user
+                        and used a MySQL database to store all notes.</p>
+                    <h3>technologies</h3>
+                        <p>Python</p>
+                        <p>Tkinter</p>
+                        <p>PyMySQL</p>
+                    <h3>Take a look at Keepit project on Github</h3>
+                    <p><a href="https://github.com/Wikijito7/keepit" title="Keepit" target="_blank">Keepit on Github</a></p>
+                    <h3>Show more about Wokis</h3>
+                    <p><a href="https://www.wokis.es" target="_blank" title="Wokis`Website">Wokis`Website</a></p>
+                    <p><a href="https://github.com/Wikijito7" target="_blank" title="Wokis`GitHub">Wokis`Github</a></p>
+                </div>
+            </div>
+            <div class="element2"><!--element2 for second line on the grid-->
+                <h2>AgendaLojo</h2>
+                <div class="description">
                     <p>
-                        <span class="subrayadoGeneral">Técnico en sistemas microinformaticos y redes locales</span>,
-                        estudiante de FP Superior en <span class="subrayadoGeneral">Desarrollo de aplicaciones web</span>
-                        y por supues <span class="subrayadoGeneral">Apasionado de la informática</span>.
-
+                        AgendaLojo is an object-oriented program with graphical interface. Written in python. Multi-user support.
+                        The function of the program is to save contacts with your phone and group.
+                        Includes group management with relationships between contacts.
                     </p>
-                    <p>Entre mis virtudes dentro del mundillo.</p>
-                    <h4>Solvencia en web</h4>
-                        <ul>
-                            <li>Dominio de lenguajes de marcas HTML5 y CSS3</li>
-                            <li>Dominio de CMS más importantes JOOMLA WORDPRESS</li>
-                            <li>Conocimientos medios en bases de datos SQL</li>
-                            <li>Conocimientos básicos en PHP</li>
-                        </ul>
-                    <h4>Conocimentos en redes y sistemas</h4>
-                        <ul>
-                            <li>Expreiencia montando y coinfigurando redes locáles</li>
-                            <li>Pleno dominio de sistemas de usuario (MAC OS, Windows, Linux)</li>
-                            <li>Conocimientos avanzados en sistemas Windows Server (2008-2012)</li>
-                            <li>Conocimentos avanzados en sistemas Ubuntu Server (12-14-16)</li>
-                            <li>Conocimientos avanzados en sistemas Debian (8-9-10)</li>
-                        </ul>
-                    </section>
-
-            </main>
-            
-            <footer class="footer">
-            <p><br>Una web desarrollada por<br><span class="subrayadoCR">"INFOLOJO © 2020"</span></p>
-
-            </footer>
+                    <h3>technologies</h3>
+                        <p>Python</p>
+                        <p>Tkinter</p>
+                        <p>PyMySQL</p>
+                    <h3>Take a look at AgendaLojo Project on Github</h3>
+                    <p><a href="https://github.com/ajloinformatico/AgendaLojov3.py" target="_blank" title="repository of AgendaLojo">Agenda Lojo on Github</a></p>
+                </div>
+            </div>
+            <div class="element2">
+                <h2>Converter between systems</h2>
+                <div class="description">
+                    <p>
+                        Converter-between-systems is a project for my first quarter in 1st CFGS under development.
+                        Calculator coded under functional paradigm. Converts terminal between systems decimal - binary
+                        - octadecimal - hexadeciml
+                    </p>
+                    <h3>Technologies</h3>
+                        <p>Python</p>
+                    <h3>Take a look at Converter between systems project on Github</h3>
+                    <p><a href="https://github.com/ajloinformatico/converter-between-systems" target="_blank" title="repository of converter-between-systems">Converter between systems on Github</a></p>
+                </div>
+            </div>
         </div>
-	</body>
+    </section></a>
+
+    <a name="contact-me"><section class="contact-me">
+        <p>If you want to see more about me or contact me take a look at the links</p>
+        <div>
+            <a href="https://www.instagram.com/antoniojose_lo98/" target="_blank" title="take a look at my twitter"><img src="images/instagram.png" alt="Instagram icon"/></a><!--Instagram-->
+            <a href="https://twitter.com/antoniojose_lo9" target="_blank" title="take a look at my twitter"><img src="images/twitter.png" alt="Twitter icon"/></a><!--Twitter-->
+            <a href="https://github.com/ajloinformatico" target="_blank" title="Show my projects on Github"><img src="images/github.png" alt="Github icon"/></a><!--Github-->
+            <a href="mailto:ajloinformatico@gmail.com" target="_blank" title="Send me an email"> <img src="images/mail.png" alt="Mail icon"/></a><!--Mail-->
+        </div>
+    </section></a>
+</main>
+
+<footer>
+    <p>page coded by <a href="https://github.com/ajloinformatico" target="_blank" title="Github page">ajloinformatico.</a>
+        I´m open source.
+        Copyright © 2020 INFOLOJO</p>
+</footer>
+</body>
+
+<!--Hide menu as default when page is loaded-->
+<script type="text/javascript">
+    document.getElementById('menu').classList.add('menu-empty')
+</script>
 </html>
-
-<!------------------------------------Fin del pié de página ELEMENTO COMÚN PARA TODAS LAS PÁGINAS------------->
-
-
-<!--
-En esta primera página expondré información sobre que es la pagina en si
-En la segunda pagina spbre mi trayectoria y proyectos
-En la tercera página contacto redes correo github ..
---->
