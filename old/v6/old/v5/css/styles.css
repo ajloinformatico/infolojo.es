@@ -1,0 +1,370 @@
+/*MOBILE STYLE*/
+/*variables*/
+:root{
+    /*BackGrounds*/
+    --bgLight: white;
+    --bgBlack: black;
+    /*FontColors*/
+    --font-color-light: black;
+    --font-color-dark: white;
+    /*FontSize*/
+    --font-size: 11pt;
+    --font-size-special: 13pt;
+
+    /*grids porjects*/
+    --bg-color-white: #DADADA;
+    --bg-color-dark: #000000;
+
+    /******Efectos transition emñaces*****/
+    /*menu*/
+    --mouse-is-over-menu: linear 0.2s;
+    --mouse-is-hover-menu:color  0.2s linear 0.2s;
+
+    /*elementos normales*/
+
+    --mouse-is-over-normal: linear 0.1s;
+    --mouse-is-hover-mormal:color  0.1s linear 0.1s;
+    
+}
+
+html{
+    display: block;
+    color: var(--font-color-light);
+}
+body{
+    background-color: var(--bgLight);
+    font-family: sans-serif;
+    font-size: var(--font-size);
+    margin:0;
+    text-align: center;
+    min-width: 350px;
+    align-content: center;
+    width: 100%
+
+
+}
+header{
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    display: inline-flex;
+    width: 100%;
+    border-bottom: gray 5px solid;
+}
+
+header h1{
+    padding-left: .5em;
+    width: 90%;
+    text-align: left;
+}
+
+
+
+.logo{
+    padding-top: 1.2em;
+    padding-left: 1em;
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 15%;
+}
+
+
+
+/********************************* MENU ***********************************/
+.menu-button{
+    width: 2em;
+    height: 2em;
+    margin-top: 1.5em;
+    margin-right: .5em;
+    float: right;
+}
+
+.menu-des{
+    display: list-item;
+    background-color: black;
+    border-bottom: gray 5px solid;
+}
+
+.menu-des ul{
+    list-style-type: none;
+    width: inherit;
+    margin: 0;
+    text-align: justify;
+    cursor: pointer;   
+    padding-left: 0;
+}
+
+.menu-des li a{
+    display:inline-block ; /*Necesario para enlaces*/
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+ 
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    transition: var(--mouse-is-over-menu); /*when the mouse is removed*/
+}
+.menu-des li  a:hover{
+    background-color: ghostwhite;
+    color: black;
+    transition: var(--mouse-is-hover-menu); /*when the mouse is over*/
+    font-weight: bolder;
+}
+
+
+
+
+/***************************************** END MENU *****************/
+
+/***************************************** INTRODUCTION *****************/
+.introduction{
+    padding: 2em 1em 1em;
+}
+/***************************************** END INTRODUCCTION **************/
+/**************************************** ABOUT ME *******************/
+
+.about-me{
+    padding: 2em 1em 1em;
+}
+
+.enl{
+    text-decoration: none;
+    font-weight: bold;
+    color: #6447ed;
+    transition: var(--mouse-is-over-normal); /*when the mouse is removed*/
+}
+
+.enl:hover{
+    background-color: black;
+    color: white;
+    transition: var(--mouse-is-hover-mormal); /*when the mouse is over*/
+
+}
+
+.about-me img{
+    margin-bottom: 1em;
+    text-align: center;
+    height: 260px;
+    width: 200px;
+    border-radius: 50%;
+    border: 2px solid black ;
+}
+
+/*Class for sub text*/
+.sub{
+    font-weight: bold;
+    font-size: var(--font-size-special);
+    /*color: #094eed;*/
+    color: #6447ed;
+}
+
+/************************ END ABOUT ME **********************************************/
+
+/*******************PROJECTS SECTION****************************/
+
+.projects{
+    /*
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    */
+    padding: 2em 1em;
+
+}
+/*Style for all links on projects*/
+.projects a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #094eed;
+    transition: var(--mouse-is-over-normal);
+}
+
+.projects a:hover{
+    background-color: black;
+    color: white;
+    transition: var(--mouse-is-hover-mormal);
+}
+/*But black color for title*/
+.projects h2 a{
+    color: black;
+}
+/*Image of classics games*/
+.cgimage{
+    border: 5px solid black;
+    width: 100px;
+    height: 100px;
+}
+/*Grid*/
+.grid-projects{
+    /*
+    display: flex;
+    flex-wrap: wrap;
+    */
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /*360 */
+    list-style-type: none;
+    gap: 1.5em;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+
+}
+/*Elements of the grid*/
+.grid-projects div{
+
+    /*width: 100%;*/
+    margin-bottom: 1.5em;
+}
+
+.element{
+    border: 1px solid black;
+    border-radius: 5%;
+    background-color: black;
+    margin-bottom: 1.5em;
+    /*out card shadow*/
+    -webkit-box-shadow: 0px 16px 6px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 16px 6px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 16px 6px -10px rgba(0,0,0,0.75);
+
+
+}
+.element h2{
+    color: white;
+}
+.description{
+    background-color: var(--bg-color-white);
+    padding: 2em;
+    border-radius: 5%;
+    /*Inside card shadow*/
+    -webkit-box-shadow: inset 0px 1px 35px 9px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 1px 35px 9px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 1px 35px 9px rgba(0,0,0,0.75);
+
+}
+
+/*************************************END PROJECT SECTION***************************************/
+/******************************CONTACT ME SECTION*********************/
+.contact-me{
+    /*padding: 1em;*/
+    padding: 2em 1em;
+    border-top: 5px solid gray;
+    background-color: #b8a9a9;
+    font-weight: bold;
+    font-size:  var(--font-size-special);
+}
+
+.contact-me img{
+    padding-left: .4em;
+    padding-right: .4em;
+    width: 50px;
+    height: 50px;
+}
+/******************************END CONTACT ME SECTION*********************/
+/******************************* FOOTER **********************************/
+footer{
+    padding: 1em;
+    background-color: black;
+    color: white;
+    font-size: var(--font-size-special);
+}
+
+footer a{
+    text-decoration: none;
+    color: #22edb4;
+    font-weight: bold;
+    transition: var(--mouse-is-over-normal);
+}
+
+footer a:hover{
+    background-color: white;
+    color: black;
+    transition: var(--mouse-is-hover-mormal);
+}
+
+
+/************************************* END FOOTER *****************************/
+/************************************* EXTRA *********************************/
+
+
+
+
+
+/*Tablets*/
+@media only screen and (min-width: 641px) and (max-width: 960px){
+
+
+    .menu-des li a{
+        text-align: center;
+    }
+    .introduction{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .about-me{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+
+    hr{
+        margin-right: 10%;
+        margin-left: 10%
+    }
+
+    .description{
+        height: 590px;
+    }
+}
+
+/*desktop*/
+@media only screen and (min-width: 961px){
+
+    /*
+    .menu-des {
+        padding-left: 0;
+        text-align: center;
+        display: inline-flex;
+        width: 100%;
+    }
+    .menu-des li a{
+        margin-left: 3em;
+    }
+    */
+    .menu-des{
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+    .menu-des ul{
+        display: inline-flex;
+    }
+
+    .menu-des li a{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    .introduction{
+        background-color: white;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .about-me{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    hr{
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+
+    .description{
+        height: 590px;
+    }
+
+}
+

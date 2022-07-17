@@ -32,6 +32,11 @@ const iconsFab = document.querySelectorAll('.fab');
 const iconsFav = document.querySelectorAll('.fav');
 const iconsFav2 = document.querySelectorAll('#fav');
 
+// local storage dark mode
+const DARK_MODE_LOCAL_STORAGE = "DARK_MODE_LOCAL_STORAGE"
+const DARK_MODE_LOCAL_STORAGE_ENABLED = "enabled"
+const DARK_MODE_LOCAL_STORAGE_DISSABLED = "dissabled"
+
 /**
  * load state methods 
  */
@@ -41,6 +46,8 @@ window.onload = () => {
     btnScrollToTop.style.display = "none";
     menuMobile();
     scrollbtn();
+    CheckDarkModeStatus();
+    setTheme();
 }
 
 /**
@@ -71,7 +78,9 @@ const scrollbtn = () => {
  */
 const setTheme = () => {
     console.log("Update style");
-    if (darkMode == false) {
+    updateDarkModeStatus();
+    
+    if (darkMode) {
         // Note: Simple elements
         toogleDarkMode(htmlParent, true);
         toogleDarkMode(projectsBorderBottom, true);
@@ -106,8 +115,6 @@ const setTheme = () => {
         // Note: Send email button
         toogleDarkMode(sendEmailButton, true);
 
-        darkMode = true;
-
     } else {
         // Note: Simple elements
         toogleDarkMode(htmlParent, false);
@@ -141,8 +148,30 @@ const setTheme = () => {
 
         // Note: Send email button
         toogleDarkMode(sendEmailButton, true);
+    }
+}
 
+/**
+ * Save in localstorage darkMode status
+ * @param {Boolean value} enable
+ */
+const CheckDarkModeStatus = () => {
+    const darkModeStauts = localStorage.getItem(DARK_MODE_LOCAL_STORAGE);
+    if (darkModeStauts == DARK_MODE_LOCAL_STORAGE_ENABLED) {
+        darkMode = true;
+    } else {
         darkMode = false;
+    }
+} 
+
+const updateDarkModeStatus = () => {
+    if (darkMode) {
+        darkMode = false
+        localStorage.setItem(DARK_MODE_LOCAL_STORAGE, DARK_MODE_LOCAL_STORAGE_ENABLED);
+    
+    } else {
+        darkMode = true
+        localStorage.setItem(DARK_MODE_LOCAL_STORAGE, DARK_MODE_LOCAL_STORAGE_DISSABLED);
     }
 }
 
