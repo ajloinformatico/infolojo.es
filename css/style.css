@@ -6,7 +6,7 @@
 
 :root{
     /*Color*/
-    --back-color : #e7e7de;
+    --back-color-light : #e7e7de;
     --header-color : #0f3057;
     --header-color-hover: #394758;
     --nav-color : #008891;
@@ -16,6 +16,13 @@
     --html-color: #f48b29;
     --java-color: #ac0d0d;
     --css-color: #008891;
+
+    /*Dark mode special colors*/
+    --border-dark-mode: white;
+    --back-color-dark: #616161;
+    --resalt-blue-dark: var(--header-color);
+    --resalt-red-dark: #ef0000;
+    --resalt-dark-color: #000000;
 
     /*Fonts*/
     --font-common: 'Noto Sans JP', sans-serif; /*Normal font*/
@@ -45,16 +52,20 @@
     --mouse-is-over-normal: linear 0.1s;
     --mouse-is-hover-mormal:color  0.1s linear 0.1s;
     --transition-common: all 1s ease-in-out;
+    --transition-fast: all .2s linear
 }
 
 html{
-    
     font-size: var(--size-commom-mobile);
-    background-color: var(--back-color);
+    background-color: var(--back-color-light);
     font-family: var(--font-common);
     color: black;
     transition: var(--transition-common);
-    
+}
+
+html.dark {
+    color: white;
+    background-color: var(--back-color-dark);
 }
 
 body{
@@ -88,6 +99,11 @@ header{
     padding-right: 1em;
     align-items: baseline;
     background-color: var(--header-color);
+    color: white;
+}
+
+header.dark {
+    background-color: var(--resalt-dark-color);
     color: white;
 }
 
@@ -129,6 +145,11 @@ nav>ul>li>a{
     transition: all 1s ease-in-out;
 }
 
+/* TODO MENU DARK MODE*/
+#menu-mobile.dark{
+    background-color: var(--resalt-dark-color);
+}
+
 
 ul>li>a{
     display: inline-block;
@@ -163,6 +184,11 @@ main{
     border-bottom: 1pt solid var(--header-color-hover);
 }
 
+.intro-about.dark {
+    /*border-bottom: 1pt solid var(--border-dark-mode);*/
+    border-color: var(--border-dark-mode);
+    transition: var(--transition-fast);
+}
 
 
 .me{
@@ -186,6 +212,11 @@ main{
     align-content: center;
     border-bottom: 1pt solid var(--header-color-hover);
 }
+
+.projects.dark {
+    border-color: var(--border-dark-mode);
+}
+
 .projects>div{
     width: 100%;
     margin-bottom: 2em;
@@ -240,8 +271,11 @@ footer {
     background-color: var(--header-color);
     color: white;
     overflow: hidden;
-    padding-top: .5em;
-    
+    padding-top: .5em;   
+}
+
+footer.dark {
+    background-color: var(--resalt-dark-color);
 }
 
 footer a{
@@ -275,18 +309,35 @@ input {
     width: 90%;
     margin-bottom: 1em;
     font-family: var(--font-input);
-    
 }
+
+input.dark {
+    background-color: var(--back-color-dark);
+    color: white;
+}
+
 textarea{
     width: 90.6%;
     height: 100px;
     font-family: var(--font-input);
 }
+
+textarea.dark {
+    background-color: var(--back-color-dark);
+    color: white;
+}
+
 textarea:focus, textarea:hover{
     background-color: var(--nav-color-hover);
     transition: var(--input-transition);
     color: black
 }
+
+textarea:hover.dark {
+    background-color: var(--back-color-dark);
+    color: white;
+}
+
 input:last-child{
     background-color: #00587a;
     color: white;
@@ -296,6 +347,11 @@ input:last-child{
     border: none;
     font-family: var(--font-common);
 }
+
+input:last-child.dark {
+    background-color: var(--header-color);
+}
+
 input:focus, input:hover{
     background-color: var(--nav-color-hover);
     transition: var(--input-transition);
@@ -315,10 +371,18 @@ input:focus, input:hover{
     font-weight: bold;
 }
 
+.resat.dark {
+    color: var(--resalt-red-dark);
+}
+
 .resalt-blue{
     color: var(--python-color);
     text-decoration: none;
     font-weight: bold;
+}
+
+.resalt-blue.dark {
+    color: var(--resalt-blue-dark)
 }
 
 .inside-link-on-text{
@@ -357,6 +421,10 @@ input:focus, input:hover{
 	right:20px;
 }
 
+#scrollTop.dark {
+    background: var(--resalt-dark-color)
+}
+
 
 @media screen and (min-width: 880px) {
 
@@ -386,7 +454,7 @@ input:focus, input:hover{
         padding: .5em;
     }
     ul>li>a:hover{
-        background-color: var(--back-color);
+        background-color: var(--back-color-light);
     }
     #menu-mobile{
         display: none;
@@ -419,15 +487,11 @@ input:focus, input:hover{
     .footr-info{
         margin-top: .4em;
     }
-    
     /************ VARS **************************/
     .font-accesible{
         font-size: 16pt;
     }
-    
     .inside-link-on-text:hover{
         font-size: large;
     }
-
 }
-

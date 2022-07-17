@@ -20,9 +20,9 @@
         <meta name="keywords" content="Dessarrollo, software, programación, sistemas" />
         <meta name="author" content="Antonio José Lojo Ojeda" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" href="css/style.css">
-        
     </head>
     <body id="general">
     <i id="scrollTop" class="fas fa-arrow-alt-circle-up fa-3x"></i>
@@ -41,7 +41,7 @@
             </nav>
             <div class="buttons">
                 <a class="trigger-acce" href="#" onclick='changeSize()'><span class="fab fa-accessible-icon"></span></a>
-                <!--TODO: darkmode by localstorage-->
+                <a class="trigger-dark-mode" href="#" onclick='setTheme()'><span class="fas fa-adjust"></span></a>
                 <a class="trigger-menu" href="#" onclick='menuMobile()'><span class="fas fa-bars"></span></a>       
             </div>
         </header>
@@ -328,7 +328,7 @@
                             </div>
                             <div>
                                 <p class="resalt-blue">Use my app at</p>
-                                <a alt="link to react notes dopleyment" href="https://react-firebase-notes-app.netlify.app" title="React notes deployment"><span class="fas fa-rocket fa-3x"></span></a>
+                                <a alt="link to react notes dopleyment" href="https://react-firebase-notes-app.netlify.app" title="React notes deployment"><span id ="fas" class="fas fa-rocket fa-3x"></span></a>
                             </div>
                         </div>
                     </div>
