@@ -1,6 +1,9 @@
 /*Import Noto Sans JP*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 
+/*Import roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 /*Import Playfair Display*/
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
@@ -25,7 +28,8 @@
     --resalt-dark-color: #000000;
 
     /*Fonts*/
-    --font-common: 'Noto Sans JP', sans-serif; /*Normal font*/
+    /*--font-common: 'Noto Sans JP', sans-serif; /*Normal font*/
+    --font-common: 'Roboto', sans-serif; /*Normal font*/
     --font-input: 'Playfair Display', serif;
 
     
