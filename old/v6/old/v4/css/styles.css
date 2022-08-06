@@ -1,0 +1,356 @@
+/*MOBILE STYLE*/
+/*variables*/
+:root{
+    /*BackGrounds*/
+    --bgLight: white;
+    --bgBlack: black;
+    /*FontColors*/
+    --font-color-light: black;
+    --font-color-dark: white;
+    /*FontSize*/
+    --font-size: 10pt;
+
+    /*grids porjects*/
+    --bg-color-white: #DADADA;
+    --bg-color-dark: #000000;
+}
+
+html{
+    display: block;
+    color: var(--font-color-light);
+}
+body{
+    background-color: var(--bgLight);
+    font-family: sans-serif;
+    font-size: var(--font-size);
+    margin:0;
+    text-align: center;
+    min-width: 350px;
+    align-content: center;
+
+
+}
+header{
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    display: inline-flex;
+    width: 100%;
+    border-bottom: gray 5px solid;
+}
+header h1{
+    padding-left: 1em;
+    width: 80%;
+    text-align: left;
+}
+header .logo{
+    margin-top: .4em;
+}
+
+/********************* BOTÓN DE SWITCH ************************/
+label{
+    margin-top: 1.6em;
+    margin-left: 0;
+    width: 10%;
+    float: right;
+}
+
+.checkbox{
+    display:none
+}
+.switch
+{
+    width: 31px; /*original 62*/
+    height: 16px; /*original 32*/
+    background: #E5E5E5;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    border-radius:8px; //IE 11 /*original 16*/
+    -moz-border-radius:8px; //Mozilla /*original 16*/
+    -webkit-border-radius:8px; //Chrome and Safari /*original 16*/
+}
+.switch:before
+{
+    content: ' ';
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    width: 31px; /*original 62*/
+    height: 16px; /*original 32*/
+    background: #FFFFFF;
+    z-index: 1;
+    border-radius:8px; //IE 11 /*original 16*/
+    -moz-border-radius:8px; //Mozilla /*original 16*/
+    -webkit-border-radius:8px; //Chrome and Safari /*original 16*/
+}
+.switch:after
+{
+    content: ' ';
+    height: 14.5px; /*original 29*/
+    width: 14.5px; /*original 29*/
+    border-radius: 14px; /*original 28*/
+    background: #FFFFFF;
+    position: absolute;
+    z-index: 2;
+    top: 1px;
+    left: 1px;
+    -webkit-transition-duration: 300ms;
+    transition-duration: 300ms;
+    -webkit-box-shadow: 0 2px 5px #999999;
+    box-shadow: 0 2px 5px #999999;
+}
+.switchOn , .switchOn:before
+{
+    background: #4cd964 !important;
+}
+.switchOn:after
+{
+    left: 17px !important; /*original 21*/
+}
+
+/********************************** FIN DEL SWITCH ***********************/
+
+
+/********************************* MENU ***********************************/
+.menu-button{
+    width: 2em;
+    height: 2em;
+    margin-top: 1.2em;
+    margin-right: 1em;
+    float: right;
+}
+
+.menu-des{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding-left: 1em;
+    background-color: black;
+    border-bottom: gray 5px solid;
+}
+
+.menu-des a{
+    text-decoration: none;
+    color: white;
+}
+.menu-des a:hover{
+    background-color: ghostwhite;
+    color: black;
+}
+/*Default class of te menu*/
+.menu-empty{
+    display: none;
+}
+
+/***************************************** END MENU *****************/
+
+/***************************************** INTRODUCTION *****************/
+.introduction{
+    padding: 2em 1em 1em;
+}
+
+/**************************************** INTRODUCTION *******************/
+
+.about-me{
+    padding: 2em 1em 1em;
+}
+
+.enl{
+    text-decoration: none;
+    font-weight: bold;
+    color: #094eed;
+}
+
+.enl:hover{
+    background-color: black;
+    color: white;
+}
+
+.about-me img{
+    margin-bottom: 1em;
+    text-align: center;
+    height: 260px;
+    width: 200px;
+    border-radius: 50%;
+    border: 2px solid black ;
+}
+
+/*Class for sub text*/
+.sub{
+    font-weight: bold;
+
+    color: #094eed;
+}
+
+/************************ END INTRODUCTION *********************/
+
+/*******************PROJECTS SECTION****************************/
+
+.projects{
+    /*
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    */
+    padding: 2em 1em;
+
+}
+/*Style for all links on projects*/
+.projects a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #35495e;
+}
+
+.projects a:hover{
+    background-color: black;
+    color: white;
+}
+/*But black color for title*/
+.projects h2 a{
+    color: black;
+}
+/*Image of classics games*/
+.cgimage{
+    border: 5px solid black;
+    width: 100px;
+    height: 100px;
+}
+/*Grid*/
+.grid-projects{
+    /*
+    display: flex;
+    flex-wrap: wrap;
+    */
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    list-style-type: none;
+    gap: 1.5em;
+    padding: 0;
+
+}
+/*Elements of the grid*/
+.grid-projects div{
+    margin-top: 1em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.element{
+    border: 1px solid black;
+    border-radius: 5%;
+    background-color: var(--bg-color-white);
+    /*
+    padding-left: 2em;
+    padding-right: 2em;
+    */
+}
+/*************************************END PROJECT SECTION***************************************/
+/******************************CONTACT ME SECTION*********************/
+.contact-me{
+    /*padding: 1em;*/
+    padding: 2em 1em;
+    border-top: 5px solid gray;
+    background-color: #b8a9a9;
+    font-weight: bold;
+}
+
+.contact-me img{
+    padding-left: .4em;
+    padding-right: .4em;
+    width: 50px;
+    height: 50px;
+}
+/******************************END CONTACT ME SECTION*********************/
+/******************************* FOOTER **********************************/
+footer{
+    padding: 1em;
+    background-color: black;
+    color: white;
+}
+
+footer a{
+    text-decoration: none;
+    color: #0e575e;
+    font-weight: bold;
+}
+
+footer a:hover{
+    background-color: white;
+    color: black;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 25%;
+}
+
+/************************************* END FOOTER *****************************/
+
+
+
+
+
+
+/*Tablets*/
+@media only screen and (min-width: 641px) and (max-width: 960px){
+
+
+    .menu-des{
+        text-align: center;
+    }
+    .introduction{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .about-me{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+
+    hr{
+        margin-right: 10%;
+        margin-left: 10%
+    }
+}
+
+/*desktop*/
+@media only screen and (min-width: 961px){
+
+    .menu-des {
+        padding-left: 0;
+        text-align: center;
+        display: inline-flex;
+        width: 100%;
+    }
+    .menu-des p{
+        margin-left: 3em;
+    }
+    .introduction{
+        background-color: white;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .about-me{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    hr{
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+
+    /**/
+
+
+
+
+}
+
