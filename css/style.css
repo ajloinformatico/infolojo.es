@@ -1,10 +1,13 @@
 /*Import Noto Sans JP*/
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 
 /*Import roboto*/
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 /*Import Playfair Display*/
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 :root{
@@ -29,6 +32,7 @@
 
     /*Fonts*/
     /*--font-common: 'Noto Sans JP', sans-serif; /*Normal font*/
+    /*noinspection*/
     --font-common: 'Roboto', sans-serif; /*Normal font*/
     --font-input: 'Playfair Display', serif;
 
@@ -38,7 +42,6 @@
     --size-common-desktop-x-large: 16pt;
     --size-common-mobile: 12pt;
     --size-common-mobile-x-large: 14pt;
-
 
 
     /*Lins transitions*/
@@ -54,13 +57,13 @@
 
     /*normal elements*/
     --mouse-is-over-normal: linear 0.1s;
-    --mouse-is-hover-mormal:color  0.1s linear 0.1s;
+    --mouse-is-hover-normal:color  0.1s linear 0.1s;
     --transition-common: all 1s ease-in-out;
     --transition-fast: all .2s linear
 }
 
 html{
-    font-size: var(--size-commom-mobile);
+    font-size: var(--size-common-mobile);
     background-color: var(--back-color-light);
     font-family: var(--font-common);
     color: black;
@@ -111,7 +114,7 @@ header.dark {
     color: white;
 }
 
-header>div:first{
+header>div:first-child{
     display: flex;
     flex-flow: row;
     flex-wrap: nowrap;
@@ -484,7 +487,7 @@ input:focus, input:hover{
     }
     /************ Form **************************/
     form{
-        margin: none;
+        margin: 0;
         border: none;
     }
     /************ Footer info *******************/
