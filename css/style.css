@@ -235,9 +235,17 @@ main {
     border: 1pt solid var(--header-color-hover);
 }
 
+.icon-no-style > img {
+    border: 0 !important;
+}
+
 
 .projects a {
     text-decoration: none;
+}
+
+.technologies {
+    margin-top: 1.4em;
 }
 
 .projects .technologies a:hover {
