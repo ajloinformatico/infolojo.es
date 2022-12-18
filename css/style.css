@@ -1,20 +1,23 @@
 /*Import Noto Sans JP*/
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 
 /*Import roboto*/
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 /*Import Playfair Display*/
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-:root{
+:root {
     /*Color*/
-    --back-color-light : #e7e7de;
-    --header-color : #0f3057;
+    --back-color-light: #e7e7de;
+    --header-color: #0f3057;
     --header-color-hover: #394758;
-    --nav-color : #008891;
-    --nav-color-hover : #78b2b6;
-    --python-color: #00587a; 
+    --nav-color: #008891;
+    --nav-color-hover: #78b2b6;
+    --python-color: #00587a;
     --bottom-go-top: #024959;
     --html-color: #f48b29;
     --java-color: #ac0d0d;
@@ -29,10 +32,11 @@
 
     /*Fonts*/
     /*--font-common: 'Noto Sans JP', sans-serif; /*Normal font*/
+    /*noinspection*/
     --font-common: 'Roboto', sans-serif; /*Normal font*/
     --font-input: 'Playfair Display', serif;
 
-    
+
     /*TODO: FONT ACCESIBLE*/
     --size-commom-desktop: 14pt;
     --size-common-desktop-x-large: 16pt;
@@ -40,27 +44,25 @@
     --size-common-mobile-x-large: 14pt;
 
 
-
     /*Lins transitions*/
     /*menu*/
     --mouse-is-over-menu: linear 0.2s;
-    --mouse-is-hover-menu:color  0.2s linear 0.2s;
+    --mouse-is-hover-menu: color 0.2s linear 0.2s;
     --mobile-menu: all .5s ease-in-out;
-    --input-transition: all .5s ease; 
+    --input-transition: all .5s ease;
     --projects-icons-trnasition: all .3s ease;
     /*1 TIME TRANSITION 2 DELEAY*/
 
-    
 
     /*normal elements*/
     --mouse-is-over-normal: linear 0.1s;
-    --mouse-is-hover-mormal:color  0.1s linear 0.1s;
+    --mouse-is-hover-normal: color 0.1s linear 0.1s;
     --transition-common: all 1s ease-in-out;
     --transition-fast: all .2s linear
 }
 
-html{
-    font-size: var(--size-commom-mobile);
+html {
+    font-size: var(--size-common-mobile);
     background-color: var(--back-color-light);
     font-family: var(--font-common);
     color: black;
@@ -72,30 +74,30 @@ html.dark {
     background-color: var(--back-color-dark);
 }
 
-body{
-    margin:0;
+body {
+    margin: 0;
     text-align: center;
     min-width: 350px;
     align-content: center;
     width: 100%;
     position: relative;
-    
+
 }
 
-ul{
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
     width: inherit;
-    
+
 }
 
-h1, h2{
+h1, h2 {
     font-weight: bolder;
 }
 
 /******************** Menu *****************/
-header{
+header {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -111,36 +113,36 @@ header.dark {
     color: white;
 }
 
-header>div:first{
+header > div:first-child {
     display: flex;
     flex-flow: row;
     flex-wrap: nowrap;
 }
 
-header>div>h1{
+header > div > h1 {
     font-size: xx-large;
     display: block;
 }
 
 /*header img*/
-header>div>img{
+header > div > img {
     width: 50px;
     display: block;
 }
 
 /**cliclabels nav*/
-nav>ul>li>a{
-    cursor:pointer;
+nav > ul > li > a {
+    cursor: pointer;
 }
 
 /************************ MENU ******************/
 
 /*Desk menu hidden*/
-.nav-menu{
+.nav-menu {
     display: none;
 }
 
-#menu-mobile{
+#menu-mobile {
     background-color: var(--nav-color);
     padding-top: .5em;
     padding-bottom: .5em;
@@ -150,22 +152,22 @@ nav>ul>li>a{
 }
 
 /* TODO MENU DARK MODE*/
-#menu-mobile.dark{
+#menu-mobile.dark {
     background-color: var(--resalt-dark-color);
 }
 
 
-ul>li>a{
+ul > li > a {
     display: inline-block;
-    color:white;
+    color: white;
     text-decoration: none;
     font-weight: bolder;
-    width:100%;
+    width: 100%;
     padding-left: .7em;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
-ul>li>a:hover{
+ul > li > a:hover {
     background-color: var(--nav-color-hover);
     width: 100%;
     transition: var(--mobile-menu);
@@ -173,18 +175,18 @@ ul>li>a:hover{
 }
 
 /******************* Buttons to show menu **********/
-.buttons a{
+.buttons a {
     color: white;
     font-size: x-large;
 }
 
 /*************************** main ***********************/
-main{
+main {
     width: 90%;
     margin: 0 auto;
 }
 
-.intro-about{
+.intro-about {
     border-bottom: 1pt solid var(--header-color-hover);
 }
 
@@ -195,17 +197,17 @@ main{
 }
 
 
-.me{
+.me {
     width: 200px;
 }
 
 /************************ proyects *********************/
-.my-projects{
+.my-projects {
     margin-bottom: 2em;
 
 }
 
-.projects{
+.projects {
     width: 100%;
     padding-bottom: 1em;
     margin-bottom: 2em;
@@ -221,37 +223,44 @@ main{
     border-color: var(--border-dark-mode);
 }
 
-.projects>div{
+.projects > div {
     width: 100%;
     margin-bottom: 2em;
 }
 
 
-.projects div>picture>img{
+.projects div > picture > img {
     width: 150px;
     height: 90px;
     border: 1pt solid var(--header-color-hover);
 }
 
+.icon-no-style > img {
+    border: 0 !important;
+}
 
 
-.projects a{
+.projects a {
     text-decoration: none;
 }
 
-.projects .tecnologies a:hover{
-    
+.technologies {
+    margin-top: 1.4em;
+}
+
+.projects .technologies a:hover {
+
     padding: .5em;
     transition: var(--projects-icons-trnasition);
 }
 
 /*Github logo*/
-.projects a:last-of-type{
+.projects a:last-of-type {
     color: black;
 }
 
 /*Footer notes*/
-.footer-notes{
+.footer-notes {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -260,29 +269,29 @@ main{
 
 }
 
-.footer-notes div{
+.footer-notes div {
     margin-left: .5em;
     margin-right: .5em;
 }
 
 
-
-.footer-notes a{
+.footer-notes a {
     color: black;
 }
+
 /*********************** FOOTER ***********************/
 footer {
     background-color: var(--header-color);
     color: white;
     overflow: hidden;
-    padding-top: .5em;   
+    padding-top: .5em;
 }
 
 footer.dark {
     background-color: var(--resalt-dark-color);
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: var(--java-color);
     font-weight: bolder;
@@ -294,7 +303,7 @@ footer a{
     width: 90%;
     margin: 0 auto;
     display: flex;
-    flex-flow: column;  
+    flex-flow: column;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -304,7 +313,8 @@ form {
     border-bottom: 1pt solid var(--header-color-hover);
     margin-bottom: 2em;
 }
-fieldset{
+
+fieldset {
     border: none;
     margin: 0 auto;
 }
@@ -320,7 +330,7 @@ input.dark {
     color: white;
 }
 
-textarea{
+textarea {
     width: 90.6%;
     height: 100px;
     font-family: var(--font-input);
@@ -331,7 +341,7 @@ textarea.dark {
     color: white;
 }
 
-textarea:focus, textarea:hover{
+textarea:focus, textarea:hover {
     background-color: var(--nav-color-hover);
     transition: var(--input-transition);
     color: black
@@ -342,9 +352,10 @@ textarea:hover.dark {
     color: white;
 }
 
-input:last-child{
-    background-color: #00587a;
+input:last-child {
+    background-color: var(--java-color);
     color: white;
+    font-weight: bold;
     padding: .5em;
     width: 90px;
     margin-top: 1.5em;
@@ -352,11 +363,7 @@ input:last-child{
     font-family: var(--font-common);
 }
 
-input:last-child.dark {
-    background-color: var(--header-color);
-}
-
-input:focus, input:hover{
+input:focus, input:hover {
     background-color: var(--nav-color-hover);
     transition: var(--input-transition);
     color: black
@@ -364,12 +371,12 @@ input:focus, input:hover{
 
 /*********************** VARS ************************/
 
-.font-accesible{
+.font-accesible {
     font-size: 14pt;
     transition: all 1s ease-in-out;
 }
 
-.resat{
+.resat {
     color: var(--java-color);
     text-decoration: none;
     font-weight: bold;
@@ -379,7 +386,7 @@ input:focus, input:hover{
     color: var(--resalt-red-dark);
 }
 
-.resalt-blue{
+.resalt-blue {
     color: var(--python-color);
     text-decoration: none;
     font-weight: bold;
@@ -389,7 +396,7 @@ input:focus, input:hover{
     color: var(--resalt-blue-dark)
 }
 
-.inside-link-on-text{
+.inside-link-on-text {
     color: var(--java-color);
     text-decoration: none;
     cursor: pointer;
@@ -397,32 +404,32 @@ input:focus, input:hover{
     transition: var(--mouse-is-over-normal)
 }
 
-.inside-link-on-text:hover{
+.inside-link-on-text:hover {
     transition: var(--mouse-is-hover-normal);
     font-size: x-large;
 }
 
-#resat{
+#resat {
     color: var(--java-color);
     transition: var(--mouse-is-over-normal)
 }
 
-#resat:hover{
+#resat:hover {
     color: var(--java-color);
     transition: var(--mouse-is-hover-mormal);
     font-size: x-large;
 }
 
 #scrollTop {
-    display:none;
-	padding:20px;
-	background: var(--header-color);
-	font-size:20px;
-	color:#fff;
-	cursor:pointer;
-	position: fixed;
-	bottom:20px;
-	right:20px;
+    display: none;
+    padding: 20px;
+    background: var(--header-color);
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 
 #scrollTop.dark {
@@ -433,10 +440,11 @@ input:focus, input:hover{
 @media screen and (min-width: 880px) {
 
 
-    html{
+    html {
         font-size: var(--size-commom-desktop);
     }
-    header{
+
+    header {
         justify-content: space-around;
         align-content: baseline;
         align-items: baseline;
@@ -444,58 +452,71 @@ input:focus, input:hover{
     }
 
     /*************** Menu* *****************/
-    .nav-menu{
-        display: block; 
+    .nav-menu {
+        display: block;
     }
-    .nav-menu>ul{
+
+    .nav-menu > ul {
         display: flex;
         justify-content: space-between;
     }
-    .nav-menu>ul>li{
+
+    .nav-menu > ul > li {
         display: block;
     }
-    ul>li>a{
+
+    ul > li > a {
         padding: .5em;
     }
-    ul>li>a:hover{
+
+    ul > li > a:hover {
         background-color: var(--back-color-light);
     }
-    #menu-mobile{
+
+    #menu-mobile {
         display: none;
     }
-    .trigger-menu{
+
+    .trigger-menu {
         display: none;
     }
+
     /************** MAIN ***********************/
-    main{
+    main {
         width: 85%;
     }
+
     /************* Projects *********************/
-    .projects>div{
-        width:20em;
+    .projects > div {
+        width: 20em;
     }
+
     /************* Footer *****************/
-    .footer-content{
+    .footer-content {
         margin-top: 2em;
         width: 85%;
         flex-flow: row;
         justify-content: space-between;
         align-content: center;
     }
+
     /************ Form **************************/
-    form{
-        margin: none;
+    form {
+        margin: 0;
         border: none;
     }
+
     /************ Footer info *******************/
-    .footr-info{
+    .footr-info {
         margin-top: .4em;
     }
+
     /************ VARS **************************/
-    .font-accesible{
+    .font-accesible {
         font-size: 16pt;
     }
-    .inside-link-on-text:hover{
+
+    .inside-link-on-text:hover {
         font-size: large;
     }
 }

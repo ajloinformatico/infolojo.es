@@ -3,15 +3,13 @@ const htmlParent = document.documentElement
 const menuMobileTag = document.querySelector('#menu-mobile');
 const htmlGeneral = document.querySelector('#general');
 const btnScrollToTop = document.querySelector('#scrollTop');
-const btnSetStyle = document.querySelector('trigger-dark-mode');
 const TIME_ANIMATION_SCROLL_TOP = 1000;
-let firstLoad = true;
 let navMobile = 1;
-let accesiblemode = -1;
+let accessibilityMode = -1;
 
 // Change to localStore
 // darkMode vals
-let darkMode = false;
+let darkMode = true;
 const DARK_STYLE_NAME = "dark";
 const DARK_TEXT = "black";
 const LIGHT_TEXT = "white";
@@ -30,7 +28,6 @@ const sendEmailButton = document.querySelector('input:last-child');
 // icons
 const iconsFab = document.querySelectorAll('.fab');
 const iconsFav = document.querySelectorAll('.fav');
-const iconsFav2 = document.querySelectorAll('#fav');
 
 // local storage dark mode
 const DARK_MODE_LOCAL_STORAGE = "DARK_MODE_LOCAL_STORAGE"
@@ -45,15 +42,12 @@ window.onload = () => {
     //hidde btn to scroll up and menu btn
     btnScrollToTop.style.display = "none";
     menuMobile();
-    scrollbtn();
+    scrollBtn();
     CheckDarkModeStatus();
     setTheme();
 }
 
-/**
- * Make ScrollToTop
- */
-const scrollbtn = () => {
+const scrollBtn = () => {
     $(window).scroll(() => {
         // if scroll > 200 muestra el botom si no ocultalo
         if ($(this).scrollTop() > 200) {
@@ -80,88 +74,81 @@ const setTheme = () => {
     console.log("Update style");
     updateDarkModeStatus();
     
-    if (darkMode) {
+    if (darkMode === true) {
         // Note: Simple elements
-        toogleDarkMode(htmlParent, true);
-        toogleDarkMode(projectsBorderBottom, true);
-        toogleDarkMode(inputFormElement, true);
-        toogleDarkMode(textAreaFormElement, true);
+        toggleDarkMode(htmlParent, true);
+        toggleDarkMode(projectsBorderBottom, true);
+        toggleDarkMode(inputFormElement, true);
+        toggleDarkMode(textAreaFormElement, true);
 
         // Note: Multi elemens
-        toogleDarkMode(aboutMeSections, true, true);
-        toogleDarkMode(resalstBlueElements, true, true);
-        toogleDarkMode(resalstRedElements, true, true);
+        toggleDarkMode(aboutMeSections, true, true);
+        toggleDarkMode(resalstBlueElements, true, true);
+        toggleDarkMode(resalstRedElements, true, true);
         
         // Note: Icons
-        applyToogleDarkModeOnIcon(iconsFab, true);
-        applyToogleDarkModeOnIcon(iconsFav, true);
-    //    applyToogleDarkModeOnIcon(iconsFav2, true);
+        applyToggleDarkModeOnIcon(iconsFab, true);
+        applyToggleDarkModeOnIcon(iconsFav, true);
 
         // Note: Menu
-        toogleDarkMode(menuMobileTag, true);
+        toggleDarkMode(menuMobileTag, true);
 
         // Note: header
-        toogleDarkMode(header, true);
+        toggleDarkMode(header, true);
 
         // Note: footer
-        toogleDarkMode(footer, true);
+        toggleDarkMode(footer, true);
 
         // Note: scroll to top buttom
-        toogleDarkMode(scrollToTopButton, true);
+        toggleDarkMode(scrollToTopButton, true);
 
         // Note: Access button
-        toogleDarkMode(triggerAcce, true);
+        toggleDarkMode(triggerAcce, true);
 
         // Note: Send email button
-        toogleDarkMode(sendEmailButton, true);
+        toggleDarkMode(sendEmailButton, true);
 
     } else {
         // Note: Simple elements
-        toogleDarkMode(htmlParent, false);
-        toogleDarkMode(projectsBorderBottom, false);
-        toogleDarkMode(inputFormElement, false);
-        toogleDarkMode(textAreaFormElement, false);
+        toggleDarkMode(htmlParent, false);
+        toggleDarkMode(projectsBorderBottom, false);
+        toggleDarkMode(inputFormElement, false);
+        toggleDarkMode(textAreaFormElement, false);
 
         // Note: Multi elements
-        toogleDarkMode(aboutMeSections, false, true);
-        toogleDarkMode(resalstBlueElements, false, true);
-        toogleDarkMode(resalstRedElements, false, true);
+        toggleDarkMode(aboutMeSections, false, true);
+        toggleDarkMode(resalstBlueElements, false, true);
+        toggleDarkMode(resalstRedElements, false, true);
 
         // Note: Icons
-        applyToogleDarkModeOnIcon(iconsFab, false);
-        applyToogleDarkMode(iconsFav, false);
+        applyToggleDarkModeOnIcon(iconsFab, false);
+        applyToggleDarkMode(iconsFav, false);
 
         // Note: Menu
-        toogleDarkMode(menuMobileTag, false);
+        toggleDarkMode(menuMobileTag, false);
 
         // Note: header
-        toogleDarkMode(header, false);
+        toggleDarkMode(header, false);
 
         // Note: footer
-        toogleDarkMode(footer, false);
+        toggleDarkMode(footer, false);
 
         // Note: scroll to top button
-        toogleDarkMode(scrollToTopButton, false);
+        toggleDarkMode(scrollToTopButton, false);
 
         // Note: Access button
-        toogleDarkMode(triggerAcce, false);
+        toggleDarkMode(triggerAcce, false);
 
         // Note: Send email button
-        toogleDarkMode(sendEmailButton, true);
+        toggleDarkMode(sendEmailButton, true);
     }
 }
 
 /**
  * Save in localstorage darkMode status
- * @param {Boolean value} enable
  */
 const CheckDarkModeStatus = () => {
-    const darkModeStauts = localStorage.getItem(DARK_MODE_LOCAL_STORAGE);
-    if (darkModeStauts == DARK_MODE_LOCAL_STORAGE_ENABLED) {
-        darkMode = true;
-    } else {
-        darkMode = false;
-    }
+    darkMode = localStorage.getItem(DARK_MODE_LOCAL_STORAGE) === DARK_MODE_LOCAL_STORAGE_ENABLED;
 } 
 
 const updateDarkModeStatus = () => {
@@ -177,26 +164,26 @@ const updateDarkModeStatus = () => {
 
 /**
  * Set if element must apply dark style
- * @param {HTML element} element 
- * @param {Boolean value} addDark 
- * @param {Boolean isMultiElement} isMultiElement
+ * @param element html element to update style
+ * @param addDark addDark
+ * @param isMultiElement Element has more than one element inside the tag
  */
-const toogleDarkMode = (element, addDark, isMultiElement = false) => {
+const toggleDarkMode = (element, addDark, isMultiElement = false) => {
     if (!isMultiElement) {
-       applyToogleDarkMode(element, addDark)
+       applyToggleDarkMode(element, addDark)
     } else {
         element.forEach(ele => {
-            applyToogleDarkMode(ele, addDark)
+            applyToggleDarkMode(ele, addDark)
         });
     }
 } 
 
 /**
  * Set if element must apply dark style
- * @param {HTML element} element 
- * @param {Boolean value} addDark 
+ * @param element htmlElement
+ * @param addDark should add
  */
-const applyToogleDarkMode = (element, addDark) => {
+const applyToggleDarkMode = (element, addDark) => {
     try {
         addDark ? element.classList.add(DARK_STYLE_NAME) : element.classList.remove(DARK_STYLE_NAME)
     } catch {
@@ -207,13 +194,13 @@ const applyToogleDarkMode = (element, addDark) => {
 
 /**
  * 
- * @param {html elemen} element icon
- * @param {boolean} addDark boolean that say if text must apply white or black
+ * @param element icon
+ * @param addDark boolean that say if text must apply white or black
  */
-const applyToogleDarkModeOnIcon = (element, addDark) => {
+const applyToggleDarkModeOnIcon = (element, addDark) => {
     element.forEach(ele => {
         try {
-            if (ele != triggerAcce) {
+            if (ele !== triggerAcce) {
                 // no-op
             } else {
                 addDark? ele.style.color = LIGHT_TEXT : ele.style.color = DARK_TEXT;
@@ -222,16 +209,6 @@ const applyToogleDarkModeOnIcon = (element, addDark) => {
             // no-op
         }
     });
-}
-
-/**
- * trigger scroll to top btn
- */
-const triggerScrollTop = () => {
-    $('html, body').animate({
-        scrollTop:0
-    },TIME_ANIMATION_SCROLL_TOP);
-    return false;
 }
 
 /**
@@ -247,9 +224,9 @@ const menuMobile = () => {
  * change size
  */
 const changeSize = () => {
-    accesiblemode *= -1;
-    console.log(accesiblemode);
-    accesiblemode===1?htmlGeneral.classList.add('font-accesible'):htmlGeneral.classList.remove('font-accesible');
+    accessibilityMode *= -1;
+    console.log(accessibilityMode);
+    accessibilityMode===1?htmlGeneral.classList.add('font-accesible'):htmlGeneral.classList.remove('font-accesible');
 }
 
 /**
