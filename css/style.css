@@ -346,17 +346,14 @@ textarea:hover.dark {
 }
 
 input:last-child{
-    background-color: #00587a;
+    background-color: var(--java-color);
     color: white;
+    font-weight: bold;
     padding: .5em;
     width: 90px;
     margin-top: 1.5em;
     border: none;
     font-family: var(--font-common);
-}
-
-input:last-child.dark {
-    background-color: var(--header-color);
 }
 
 input:focus, input:hover{
