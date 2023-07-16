@@ -3,7 +3,7 @@ const htmlParent = document.documentElement
 const menuMobileTag = document.querySelector('#menu-mobile');
 const htmlGeneral = document.querySelector('#general');
 const btnScrollToTop = document.querySelector('#scrollTop');
-const TIME_ANIMATION_SCROLL_TOP = 1000;
+const TIME_ANIMATION_SCROLL_TOP = 500;
 let navMobile = 1;
 let accessibilityMode = -1;
 
@@ -38,16 +38,19 @@ const DARK_MODE_LOCAL_STORAGE_DISSABLED = "dissabled"
  * load state methods 
  */
 window.onload = () => {
-    console.log("run all");
+    log("run all");
     //hidde btn to scroll up and menu btn
     btnScrollToTop.style.display = "none";
     menuMobile();
-    scrollBtn();
+    manageScrollToTopButton();
     CheckDarkModeStatus();
     setTheme();
 }
 
-const scrollBtn = () => {
+
+
+// region jsquery oldBlock
+const manageScrollToTopButtonOld = () => {
     $(window).scroll(() => {
         // if scroll > 200 muestra el botom si no ocultalo
         if ($(this).scrollTop() > 200) {
@@ -65,13 +68,73 @@ const scrollBtn = () => {
         return false;
     });
 }
+// endregion jsquery
+
+/** manage scroll to top */
+const manageScrollToTopButton = () => {
+    window.addEventListener("scroll", () => {
+        // show scroll button if scroll is bigger than 200
+        showAnimatedElement(btnScrollToTop, (window.scrollY > 200));
+
+        // Add onClick in btnScrollToTop to do scroll animated
+        btnScrollToTop.addEventListener('click', () => {
+            //smoothScrollToPosition(0)
+            smoothScrollToPosition(0)
+            //scrollToTop();
+            return false;
+        });
+    });
+}
+
+/**
+ * Show a view with fadeIn or a fadeOut animation.
+ * @param {Element} element 
+ * @param {Boolean} show 
+ */
+const showAnimatedElement = (element, show) => {
+    (show) ? $(element).fadeIn() : $(element).fadeOut();
+ } 
+
+/**
+ * Show a message in console
+ * @param {String} message
+ */
+const log = (message) => {
+    console.log(message);
+}
+
+ /**
+  * Performace a smooth scroll to a position
+  * @param {Number} postion position y to do the smooth scroll 
+  * @param {Number} duration duration of smooth scroll
+  */
+const smoothScrollToPosition = (postion, duration = TIME_ANIMATION_SCROLL_TOP) => {
+    const startingY = window.pageYOffset;
+    const startTime = performance.now();
+
+    const step = (timestamp) => {
+        const currentTime = timestamp || performance.now();
+        const timeElapsed = currentTime - startTime;
+        const scrollY = Math.max(
+            startingY - (timeElapsed / duration) * startingY,
+            0
+        );
+        window.scrollTo(postion, scrollY);
+
+        if (timeElapsed < duration) {
+            window.requestAnimationFrame(step);
+        }
+    }
+
+    window.requestAnimationFrame(step);
+}
 
 /**
  * Change style between dark and light by calling
  * toogleDarkMode();
  */
 const setTheme = () => {
-    console.log("Update style");
+    log("Update style");
     updateDarkModeStatus();
     
     if (darkMode === true) {
@@ -189,7 +252,6 @@ const applyToggleDarkMode = (element, addDark) => {
     } catch {
         // no-op
     }
-    
 }
 
 /**
@@ -225,7 +287,7 @@ const menuMobile = () => {
  */
 const changeSize = () => {
     accessibilityMode *= -1;
-    console.log(accessibilityMode);
+    log(accessibilityMode);
     accessibilityMode===1?htmlGeneral.classList.add('font-accesible'):htmlGeneral.classList.remove('font-accesible');
 }
 
@@ -239,3 +301,44 @@ const navTo = (element) => {
         scrollTop:$(element).offset().top
     },TIME_ANIMATION_SCROLL_TOP);
 }
+
+// manage scroll to top button migration to js 
+/*
+window.addEventListener("scroll", function() {
+    // Obtén la posición de desplazamiento actual
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Si el desplazamiento es mayor que 200px, muestra el botón
+    if (scrollTop > 200) {
+        document.querySelector("#scrollTop").style.display = "block";
+    } else {
+        document.querySelector("#scrollTop").style.display = "none";
+    }
+});
+
+document.querySelector("#scrollTop").addEventListener("click", function() {
+    scrollToTop(TIME_ANIMATION_SCROLL_TOP);
+});
+
+function scrollToTop(duration) {
+    var startingY = window.pageYOffset;
+    var startTime = performance.now();
+
+    function step(timestamp) {
+        var currentTime = timestamp || performance.now();
+        var timeElapsed = currentTime - startTime;
+        var scrollY = Math.max(
+            startingY - timeElapsed / duration * startingY,
+            0
+        );
+        window.scrollTo(0, scrollY);
+
+        if (timeElapsed < duration) {
+            window.requestAnimationFrame(step);
+        }
+    }
+
+    window.requestAnimationFrame(step);
+    return false;
+}
+*/
