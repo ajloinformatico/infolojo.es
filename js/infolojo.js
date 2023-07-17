@@ -15,7 +15,8 @@ import {
     contactMeIcon,
     triggerAccesibility,
     triggerDarkMode,
-    triggerUpdateThteme
+    triggerUpdateThteme,
+    linkToKeepIt
 } from './constants.js'
 
 
@@ -76,31 +77,41 @@ window.onload = () => {
 
 const addOnClickEvents = () => {
 
-    aboutMeIcon.forEach(element => 
-        element.addEventListener('click', () => {
+    // region menuIcons
+    aboutMeIcon.forEach(element => element.addEventListener('click', () => {
             navTo('#about-me');
-        })
-    );
+    }));
 
+    myprojectIcon.forEach(element => element.addEventListener('click', () => {
+        navTo('#my-projects')
+    }));
 
-    myprojectIcon.addEventListener('click', () => {
-        navTo('#my-projects');
-    });
-    curriculumIcon.addEventListener('click', () => {
+    curriculumIcon.forEach(element => element.addEventListener('click', () => {
         log("Antonio José Lojo Ojeda curricum downloaded");
-    });
-    contactMeIcon.addEventListener('click', () => {
+    }));
+
+    contactMeIcon.forEach(element => element.addEventListener('click', () => {
         navTo('#contact-me');
-    });
-    triggerAccesibility.addEventListener('click', () => {
+    }));
+
+    triggerAccesibility.forEach(element => element.addEventListener('click', () => {
         changeSize();
-    });
-    triggerDarkMode.addEventListener('click', () => {
+    }));
+    
+    triggerDarkMode.forEach(element => element.addEventListener('click', () => {
         setTheme();
-    });
-    triggerUpdateThteme.addEventListener('click', () => {
+    }));
+
+    triggerUpdateThteme.forEach(element => element.addEventListener('click', () => {
         menuMobile();
+    }));
+    // endregion menuIcons
+
+    // region internalLinks
+    linkToKeepIt.addEventListener('click', () => {
+        navTo('#keep-it-div');
     });
+    // endregion internalLinks
 }
 
 

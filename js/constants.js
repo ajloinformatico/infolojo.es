@@ -14,13 +14,17 @@ const test = "test"
 // Note I need query selector all because i have to buttons one for desktop menu and another for mobile menu.
 // TODO continue doing it and modifing click events. Also I have to remove from html onClick methods
 const aboutMeIcon = document.querySelectorAll('.aboutmeLink');
-const myprojectIcon = document.querySelector('.myprojectLink');
-const curriculumIcon = document.querySelector('.curriculumLink');
-const contactMeIcon = document.querySelector('.contactMelink');
-const triggerAccesibility = document.querySelector('.trigger-acce');
-const triggerDarkMode = document.querySelector('.trigger-dark-mode');
-const triggerUpdateThteme = document.querySelector('.trigger-menu')
+const myprojectIcon = document.querySelectorAll('.myprojectLink');
+const curriculumIcon = document.querySelectorAll('.curriculumLink');
+const contactMeIcon = document.querySelectorAll('.contactMelink');
+const triggerAccesibility = document.querySelectorAll('.trigger-acce');
+const triggerDarkMode = document.querySelectorAll('.trigger-dark-mode');
+const triggerUpdateThteme = document.querySelectorAll('.trigger-menu');
 // endregion menuIcons
+
+// region internalScrollLinks
+const linkToKeepIt = document.querySelector('#link-to-keep-it');
+// endregion internalScrollLinks
 
 // region app perfomance values
 const TIME_ANIMATION_SCROLL_TOP = 500;
@@ -48,5 +52,6 @@ export {
     contactMeIcon,
     triggerAccesibility,
     triggerDarkMode,
-    triggerUpdateThteme
+    triggerUpdateThteme,
+    linkToKeepIt
 }
