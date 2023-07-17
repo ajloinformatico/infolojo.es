@@ -1,18 +1,43 @@
+import {
+    body,
+    htmlParent,    
+    menuMobileTag,
+    htmlGeneral,
+    btnScrollToTop,
+    test,
+    TIME_ANIMATION_SCROLL_TOP,
+    DARK_STYLE_NAME,
+    DARK_TEXT,
+    LIGHT_TEXT,
+    aboutMeIcon,
+    myprojectIcon,
+    curriculumIcon,
+    contactMeIcon,
+    triggerAccesibility,
+    triggerDarkMode,
+    triggerUpdateThteme
+} from './constants.js'
+
+
+/*
 const body = document.body;
 const htmlParent = document.documentElement
 const menuMobileTag = document.querySelector('#menu-mobile');
 const htmlGeneral = document.querySelector('#general');
 const btnScrollToTop = document.querySelector('#scrollTop');
 const TIME_ANIMATION_SCROLL_TOP = 500;
+*/
 let navMobile = 1;
 let accessibilityMode = -1;
 
 // Change to localStore
 // darkMode vals
 let darkMode = true;
+/*
 const DARK_STYLE_NAME = "dark";
 const DARK_TEXT = "black";
 const LIGHT_TEXT = "white";
+*/
 const inputFormElement = document.querySelector('#_replyto');
 const textAreaFormElement = document.querySelector('#message');
 const projectsBorderBottom = document.querySelector('.projects');
@@ -38,13 +63,44 @@ const DARK_MODE_LOCAL_STORAGE_DISSABLED = "dissabled"
  * load state methods 
  */
 window.onload = () => {
-    log("run all");
+    log("run all " + test);
     //hidde btn to scroll up and menu btn
     btnScrollToTop.style.display = "none";
     menuMobile();
     manageScrollToTopButton();
     CheckDarkModeStatus();
     setTheme();
+    addOnClickEvents();
+}
+
+
+const addOnClickEvents = () => {
+
+    aboutMeIcon.forEach(element => 
+        element.addEventListener('click', () => {
+            navTo('#about-me');
+        })
+    );
+
+
+    myprojectIcon.addEventListener('click', () => {
+        navTo('#my-projects');
+    });
+    curriculumIcon.addEventListener('click', () => {
+        log("Antonio José Lojo Ojeda curricum downloaded");
+    });
+    contactMeIcon.addEventListener('click', () => {
+        navTo('#contact-me');
+    });
+    triggerAccesibility.addEventListener('click', () => {
+        changeSize();
+    });
+    triggerDarkMode.addEventListener('click', () => {
+        setTheme();
+    });
+    triggerUpdateThteme.addEventListener('click', () => {
+        menuMobile();
+    });
 }
 
 
@@ -278,6 +334,7 @@ const applyToggleDarkModeOnIcon = (element, addDark) => {
  */
 const menuMobile = () => {
    navMobile *= -1;
+   log("update accesibility with " + navMobile);
    navMobile===-1?menuMobileTag.style.display="none":menuMobileTag.style.display = "block";
 
 }
@@ -287,7 +344,7 @@ const menuMobile = () => {
  */
 const changeSize = () => {
     accessibilityMode *= -1;
-    log(accessibilityMode);
+    log("update accesibility with " + accessibilityMode);
     accessibilityMode===1?htmlGeneral.classList.add('font-accesible'):htmlGeneral.classList.remove('font-accesible');
 }
 
@@ -300,6 +357,7 @@ const navTo = (element) => {
     $('html, body').animate({
         scrollTop:$(element).offset().top
     },TIME_ANIMATION_SCROLL_TOP);
+    log('navigate to ' + element);
 }
 
 // manage scroll to top button migration to js 
