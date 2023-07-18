@@ -5,6 +5,15 @@ import {
     htmlGeneral,
     btnScrollToTop,
     test,
+    inputFormElement,
+    textAreaFormElement,
+    projectsBorderBottom,
+    aboutMeSections,
+    resalstBlueElements,
+    resalstRedElements,
+    header,
+    footer,
+    sendEmailButton,
     TIME_ANIMATION_SCROLL_TOP,
     DARK_STYLE_NAME,
     DARK_TEXT,
@@ -16,49 +25,24 @@ import {
     triggerAccesibility,
     triggerDarkMode,
     triggerUpdateThteme,
-    linkToKeepIt
+    linkToKeepIt,
+    iconsFab,
+    iconsFav,
+    DARK_MODE_LOCAL_STORAGE,
+    DARK_MODE_LOCAL_STORAGE_ENABLED,
+    DARK_MODE_LOCAL_STORAGE_DISSABLED
 } from './constants.js'
 
-
-/*
-const body = document.body;
-const htmlParent = document.documentElement
-const menuMobileTag = document.querySelector('#menu-mobile');
-const htmlGeneral = document.querySelector('#general');
-const btnScrollToTop = document.querySelector('#scrollTop');
-const TIME_ANIMATION_SCROLL_TOP = 500;
-*/
+// region localStorageStates
+// menu mobile state
 let navMobile = 1;
+
+// accesibility mode state
 let accessibilityMode = -1;
 
-// Change to localStore
-// darkMode vals
+// dark mode state
 let darkMode = true;
-/*
-const DARK_STYLE_NAME = "dark";
-const DARK_TEXT = "black";
-const LIGHT_TEXT = "white";
-*/
-const inputFormElement = document.querySelector('#_replyto');
-const textAreaFormElement = document.querySelector('#message');
-const projectsBorderBottom = document.querySelector('.projects');
-const aboutMeSections = document.querySelectorAll('.intro-about');
-const resalstBlueElements = document.querySelectorAll('.resalt-blue');
-const resalstRedElements = document.querySelectorAll('.resat');
-const header = document.querySelector('header');
-const footer = document.querySelector('footer');
-const scrollToTopButton = document.querySelector('#scrollTop');
-const triggerAcce = document.querySelector("#trigger-acce");
-const sendEmailButton = document.querySelector('input:last-child');
-
-// icons
-const iconsFab = document.querySelectorAll('.fab');
-const iconsFav = document.querySelectorAll('.fav');
-
-// local storage dark mode
-const DARK_MODE_LOCAL_STORAGE = "DARK_MODE_LOCAL_STORAGE"
-const DARK_MODE_LOCAL_STORAGE_ENABLED = "enabled"
-const DARK_MODE_LOCAL_STORAGE_DISSABLED = "dissabled"
+// endregion localStorageStates
 
 /**
  * load state methods 
@@ -230,11 +214,11 @@ const setTheme = () => {
         toggleDarkMode(footer, true);
 
         // Note: scroll to top buttom
-        toggleDarkMode(scrollToTopButton, true);
+        toggleDarkMode(btnScrollToTop, true);
 
         // Note: Access button
-        toggleDarkMode(triggerAcce, true);
-
+        triggerAccesibility.forEach(element => toggleDarkMode(element, true))
+        
         // Note: Send email button
         toggleDarkMode(sendEmailButton, true);
 
@@ -264,10 +248,10 @@ const setTheme = () => {
         toggleDarkMode(footer, false);
 
         // Note: scroll to top button
-        toggleDarkMode(scrollToTopButton, false);
+        toggleDarkMode(btnScrollToTop, false);
 
         // Note: Access button
-        toggleDarkMode(triggerAcce, false);
+        triggerAccesibility.forEach(element => toggleDarkMode(element, false));
 
         // Note: Send email button
         toggleDarkMode(sendEmailButton, true);
@@ -327,6 +311,11 @@ const applyToggleDarkMode = (element, addDark) => {
  * @param addDark boolean that say if text must apply white or black
  */
 const applyToggleDarkModeOnIcon = (element, addDark) => {
+    let triggerAcce = null;
+    triggerAccesibility.forEach(element => () => {
+        triggerAccesibility = element
+    })
+    
     element.forEach(ele => {
         try {
             if (ele !== triggerAcce) {
