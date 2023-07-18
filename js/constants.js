@@ -7,7 +7,6 @@ const htmlParent = document.documentElement
 const menuMobileTag = document.querySelector('#menu-mobile');
 const btnScrollToTop = document.querySelector('#scrollTop');
 const htmlGeneral = document.querySelector('#general');
-const test = "test"
 const inputFormElement = document.querySelector('#_replyto');
 const textAreaFormElement = document.querySelector('#message');
 const projectsBorderBottom = document.querySelector('.projects');
@@ -59,7 +58,6 @@ export {
     menuMobileTag,
     htmlGeneral,
     btnScrollToTop,
-    test,
     inputFormElement,
     textAreaFormElement,
     projectsBorderBottom,

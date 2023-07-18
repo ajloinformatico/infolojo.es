@@ -4,7 +4,6 @@ import {
     menuMobileTag,
     htmlGeneral,
     btnScrollToTop,
-    test,
     inputFormElement,
     textAreaFormElement,
     projectsBorderBottom,
@@ -48,7 +47,7 @@ let darkMode = true;
  * load state methods 
  */
 window.onload = () => {
-    log("run all " + test);
+    log("Loading infolojo.js module")
     //hidde btn to scroll up and menu btn
     btnScrollToTop.style.display = "none";
     menuMobile();
@@ -98,8 +97,6 @@ const addOnClickEvents = () => {
     // endregion internalLinks
 }
 
-
-
 // region jsquery oldBlock
 const manageScrollToTopButtonOld = () => {
     $(window).scroll(() => {
@@ -129,9 +126,7 @@ const manageScrollToTopButton = () => {
 
         // Add onClick in btnScrollToTop to do scroll animated
         btnScrollToTop.addEventListener('click', () => {
-            //smoothScrollToPosition(0)
-            smoothScrollToPosition(0)
-            //scrollToTop();
+            navTo(null, 0)
             return false;
         });
     });
@@ -152,32 +147,6 @@ const showAnimatedElement = (element, show) => {
  */
 const log = (message) => {
     console.log(message);
-}
-
- /**
-  * Performace a smooth scroll to a position
-  * @param {Number} postion position y to do the smooth scroll 
-  * @param {Number} duration duration of smooth scroll
-  */
-const smoothScrollToPosition = (postion, duration = TIME_ANIMATION_SCROLL_TOP) => {
-    const startingY = window.pageYOffset;
-    const startTime = performance.now();
-
-    const step = (timestamp) => {
-        const currentTime = timestamp || performance.now();
-        const timeElapsed = currentTime - startTime;
-        const scrollY = Math.max(
-            startingY - (timeElapsed / duration) * startingY,
-            0
-        );
-        window.scrollTo(postion, scrollY);
-
-        if (timeElapsed < duration) {
-            window.requestAnimationFrame(step);
-        }
-    }
-
-    window.requestAnimationFrame(step);
 }
 
 /**
@@ -349,47 +318,48 @@ const changeSize = () => {
 }
 
 /**
- * anim go to id element on the web
- * @param {string} element 
+ * Function to perform a smooth scroll to a specific element
+ * @param {string} element element to go 
+ * @param {Number} position position to go
  * @returns {void}
  */
-const navTo = (element) => {
+const navTo = (element = null, position = null) => {
+    if (element != null) {
+        smoothScrollToElement(element)
+    } else if (position != null) {
+        smoothScrollToPosition(position)
+    }
+}
+
+/**
+ * Function to perform a smooth scroll to a specific position
+ * @param {Element} element 
+ * @param {Duration} duration 
+ */
+const smoothScrollToElement = (element, duration = TIME_ANIMATION_SCROLL_TOP) => {
     $('html, body').animate({
         scrollTop:$(element).offset().top
-    },TIME_ANIMATION_SCROLL_TOP);
+    },duration);
     log('navigate to ' + element);
 }
 
-// manage scroll to top button migration to js 
-/*
-window.addEventListener("scroll", function() {
-    // Obtén la posición de desplazamiento actual
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+ /**
+  * Performace a smooth scroll to a position
+  * @param {Number} postion position y to do the smooth scroll 
+  * @param {Number} duration duration of smooth scroll
+  */
+ const smoothScrollToPosition = (postion, duration = TIME_ANIMATION_SCROLL_TOP) => {
+    const startingY = window.pageYOffset;
+    const startTime = performance.now();
 
-    // Si el desplazamiento es mayor que 200px, muestra el botón
-    if (scrollTop > 200) {
-        document.querySelector("#scrollTop").style.display = "block";
-    } else {
-        document.querySelector("#scrollTop").style.display = "none";
-    }
-});
-
-document.querySelector("#scrollTop").addEventListener("click", function() {
-    scrollToTop(TIME_ANIMATION_SCROLL_TOP);
-});
-
-function scrollToTop(duration) {
-    var startingY = window.pageYOffset;
-    var startTime = performance.now();
-
-    function step(timestamp) {
-        var currentTime = timestamp || performance.now();
-        var timeElapsed = currentTime - startTime;
-        var scrollY = Math.max(
-            startingY - timeElapsed / duration * startingY,
+    const step = (timestamp) => {
+        const currentTime = timestamp || performance.now();
+        const timeElapsed = currentTime - startTime;
+        const scrollY = Math.max(
+            startingY - (timeElapsed / duration) * startingY,
             0
         );
-        window.scrollTo(0, scrollY);
+        window.scrollTo(postion, scrollY);
 
         if (timeElapsed < duration) {
             window.requestAnimationFrame(step);
@@ -397,6 +367,4 @@ function scrollToTop(duration) {
     }
 
     window.requestAnimationFrame(step);
-    return false;
 }
-*/
