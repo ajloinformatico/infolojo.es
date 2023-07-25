@@ -1,5 +1,9 @@
-console.log("Loading constants.js module")
+import {
+    customLog
+} from './infolojoLogger.js'
 
+
+const CLASS_NAME = "constants.js"
 
 // region elements
 const body = document.body;
@@ -31,10 +35,10 @@ const triggerUpdateThteme = document.querySelectorAll('.trigger-menu');
 
 // region internalScrollLinks
 const linkToKeepIt = document.querySelector('#link-to-keep-it');
+const keepItDiv = document.querySelector('#keep-it-div');
 // endregion internalScrollLinks
 
 // region app perfomance values
-const TIME_ANIMATION_SCROLL_TOP = 500;
 const DARK_STYLE_NAME = "dark";
 const DARK_TEXT = "black";
 const LIGHT_TEXT = "white";
@@ -52,6 +56,15 @@ const DARK_MODE_LOCAL_STORAGE_DISSABLED = "dissabled"
 // endregion localStorage states
 
 
+/**
+ * Call customLog from infolojoLogger with private class name
+ * and message
+ * @param {String} message 
+ */
+const log = (message) => {
+    customLog(message, CLASS_NAME)
+}
+
 export {
     body,
     htmlParent,    
@@ -67,7 +80,6 @@ export {
     header,
     footer,
     sendEmailButton,
-    TIME_ANIMATION_SCROLL_TOP,
     DARK_STYLE_NAME,
     DARK_TEXT,
     LIGHT_TEXT,
@@ -79,9 +91,12 @@ export {
     triggerDarkMode,
     triggerUpdateThteme,
     linkToKeepIt,
+    keepItDiv,
     iconsFab,
     iconsFav,
     DARK_MODE_LOCAL_STORAGE,
     DARK_MODE_LOCAL_STORAGE_ENABLED,
     DARK_MODE_LOCAL_STORAGE_DISSABLED
 }
+
+log("Loading constants.js module")

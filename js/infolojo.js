@@ -13,7 +13,6 @@ import {
     header,
     footer,
     sendEmailButton,
-    TIME_ANIMATION_SCROLL_TOP,
     DARK_STYLE_NAME,
     DARK_TEXT,
     LIGHT_TEXT,
@@ -25,12 +24,23 @@ import {
     triggerDarkMode,
     triggerUpdateThteme,
     linkToKeepIt,
+    keepItDiv,
     iconsFab,
     iconsFav,
     DARK_MODE_LOCAL_STORAGE,
     DARK_MODE_LOCAL_STORAGE_ENABLED,
     DARK_MODE_LOCAL_STORAGE_DISSABLED
 } from './constants.js'
+
+import {
+    navTo
+} from './scrollHelper.js'
+
+import {
+    customLog
+} from './infolojoLogger.js'
+
+const CLASS_NAME = "infolojo.js"
 
 // region localStorageStates
 // menu mobile state
@@ -42,6 +52,15 @@ let accessibilityMode = -1;
 // dark mode state
 let darkMode = true;
 // endregion localStorageStates
+
+/**
+ * Call customLog from infolojoLogger with private class name
+ * and message
+ * @param {String} message 
+ */
+const log = (message) => {
+    customLog(message, CLASS_NAME)
+}
 
 /**
  * load state methods 
@@ -92,31 +111,10 @@ const addOnClickEvents = () => {
 
     // region internalLinks
     linkToKeepIt.addEventListener('click', () => {
-        navTo('#keep-it-div');
+        navTo(linkToKeepIt);
     });
     // endregion internalLinks
 }
-
-// region jsquery oldBlock
-const manageScrollToTopButtonOld = () => {
-    $(window).scroll(() => {
-        // if scroll > 200 muestra el botom si no ocultalo
-        if ($(this).scrollTop() > 200) {
-            $('#scrollTop').fadeIn();
-        
-        } else {
-            $('#scrollTop').fadeOut();
-        }
-    });
-
-    $('#scrollTop').click(() => {
-        $('html, body').animate({
-            scrollTop:0
-        },TIME_ANIMATION_SCROLL_TOP);
-        return false;
-    });
-}
-// endregion jsquery
 
 /** manage scroll to top */
 const manageScrollToTopButton = () => {
@@ -140,14 +138,6 @@ const manageScrollToTopButton = () => {
 const showAnimatedElement = (element, show) => {
     (show) ? $(element).fadeIn() : $(element).fadeOut();
  } 
-
-/**
- * Show a message in console
- * @param {String} message
- */
-const log = (message) => {
-    console.log(message);
-}
 
 /**
  * Change style between dark and light by calling
@@ -315,56 +305,4 @@ const changeSize = () => {
     accessibilityMode *= -1;
     log("update accesibility with " + accessibilityMode);
     accessibilityMode===1?htmlGeneral.classList.add('font-accesible'):htmlGeneral.classList.remove('font-accesible');
-}
-
-/**
- * Function to perform a smooth scroll to a specific element
- * @param {string} element element to go 
- * @param {Number} position position to go
- * @returns {void}
- */
-const navTo = (element = null, position = null) => {
-    if (element != null) {
-        smoothScrollToElement(element)
-    } else if (position != null) {
-        smoothScrollToPosition(position)
-    }
-}
-
-/**
- * Function to perform a smooth scroll to a specific position
- * @param {Element} element 
- * @param {Duration} duration 
- */
-const smoothScrollToElement = (element, duration = TIME_ANIMATION_SCROLL_TOP) => {
-    $('html, body').animate({
-        scrollTop:$(element).offset().top
-    },duration);
-    log('navigate to ' + element);
-}
-
- /**
-  * Performace a smooth scroll to a position
-  * @param {Number} postion position y to do the smooth scroll 
-  * @param {Number} duration duration of smooth scroll
-  */
- const smoothScrollToPosition = (postion, duration = TIME_ANIMATION_SCROLL_TOP) => {
-    const startingY = window.pageYOffset;
-    const startTime = performance.now();
-
-    const step = (timestamp) => {
-        const currentTime = timestamp || performance.now();
-        const timeElapsed = currentTime - startTime;
-        const scrollY = Math.max(
-            startingY - (timeElapsed / duration) * startingY,
-            0
-        );
-        window.scrollTo(postion, scrollY);
-
-        if (timeElapsed < duration) {
-            window.requestAnimationFrame(step);
-        }
-    }
-
-    window.requestAnimationFrame(step);
 }
