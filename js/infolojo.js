@@ -1,77 +1,150 @@
-const body = document.body;
-const htmlParent = document.documentElement
-const menuMobileTag = document.querySelector('#menu-mobile');
-const htmlGeneral = document.querySelector('#general');
-const btnScrollToTop = document.querySelector('#scrollTop');
-const TIME_ANIMATION_SCROLL_TOP = 1000;
+import {
+    body,
+    htmlParent,    
+    menuMobileTag,
+    htmlGeneral,
+    btnScrollToTop,
+    inputFormElement,
+    textAreaFormElement,
+    projectsBorderBottom,
+    aboutMeSections,
+    resalstBlueElements,
+    resalstRedElements,
+    header,
+    footer,
+    sendEmailButton,
+    DARK_STYLE_NAME,
+    DARK_TEXT,
+    LIGHT_TEXT,
+    aboutMeIcon,
+    myprojectIcon,
+    curriculumIcon,
+    contactMeIcon,
+    triggerAccesibility,
+    triggerDarkMode,
+    triggerUpdateThteme,
+    linkToKeepIt,
+    keepItDiv,
+    iconsFab,
+    iconsFav,
+    DARK_MODE_LOCAL_STORAGE,
+    DARK_MODE_LOCAL_STORAGE_ENABLED,
+    DARK_MODE_LOCAL_STORAGE_DISSABLED
+} from './constants.js'
+
+import {
+    navTo
+} from './scrollHelper.js'
+
+import {
+    customLog
+} from './infolojoLogger.js'
+
+const CLASS_NAME = "infolojo.js"
+
+// region localStorageStates
+// menu mobile state
 let navMobile = 1;
+
+// accesibility mode state
 let accessibilityMode = -1;
 
-// Change to localStore
-// darkMode vals
+// dark mode state
 let darkMode = true;
-const DARK_STYLE_NAME = "dark";
-const DARK_TEXT = "black";
-const LIGHT_TEXT = "white";
-const inputFormElement = document.querySelector('#_replyto');
-const textAreaFormElement = document.querySelector('#message');
-const projectsBorderBottom = document.querySelector('.projects');
-const aboutMeSections = document.querySelectorAll('.intro-about');
-const resalstBlueElements = document.querySelectorAll('.resalt-blue');
-const resalstRedElements = document.querySelectorAll('.resat');
-const header = document.querySelector('header');
-const footer = document.querySelector('footer');
-const scrollToTopButton = document.querySelector('#scrollTop');
-const triggerAcce = document.querySelector("#trigger-acce");
-const sendEmailButton = document.querySelector('input:last-child');
+// endregion localStorageStates
 
-// icons
-const iconsFab = document.querySelectorAll('.fab');
-const iconsFav = document.querySelectorAll('.fav');
-
-// local storage dark mode
-const DARK_MODE_LOCAL_STORAGE = "DARK_MODE_LOCAL_STORAGE"
-const DARK_MODE_LOCAL_STORAGE_ENABLED = "enabled"
-const DARK_MODE_LOCAL_STORAGE_DISSABLED = "dissabled"
+/**
+ * Call customLog from infolojoLogger with private class name
+ * and message
+ * @param {String} message 
+ */
+const log = (message) => {
+    customLog(message, CLASS_NAME)
+}
 
 /**
  * load state methods 
  */
 window.onload = () => {
-    console.log("run all");
+    log("Loading infolojo.js module")
     //hidde btn to scroll up and menu btn
     btnScrollToTop.style.display = "none";
     menuMobile();
-    scrollBtn();
+    manageScrollToTopButton();
     CheckDarkModeStatus();
     setTheme();
+    addOnClickEvents();
 }
 
-const scrollBtn = () => {
-    $(window).scroll(() => {
-        // if scroll > 200 muestra el botom si no ocultalo
-        if ($(this).scrollTop() > 200) {
-            $('#scrollTop').fadeIn();
-        
-        } else {
-            $('#scrollTop').fadeOut();
-        }
-    });
 
-    $('#scrollTop').click(() => {
-        $('html, body').animate({
-            scrollTop:0
-        },TIME_ANIMATION_SCROLL_TOP);
-        return false;
+const addOnClickEvents = () => {
+
+    // region menuIcons
+    aboutMeIcon.forEach(element => element.addEventListener('click', () => {
+            navTo('#about-me');
+    }));
+
+    myprojectIcon.forEach(element => element.addEventListener('click', () => {
+        navTo('#my-projects')
+    }));
+
+    curriculumIcon.forEach(element => element.addEventListener('click', () => {
+        log("Antonio José Lojo Ojeda curricum downloaded");
+    }));
+
+    contactMeIcon.forEach(element => element.addEventListener('click', () => {
+        navTo('#contact-me');
+    }));
+
+    triggerAccesibility.forEach(element => element.addEventListener('click', () => {
+        changeSize();
+    }));
+    
+    triggerDarkMode.forEach(element => element.addEventListener('click', () => {
+        setTheme();
+    }));
+
+    triggerUpdateThteme.forEach(element => element.addEventListener('click', () => {
+        menuMobile();
+    }));
+    // endregion menuIcons
+
+    // region internalLinks
+    linkToKeepIt.addEventListener('click', () => {
+        navTo(linkToKeepIt);
+    });
+    // endregion internalLinks
+}
+
+/** manage scroll to top */
+const manageScrollToTopButton = () => {
+    window.addEventListener("scroll", () => {
+        // show scroll button if scroll is bigger than 200
+        showAnimatedElement(btnScrollToTop, (window.scrollY > 200));
+
+        // Add onClick in btnScrollToTop to do scroll animated
+        btnScrollToTop.addEventListener('click', () => {
+            navTo(null, 0)
+            return false;
+        });
     });
 }
+
+/**
+ * Show a view with fadeIn or a fadeOut animation.
+ * @param {Element} element 
+ * @param {Boolean} show 
+ */
+const showAnimatedElement = (element, show) => {
+    (show) ? $(element).fadeIn() : $(element).fadeOut();
+ } 
 
 /**
  * Change style between dark and light by calling
  * toogleDarkMode();
  */
 const setTheme = () => {
-    console.log("Update style");
+    log("Update style");
     updateDarkModeStatus();
     
     if (darkMode === true) {
@@ -100,11 +173,11 @@ const setTheme = () => {
         toggleDarkMode(footer, true);
 
         // Note: scroll to top buttom
-        toggleDarkMode(scrollToTopButton, true);
+        toggleDarkMode(btnScrollToTop, true);
 
         // Note: Access button
-        toggleDarkMode(triggerAcce, true);
-
+        triggerAccesibility.forEach(element => toggleDarkMode(element, true))
+        
         // Note: Send email button
         toggleDarkMode(sendEmailButton, true);
 
@@ -134,10 +207,10 @@ const setTheme = () => {
         toggleDarkMode(footer, false);
 
         // Note: scroll to top button
-        toggleDarkMode(scrollToTopButton, false);
+        toggleDarkMode(btnScrollToTop, false);
 
         // Note: Access button
-        toggleDarkMode(triggerAcce, false);
+        triggerAccesibility.forEach(element => toggleDarkMode(element, false));
 
         // Note: Send email button
         toggleDarkMode(sendEmailButton, true);
@@ -189,7 +262,6 @@ const applyToggleDarkMode = (element, addDark) => {
     } catch {
         // no-op
     }
-    
 }
 
 /**
@@ -198,6 +270,11 @@ const applyToggleDarkMode = (element, addDark) => {
  * @param addDark boolean that say if text must apply white or black
  */
 const applyToggleDarkModeOnIcon = (element, addDark) => {
+    let triggerAcce = null;
+    triggerAccesibility.forEach(element => () => {
+        triggerAccesibility = element
+    })
+    
     element.forEach(ele => {
         try {
             if (ele !== triggerAcce) {
@@ -216,6 +293,7 @@ const applyToggleDarkModeOnIcon = (element, addDark) => {
  */
 const menuMobile = () => {
    navMobile *= -1;
+   log("update accesibility with " + navMobile);
    navMobile===-1?menuMobileTag.style.display="none":menuMobileTag.style.display = "block";
 
 }
@@ -225,17 +303,6 @@ const menuMobile = () => {
  */
 const changeSize = () => {
     accessibilityMode *= -1;
-    console.log(accessibilityMode);
+    log("update accesibility with " + accessibilityMode);
     accessibilityMode===1?htmlGeneral.classList.add('font-accesible'):htmlGeneral.classList.remove('font-accesible');
-}
-
-/**
- * anim go to id element on the web
- * @param {string} element 
- * @returns {void}
- */
-const navTo = (element) => {
-    $('html, body').animate({
-        scrollTop:$(element).offset().top
-    },TIME_ANIMATION_SCROLL_TOP);
 }
