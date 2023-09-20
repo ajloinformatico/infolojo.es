@@ -35,33 +35,33 @@
     <h1>INFOLOJO</h1>
     <nav class="nav-menu">
         <ul>
-            <li><a onclick="navTo('#about-me')" class="aboutmeLink" title="about me section">About Me</a></li>
-            <li><a onclick="navTo('#my-projects')" class="myprojectLink" title="My projects section">My Projects</a>
+            <li><a class="aboutmeLink" title="about me section">About Me</a></li>
+            <li><a class="myprojectLink" title="My projects section">My Projects</a>
             </li>
             <li><a href="docs/curriculum.pdf" class="curriculumLink" target="_blank" title="Curriculum">Curriculum
                 Vitae</a></li>
             <li><a href="digital_curriculum/" target="_blank" title="Curriculum virtual">Digital curriculum</a></li>
             <li><a href="https://es.linkedin.com/in/antonio-jos%C3%A9-lojo-ojeda-a196b715a" target="_blank"
                    title="Linkedin">Linkedin</a></li>
-            <li><a onclick="navTo('#contact-me')" class="contactMelink" title="contact me section">Contact Me</a></li>
+            <li><a class="contactMelink" title="contact me section">Contact Me</a></li>
         </ul>
     </nav>
     <div class="buttons">
-        <a class="trigger-acce" href="#" onclick='changeSize()'><span class="fab fa-accessible-icon"></span></a>
-        <a class="trigger-dark-mode" href="#" onclick='setTheme()'><span class="fas fa-adjust"></span></a>
-        <a class="trigger-menu" href="#" onclick='menuMobile()'><span class="fas fa-bars"></span></a>
+        <a class="trigger-acce" href="#"><span class="fab fa-accessible-icon"></span></a>
+        <a class="trigger-dark-mode" href="#"><span class="fas fa-adjust"></span></a>
+        <a class="trigger-menu" href="#"><span class="fas fa-bars"></span></a>
     </div>
 </header>
 <nav id="menu-mobile" class="menu-empty">
     <ul>
-        <li><a onclick="navTo('#about-me')" class="aboutmeLink" title="about me section">About Me</a></li>
-        <li><a onclick="navTo('#my-projects')" class="myprojectLink" title="My projects section">My Projects</a></li>
+        <li><a class="aboutmeLink" title="about me section">About Me</a></li>
+        <li><a class="myprojectLink" title="My projects section">My Projects</a></li>
         <li><a href="docs/curriculum.pdf" class="curriculumLink" target="_blank" title="Curriculum">Curriculum Vitae</a>
         </li>
         <li><a href="digital_curriculum/" target="_blank" title="Curriculum virtual">Digital curriculum</a></li>
         <li><a href="https://es.linkedin.com/in/antonio-jos%C3%A9-lojo-ojeda-a196b715a" target="_blank"
                title="Linkedin">Linkedin</a></li>
-        <li><a onclick="navTo('#contact-me')" class="contactMelink" title="contact me esection">Contact Me</a></li>
+        <li><a class="contactMelink" title="contact me esection">Contact Me</a></li>
     </ul>
 </nav>
 <!--endregion menu-->
@@ -138,9 +138,9 @@
                 </div>
                 <div class="footer-notes">
                     <div>
-                        <p class="resat">download app at</p>
-                        <a title="Go to Random group competition"
-                           href="https://github.com/ajloinformatico/RandomGroup" target="_blank">
+                        <p class="resat">donwload</p>
+                        <a title="Download RandomGroup"
+                           href="https://github.com/ajloinformatico/RandomGroup/releases/tag/release" target="_blank">
                             <span class="fab fa-github fa-3x"></span>
                         </a>
                     </div>
@@ -155,7 +155,7 @@
                 <div>
                     <p>
                         <b><i>Notes App for Android</i></b><br/>
-                        New <span class="inside-link-on-text" onclick="navTo('#keep-it-div')">keep it</span> desktop app
+                        New <span id="link-to-keep-it" class="inside-link-on-text">keep it</span> desktop app
                         redesign.
                         <br/>
                         This time for your mobile or tablet. The application is fully functional but actually it´s in
@@ -687,7 +687,7 @@
         <!-- endregion footer msg-->
     </section>
 </footer>
-<script src="js/infolojo.js" type="text/javascript"></script>
+<script src="js/infolojo.js" type="module"></script>
 </body>
 </html>
 <!-- region Libraries -->
