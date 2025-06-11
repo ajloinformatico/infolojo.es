@@ -10,6 +10,7 @@ import {
     aboutMeSections,
     resalstBlueElements,
     resalstRedElements,
+    resaltsRedElementsIds,
     header,
     footer,
     sendEmailButton,
@@ -81,7 +82,7 @@ const addOnClickEvents = () => {
 
     // region menuIcons
     aboutMeIcon.forEach(element => element.addEventListener('click', () => {
-            navTo('#about-me');
+        navTo('#about-me');
     }));
 
     myprojectIcon.forEach(element => element.addEventListener('click', () => {
@@ -131,6 +132,19 @@ const manageScrollToTopButton = () => {
 }
 
 /**
+ * Set if element must apply dark style
+ * @param element htmlElement
+ * @param addDark should add
+ */
+const applyToggleDarkMode = (element, addDark) => {
+    try {
+        addDark ? element.classList.add(DARK_STYLE_NAME) : element.classList.remove(DARK_STYLE_NAME)
+    } catch {
+        // no-op
+    }
+}
+
+/**
  * Show a view with fadeIn or a fadeOut animation.
  * @param {Element} element 
  * @param {Boolean} show 
@@ -158,6 +172,7 @@ const setTheme = () => {
         toggleDarkMode(aboutMeSections, true, true);
         toggleDarkMode(resalstBlueElements, true, true);
         toggleDarkMode(resalstRedElements, true, true);
+        toggleDarkMode(resaltsRedElementsIds, true, true);
         
         // Note: Icons
         applyToggleDarkModeOnIcon(iconsFab, true);
@@ -250,19 +265,6 @@ const toggleDarkMode = (element, addDark, isMultiElement = false) => {
         });
     }
 } 
-
-/**
- * Set if element must apply dark style
- * @param element htmlElement
- * @param addDark should add
- */
-const applyToggleDarkMode = (element, addDark) => {
-    try {
-        addDark ? element.classList.add(DARK_STYLE_NAME) : element.classList.remove(DARK_STYLE_NAME)
-    } catch {
-        // no-op
-    }
-}
 
 /**
  * 

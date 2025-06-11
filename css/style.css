@@ -13,31 +13,36 @@
 :root {
     /*Color*/
     --back-color-light: #e7e7de;
-    --header-color: #0f3057;
+    --back-color-2-light: #f6f6ed;
+    --header-color: #2b76d3;
     --header-color-hover: #394758;
     --nav-color: #008891;
     --nav-color-hover: #78b2b6;
     --python-color: #00587a;
     --bottom-go-top: #024959;
     --html-color: #f48b29;
-    --java-color: #ac0d0d;
+    --java-color: #f00000;
     --css-color: #008891;
+    --resalt-blue-color: #017ca5;
+    --resalt-red: #ff3f3f;
 
     /*Dark mode special colors*/
     --border-dark-mode: white;
-    --back-color-dark: #616161;
-    --resalt-blue-dark: var(--header-color);
-    --resalt-red-dark: #ef0000;
-    --resalt-dark-color: #000000;
+    --back-color-dark: #4d4d4d;
+    --back-color-2-dark: #a4a2a2;
+    --resalt-blue-dark: #18b3e7;
+    --resalt-red-dark: #ff3f3f;
+    --resalt-dark-color: #070606;
 
     /*Fonts*/
     /*--font-common: 'Noto Sans JP', sans-serif; /*Normal font*/
+    /*--font-common: 'Roboto', sans-serif; /*Normal font*/
     /*noinspection*/
-    --font-common: 'Roboto', sans-serif; /*Normal font*/
+    --font-common: 'Open Sans', sans-serif; /*Normal font*/
     --font-input: 'Playfair Display', serif;
 
 
-    /*TODO: FONT ACCESIBLE*/
+    /*TODO: FONT ACCSESIBLE*/
     --size-commom-desktop: 14pt;
     --size-common-desktop-x-large: 16pt;
     --size-common-mobile: 12pt;
@@ -377,17 +382,17 @@ input:focus, input:hover {
 }
 
 .resat {
-    color: var(--java-color);
+    color: var(--resalt-red);
     text-decoration: none;
     font-weight: bold;
 }
 
 .resat.dark {
-    color: var(--resalt-red-dark);
+    color: var(--resalt-blue-dark);
 }
 
 .resalt-blue {
-    color: var(--python-color);
+    color: var(--resalt-blue-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -396,22 +401,14 @@ input:focus, input:hover {
     color: var(--resalt-blue-dark)
 }
 
-.inside-link-on-text {
-    color: var(--java-color);
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: var(--mouse-is-over-normal)
-}
-
-.inside-link-on-text:hover {
-    transition: var(--mouse-is-hover-normal);
-    font-size: x-large;
-}
-
 #resat {
-    color: var(--java-color);
+    color: var(--resalt-red);
     transition: var(--mouse-is-over-normal)
+}
+
+/*In dark mode all resalt are blue.*/ 
+#resat.dark {
+    color: var(--resalt-blue-dark);
 }
 
 #resat:hover {

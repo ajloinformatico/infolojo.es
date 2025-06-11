@@ -17,6 +17,7 @@ const projectsBorderBottom = document.querySelector('.projects');
 const aboutMeSections = document.querySelectorAll('.intro-about');
 const resalstBlueElements = document.querySelectorAll('.resalt-blue');
 const resalstRedElements = document.querySelectorAll('.resat');
+const resaltsRedElementsIds = document.querySelectorAll('#resat');
 const header = document.querySelector('header');
 const footer = document.querySelector('footer');
 const sendEmailButton = document.querySelector('input:last-child');
@@ -77,6 +78,7 @@ export {
     aboutMeSections,
     resalstBlueElements,
     resalstRedElements,
+    resaltsRedElementsIds,
     header,
     footer,
     sendEmailButton,
