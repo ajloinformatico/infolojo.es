@@ -71,7 +71,7 @@ html {
     background-color: var(--back-color-light);
     font-family: var(--font-common);
     color: black;
-    transition: var(--transition-common);
+    transition: background-color 1s ease-in-out;
 }
 
 html.dark {
@@ -113,7 +113,7 @@ header {
     color: white;
 }
 
-header.dark {
+html.dark header {
     background-color: var(--resalt-dark-color);
     color: white;
 }
@@ -157,7 +157,7 @@ nav > ul > li > a {
 }
 
 /* TODO MENU DARK MODE*/
-#menu-mobile.dark {
+html.dark #menu-mobile {
     background-color: var(--resalt-dark-color);
 }
 
@@ -195,7 +195,7 @@ main {
     border-bottom: 1pt solid var(--header-color-hover);
 }
 
-.intro-about.dark {
+html.dark .intro-about {
     /*border-bottom: 1pt solid var(--border-dark-mode);*/
     border-color: var(--border-dark-mode);
     transition: var(--transition-fast);
@@ -224,7 +224,7 @@ main {
     border-bottom: 1pt solid var(--header-color-hover);
 }
 
-.projects.dark {
+html.dark .projects {
     border-color: var(--border-dark-mode);
 }
 
@@ -292,7 +292,7 @@ footer {
     padding-top: .5em;
 }
 
-footer.dark {
+html.dark footer {
     background-color: var(--resalt-dark-color);
 }
 
@@ -330,8 +330,13 @@ input {
     font-family: var(--font-input);
 }
 
-input.dark {
+html.dark input {
     background-color: var(--back-color-dark);
+    color: white;
+}
+
+html.dark input:last-child {
+    background-color: var(--java-color);
     color: white;
 }
 
@@ -341,7 +346,7 @@ textarea {
     font-family: var(--font-input);
 }
 
-textarea.dark {
+html.dark textarea {
     background-color: var(--back-color-dark);
     color: white;
 }
@@ -352,7 +357,7 @@ textarea:focus, textarea:hover {
     color: black
 }
 
-textarea:hover.dark {
+html.dark textarea:hover {
     background-color: var(--back-color-dark);
     color: white;
 }
@@ -387,7 +392,7 @@ input:focus, input:hover {
     font-weight: bold;
 }
 
-.resat.dark {
+html.dark .resat {
     color: var(--resalt-blue-dark);
 }
 
@@ -397,7 +402,7 @@ input:focus, input:hover {
     font-weight: bold;
 }
 
-.resalt-blue.dark {
+html.dark .resalt-blue {
     color: var(--resalt-blue-dark)
 }
 
@@ -407,7 +412,7 @@ input:focus, input:hover {
 }
 
 /*In dark mode all resalt are blue.*/ 
-#resat.dark {
+html.dark #resat {
     color: var(--resalt-blue-dark);
 }
 
@@ -429,7 +434,7 @@ input:focus, input:hover {
     right: 20px;
 }
 
-#scrollTop.dark {
+html.dark #scrollTop {
     background: var(--resalt-dark-color)
 }
 
