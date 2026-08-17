@@ -59,6 +59,7 @@ window.onload = () => {
     CheckDarkModeStatus();
     setTheme();
     addOnClickEvents();
+    manageRevealAnimations();
 }
 const addOnClickEvents = () => {
 
@@ -159,6 +160,43 @@ const toggleTheme = () => {
 const CheckDarkModeStatus = () => {
     darkMode = localStorage.getItem(DARK_MODE_LOCAL_STORAGE) === DARK_MODE_LOCAL_STORAGE_ENABLED;
 } 
+
+/**
+ * Add scroll reveal animations to sections and project cards.
+ * Elements fade up as they enter the viewport. Falls back to
+ * showing everything when IntersectionObserver is not supported.
+ */
+const manageRevealAnimations = () => {
+    if (!('IntersectionObserver' in window)) {
+        return;
+    }
+    const sections = document.querySelectorAll('main > section');
+    const cards = document.querySelectorAll('.projects > div');
+
+    const reveal = (element) => element.classList.add('reveal');
+
+    sections.forEach(reveal);
+    cards.forEach((card, index) => {
+        reveal(card);
+        card.style.transitionDelay = ((index % 4) * 0.07) + 's';
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                setTimeout(() => {
+                    entry.target.classList.remove('reveal');
+                    entry.target.style.transitionDelay = '';
+                }, 900);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    sections.forEach(section => observer.observe(section));
+    cards.forEach(card => observer.observe(card));
+}
 
 /**
  * hide menu on start 
