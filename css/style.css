@@ -200,11 +200,17 @@ ul > li > a:hover {
     color: black;
 }
 
+#menu-mobile ul > li {
+    text-align: center;
+}
+
 #menu-mobile ul > li > a {
-    padding: .5em;
+    width: auto;
+    padding: .5em 1em;
 }
 
 #menu-mobile ul > li > a:hover {
+    width: auto;
     background-color: var(--back-color-light);
 }
 
