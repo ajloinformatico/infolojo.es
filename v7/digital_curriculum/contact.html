@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>INFOLOJO CURRICULUM VITAE</title>
+        <meta name="description" content="Curriculum asynchrone utilisant les appels Ajax">
+        <meta name="keyboard" content="INFOLOJO, Curriculum, Asíncrono">
+        <meta name="author" content="Antonio José Lojo Ojeda">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../images/infolojo.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+    <body>
+        <header class="header-principal">
+            <h1>INFOLOJO</h1>
+            <span class="subtitle-principal">Technician in Microcomputer Systems and Networks
+                Web apps Developer</span>
+        </header>
+        <main>
+            <nav>
+                <h2>Curriculum Vitae</h2>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About me</a></li>
+                    <li><a href="findme.html">Find me</a></li>
+                    <li><a href="work.html">Working</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <!--Here the content will be loaded-->
+            <section id="#contenido">
+                <article id="article">
+                    <header>
+                        <h1>Contact Form</h1>
+                    </header>
+                        <section class="section-form">
+                        <form id="contactForm" action="" method="" enctype="multipart/form-data">
+                            <!--Perdón por los br-->
+                            <label for="name">Enter your name:<span title="required field"> * </span></label>
+                            <input type="text" size="30" name="name" id="name" placeholder="your name">
+                     
+                            <label for="affair">Enter affair:<span title="required field"> * </span></label>
+                     
+                            <input type="text" size="30" name="affair" id="affair" placeholder="mail affair">
+                            
+                            <label for="mail">Enter your email:<span title="required field"> * </span></label>
+                       
+                            <input type="email" name="mail" id="mail" placeholder="your mail">
+                         
+                            <label for="mail-content">Enter mail content<span title="this field is required"> * </span></label>
+                
+                            <textarea id="mail-content" size=""name="mail-content" required></textarea>
+                           
+                            <label>Are you shure you want send mail </label>
+                            <input type="checkbox" name="informado" id="informado" title="informame"/>
+                            
+                            <input type="submit" value="submit" id="submit" onsubmit="return false;" name="submit">            
+                        </form>
+                        </section>
+                       
+                </article>
+                
+                
+            </section>
+        </main>
+        <!--ajax Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--jQuery Validator-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+        <!--Font awesome-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+        <!--My Scrips-->
+        <script src="./js/main.js" async defer></script>
+        <script type="text/javascript" src="./js/validate.js"></script>
+    </body>
+</html>
