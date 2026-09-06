@@ -1,21 +1,9 @@
 import {
-    body,
-    htmlParent,    
+    htmlParent,
     menuMobileTag,
     htmlGeneral,
     btnScrollToTop,
-    inputFormElement,
-    textAreaFormElement,
-    projectsBorderBottom,
-    aboutMeSections,
-    resalstBlueElements,
-    resalstRedElements,
-    header,
-    footer,
-    sendEmailButton,
     DARK_STYLE_NAME,
-    DARK_TEXT,
-    LIGHT_TEXT,
     aboutMeIcon,
     myprojectIcon,
     curriculumIcon,
@@ -24,9 +12,6 @@ import {
     triggerDarkMode,
     triggerUpdateThteme,
     linkToKeepIt,
-    keepItDiv,
-    iconsFab,
-    iconsFav,
     DARK_MODE_LOCAL_STORAGE,
     DARK_MODE_LOCAL_STORAGE_ENABLED,
     DARK_MODE_LOCAL_STORAGE_DISSABLED
@@ -50,7 +35,7 @@ let navMobile = 1;
 let accessibilityMode = -1;
 
 // dark mode state
-let darkMode = true;
+let darkMode = false;
 // endregion localStorageStates
 
 /**
@@ -74,14 +59,13 @@ window.onload = () => {
     CheckDarkModeStatus();
     setTheme();
     addOnClickEvents();
+    manageRevealAnimations();
 }
-
-
 const addOnClickEvents = () => {
 
     // region menuIcons
     aboutMeIcon.forEach(element => element.addEventListener('click', () => {
-            navTo('#about-me');
+        navTo('#about-me');
     }));
 
     myprojectIcon.forEach(element => element.addEventListener('click', () => {
@@ -101,7 +85,7 @@ const addOnClickEvents = () => {
     }));
     
     triggerDarkMode.forEach(element => element.addEventListener('click', () => {
-        setTheme();
+        toggleTheme();
     }));
 
     triggerUpdateThteme.forEach(element => element.addEventListener('click', () => {
@@ -131,127 +115,6 @@ const manageScrollToTopButton = () => {
 }
 
 /**
- * Show a view with fadeIn or a fadeOut animation.
- * @param {Element} element 
- * @param {Boolean} show 
- */
-const showAnimatedElement = (element, show) => {
-    (show) ? $(element).fadeIn() : $(element).fadeOut();
- } 
-
-/**
- * Change style between dark and light by calling
- * toogleDarkMode();
- */
-const setTheme = () => {
-    log("Update style");
-    updateDarkModeStatus();
-    
-    if (darkMode === true) {
-        // Note: Simple elements
-        toggleDarkMode(htmlParent, true);
-        toggleDarkMode(projectsBorderBottom, true);
-        toggleDarkMode(inputFormElement, true);
-        toggleDarkMode(textAreaFormElement, true);
-
-        // Note: Multi elemens
-        toggleDarkMode(aboutMeSections, true, true);
-        toggleDarkMode(resalstBlueElements, true, true);
-        toggleDarkMode(resalstRedElements, true, true);
-        
-        // Note: Icons
-        applyToggleDarkModeOnIcon(iconsFab, true);
-        applyToggleDarkModeOnIcon(iconsFav, true);
-
-        // Note: Menu
-        toggleDarkMode(menuMobileTag, true);
-
-        // Note: header
-        toggleDarkMode(header, true);
-
-        // Note: footer
-        toggleDarkMode(footer, true);
-
-        // Note: scroll to top buttom
-        toggleDarkMode(btnScrollToTop, true);
-
-        // Note: Access button
-        triggerAccesibility.forEach(element => toggleDarkMode(element, true))
-        
-        // Note: Send email button
-        toggleDarkMode(sendEmailButton, true);
-
-    } else {
-        // Note: Simple elements
-        toggleDarkMode(htmlParent, false);
-        toggleDarkMode(projectsBorderBottom, false);
-        toggleDarkMode(inputFormElement, false);
-        toggleDarkMode(textAreaFormElement, false);
-
-        // Note: Multi elements
-        toggleDarkMode(aboutMeSections, false, true);
-        toggleDarkMode(resalstBlueElements, false, true);
-        toggleDarkMode(resalstRedElements, false, true);
-
-        // Note: Icons
-        applyToggleDarkModeOnIcon(iconsFab, false);
-        applyToggleDarkMode(iconsFav, false);
-
-        // Note: Menu
-        toggleDarkMode(menuMobileTag, false);
-
-        // Note: header
-        toggleDarkMode(header, false);
-
-        // Note: footer
-        toggleDarkMode(footer, false);
-
-        // Note: scroll to top button
-        toggleDarkMode(btnScrollToTop, false);
-
-        // Note: Access button
-        triggerAccesibility.forEach(element => toggleDarkMode(element, false));
-
-        // Note: Send email button
-        toggleDarkMode(sendEmailButton, true);
-    }
-}
-
-/**
- * Save in localstorage darkMode status
- */
-const CheckDarkModeStatus = () => {
-    darkMode = localStorage.getItem(DARK_MODE_LOCAL_STORAGE) === DARK_MODE_LOCAL_STORAGE_ENABLED;
-} 
-
-const updateDarkModeStatus = () => {
-    if (darkMode) {
-        darkMode = false
-        localStorage.setItem(DARK_MODE_LOCAL_STORAGE, DARK_MODE_LOCAL_STORAGE_ENABLED);
-    
-    } else {
-        darkMode = true
-        localStorage.setItem(DARK_MODE_LOCAL_STORAGE, DARK_MODE_LOCAL_STORAGE_DISSABLED);
-    }
-}
-
-/**
- * Set if element must apply dark style
- * @param element html element to update style
- * @param addDark addDark
- * @param isMultiElement Element has more than one element inside the tag
- */
-const toggleDarkMode = (element, addDark, isMultiElement = false) => {
-    if (!isMultiElement) {
-       applyToggleDarkMode(element, addDark)
-    } else {
-        element.forEach(ele => {
-            applyToggleDarkMode(ele, addDark)
-        });
-    }
-} 
-
-/**
  * Set if element must apply dark style
  * @param element htmlElement
  * @param addDark should add
@@ -265,27 +128,74 @@ const applyToggleDarkMode = (element, addDark) => {
 }
 
 /**
- * 
- * @param element icon
- * @param addDark boolean that say if text must apply white or black
+ * Show a view with fadeIn or a fadeOut animation.
+ * @param {Element} element 
+ * @param {Boolean} show 
  */
-const applyToggleDarkModeOnIcon = (element, addDark) => {
-    let triggerAcce = null;
-    triggerAccesibility.forEach(element => () => {
-        triggerAccesibility = element
-    })
-    
-    element.forEach(ele => {
-        try {
-            if (ele !== triggerAcce) {
-                // no-op
-            } else {
-                addDark? ele.style.color = LIGHT_TEXT : ele.style.color = DARK_TEXT;
-            }
-        } catch {
-            // no-op
-        }
+const showAnimatedElement = (element, show) => {
+    (show) ? $(element).fadeIn() : $(element).fadeOut();
+ } 
+
+/**
+ * Apply the current dark mode state to the whole page.
+ * Dark styles cascade from the "dark" class on <html>.
+ */
+const setTheme = () => {
+    log("Update style");
+    applyToggleDarkMode(htmlParent, darkMode);
+}
+
+/**
+ * Toggle dark mode state, persist it and apply it.
+ */
+const toggleTheme = () => {
+    darkMode = !darkMode;
+    localStorage.setItem(DARK_MODE_LOCAL_STORAGE, darkMode ? DARK_MODE_LOCAL_STORAGE_ENABLED : DARK_MODE_LOCAL_STORAGE_DISSABLED);
+    setTheme();
+}
+
+/**
+ * Load dark mode status from localstorage
+ */
+const CheckDarkModeStatus = () => {
+    darkMode = localStorage.getItem(DARK_MODE_LOCAL_STORAGE) === DARK_MODE_LOCAL_STORAGE_ENABLED;
+} 
+
+/**
+ * Add scroll reveal animations to sections and project cards.
+ * Elements fade up as they enter the viewport. Falls back to
+ * showing everything when IntersectionObserver is not supported.
+ */
+const manageRevealAnimations = () => {
+    if (!('IntersectionObserver' in window)) {
+        return;
+    }
+    const sections = document.querySelectorAll('main > section');
+    const cards = document.querySelectorAll('.projects > div');
+
+    const reveal = (element) => element.classList.add('reveal');
+
+    sections.forEach(reveal);
+    cards.forEach((card, index) => {
+        reveal(card);
+        card.style.transitionDelay = ((index % 4) * 0.07) + 's';
     });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                setTimeout(() => {
+                    entry.target.classList.remove('reveal');
+                    entry.target.style.transitionDelay = '';
+                }, 900);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+    sections.forEach(section => observer.observe(section));
+    cards.forEach(card => observer.observe(card));
 }
 
 /**
